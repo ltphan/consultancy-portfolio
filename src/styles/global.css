@@ -48,4 +48,38 @@ block level container; auto helps center value horizontally where browser resize
 
 }
 
+/* Alternative: Direct selector approach using the component structure */
+.startup-cards-stack .z-10 {
+  animation: startupCardBrexFloat 6s ease-in-out infinite;
+}
 
+.startup-cards-stack .z-0 {
+  animation: startupCardClioFloat 7s ease-in-out infinite;
+}
+
+.card-left {
+  left: -4px;
+  top: -2px;
+  transform: rotate(-5deg);
+  z-index: 2;
+  animation: fanLeft 4s ease-in-out infinite;
+}
+
+/* Simple animation for the right card */
+.card-right {
+  left: 4px;
+  top: -2px;
+  transform: rotate(5deg);
+  z-index: 1;
+  animation: fanRight 4s ease-in-out infinite;
+}
+
+@keyframes fanLeft {
+  0%, 100% { transform: rotate(-5deg) translateX(-4px); }
+  50% { transform: rotate(-15deg) translateX(-12px); }
+}
+
+@keyframes fanRight {
+  0%, 100% { transform: rotate(5deg) translateX(4px); }
+  50% { transform: rotate(20deg) translateX(20px); }
+}
