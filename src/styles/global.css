@@ -48,7 +48,6 @@ block level container; auto helps center value horizontally where browser resize
 
 }
 
-/* Alternative: Direct selector approach using the component structure */
 .startup-cards-stack .z-10 {
   animation: startupCardBrexFloat 6s ease-in-out infinite;
 }
@@ -65,7 +64,6 @@ block level container; auto helps center value horizontally where browser resize
   animation: fanLeft 4s ease-in-out infinite;
 }
 
-/* Simple animation for the right card */
 .card-right {
   left: 4px;
   top: -2px;
