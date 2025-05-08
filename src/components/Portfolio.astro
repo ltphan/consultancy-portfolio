@@ -1,0 +1,394 @@
+---
+import BrexCard from "../components/BrexCard.astro";
+import ClioCard from "../components/ClioCard.astro";
+
+import ToggleDown from "../components/ToggleDown.astro";
+import PhoneImage from "./PhoneImage.astro";
+import EmailImage from "./EmailImage.astro";
+import GithubImage from "./GithubImage.astro";
+import LinkedinImage from "./LinkedinImage.astro";
+
+import clioForClients from "../assets/clio-for-clients.png";
+import clioForLawyers from "../assets/clio-for-lawyers.png";
+import milkShakeBlog from "../assets/milkshake-blog.png";
+
+import { Image } from "astro:assets";
+
+const name = "linh phan";
+
+const navTabs = ["about", "services", "work", "contact"];
+const services = [
+  "web development and saas",
+  "mobile development",
+  "backend and api development",
+  "cloud and infrastructure",
+  "enterprise security features",
+];
+
+const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production ready web and mobile applications,
+focused on delivering high quality solutions through customer obsession and craftmanship.`;
+---
+
+<header class="w-content pt-4">
+  <nav
+    class="rounded-2xl border-2 py-2 flex items-center justify-between px-4 w-full bg-sky-300"
+  >
+    <h1>{name}</h1>
+    <div class="flex gap-3">
+      <div>{navTabs[0]}</div>
+      <div>{navTabs[1]}</div>
+      <div>{navTabs[2]}</div>
+      <div>{navTabs[3]}</div>
+    </div>
+  </nav>
+</header>
+
+<main class="min-h-svh pb-20 flex-grow">
+  <div class="w-content">
+    <div class="content-box mt-10">
+      <h2 class="mb-10">about me</h2>
+      <div>
+        <p class="intro-text">
+          {firstParagraphIntro}
+        </p>
+
+        <div class="startups-text-and-cards mt-4 leading-[1.6]">
+          She's worked at highgrowth startups that include
+
+          <div
+            class="startup-cards-inline-wrapper inline-flex items-center ml-1 mr-1 align-[-6px]"
+          >
+            <div class="startup-cards-stack relative">
+              {/* Stacked cards - still absolute within this relative parent */}
+              <ClioCard class="absolute" />
+              <BrexCard class="absolute top-1 right-1" />
+              {/* Placeholder for dimension - Still needed! */}
+              <div class="w-12 h-12"></div>
+            </div>
+          </div>
+
+          with experience building 0 to 1 products and revamping and redesigning
+          applications.
+        </div>
+      </div>
+    </div>
+    <hr class="w-full border-t border-gray-300 my-20 border-10" />
+
+    <div class="content-box">
+      <h2 class="mb-10">work</h2>
+      <div>
+        <div class="flex justify-between mb-2">
+          <div>
+            <h1>milkshake blog</h1>
+          </div>
+          <ToggleDown />
+        </div>
+        <div class="mb-4">
+          <Image
+            src={milkShakeBlog}
+            alt="Milkshake blog image"
+            width="1024"
+            height="560"
+          />
+          <p class="mt-2">
+            I designed and developed a blog that specializes in F1 motorsport
+            gossip magazine for women, creating a responsive digital publication
+            that brings the excitement of Formula 1 to a female audience. The
+            platform features a clean, visually engaging interface that blends
+            racing news with lifestyle elements.
+          </p>
+        </div>
+        <div class="flex justify-between mb-2">
+          <div>
+            <h1>brex card and expense management</h1>
+          </div>
+          <ToggleDown />
+        </div>
+        <div class="mb-4">
+          <Image
+            src="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
+            alt="Brex mobile app image"
+            width="1024"
+            height="560"
+          />
+          <p class="mt-2">
+            I revamped and redesigned the mobile application, focusing on
+            critical expense management features including streamlined account
+            creation and detailed card transaction tracking. The app serves as a
+            cornerstone financial tool that helped secure enterprise deals with
+            companies like Coinbase and DoorDash.
+          </p>
+        </div>
+        <div class="flex justify-between">
+          <div>
+            <h1>clio for clients</h1>
+          </div>
+          <ToggleDown />
+        </div>
+        <div class="mb-4">
+          <Image
+            src={clioForClients}
+            alt="Clio for clients mobile app image"
+            width="1024"
+            height="560"
+          />
+          <p class="mt-2">
+            I built and launched Clio's first consumer product during COVID-19,
+            creating essential remote collaboration capabilities between lawyers
+            and their clients when in-person meetings weren't possible. This
+            strategic innovation opened a new market opportunity and solidified
+            Clio's position as a legal tech leader, serving over 600,000+
+            clients.
+          </p>
+        </div>
+        <div class="flex justify-between mb-2">
+          <div>
+            <h1>clio for lawfirms and lawyers</h1>
+          </div>
+          <ToggleDown />
+        </div>
+        <div class="mb-4">
+          <Image
+            src={clioForLawyers}
+            alt="Clio for lawyers image"
+            width="1024"
+            height="560"
+          />
+          <p class="mt-2">
+            I led the comprehensive revamp and redesign of Clio's flagship
+            mobile application for both iOS and Android platforms. I implemented
+            critical features including case details management, transaction
+            tracking, and secure PDF document uploading, transforming the user
+            experience. This redesign dramatically increased app store ratings
+            from 2.3 to 4.8, garnering over 6,000+ positive reviews and
+            significantly enhancing the digital workflow for 150,000+ legal
+            professionals.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr class="w-full border-t border-gray-300 my-20 border-10" />
+    <div class="content-box">
+      <h2 class="mb-10">services</h2>
+      <div class="mb-5">
+        <div class="flex justify-between mb-2">
+          <button>{services[0]}</button>
+          <ToggleDown />
+        </div>
+        <div class="grid gap-2">
+          <span>craft and develop premium native mobile apps</span>
+          <span
+            >design and create user interfaces that are easy to navigate and use</span
+          >
+          <span>build applications that are reliable even offline</span>
+          <span
+            >implement features and design principles to drive user engagement</span
+          >
+          <span>utilize push notification strategies to engage users</span>
+          <span
+            >develop mobile focused performance optimization and scalability</span
+          >
+        </div>
+      </div>
+      <br />
+      <div class="mb-5">
+        <div class="flex justify-between mb-2">
+          <button>{services[1]}</button>
+          <ToggleDown />
+        </div>
+        <div class="grid gap-2">
+          <span
+            >develop web apps that focus on responsive design and intuitive
+            interfaces</span
+          >
+          <span>implement real time interaction and collaboration features</span
+          >
+          <span>build effective admin dashboards that are robust</span>
+          <span
+            >transform complex data into clear and interactive visualizations</span
+          >
+          <span
+            >connect to external services and APIs to extend functionality</span
+          >
+          <span
+            >design and implement solutions to effectively serve a global user
+            base</span
+          >
+        </div>
+      </div>
+      <br />
+      <div class="mb-5">
+        <div class="flex justify-between mb-2">
+          <button>{services[2]}</button>
+          <ToggleDown />
+        </div>
+        <div class="grid gap-2">
+          <span>design and develop highly performant backend systems</span>
+          <span
+            >implement real-time updates and notifications that support
+            real-time data flow</span
+          >
+          <span>handle large scale data processing</span>
+          <span>utilize smart caching strategies to optimize performance</span>
+          <span
+            >ensure secure user authentication to protect application's resource
+            and user data</span
+          >
+          <span>facilitate easy integration that are well documented</span>
+        </div>
+      </div>
+      <br />
+      <div class="mb-5">
+        <div class="flex justify-between mb-2">
+          <button>{services[3]}</button>
+          <ToggleDown />
+        </div>
+        <div class="grid gap-2">
+          <span>scalable cloud infrastructure that are flexible</span>
+          <span
+            >agile infrastructure management that supports rapid development
+            cycle</span
+          >
+          <span
+            >24/7 monitoring and alerting that identifies potential issues
+            before impacts users</span
+          >
+          <span
+            >high availability architecture to ensure systems remains
+            operational</span
+          >
+          <span
+            >implement automated backup procedures to protect valuable data</span
+          >
+          <span
+            >real time performance monitoring to gain user insights on how apps
+            perform</span
+          >
+        </div>
+      </div>
+      <br />
+      <div class="mb-5">
+        <div class="flex justify-between mb-2">
+          <button>{services[4]}</button>
+          <ToggleDown />
+        </div>
+        <div class="grid gap-2">
+          <span
+            >implement enterprise-grade security to meet rigorous demands of
+            large organizations and protext against threats</span
+          >
+          <span>ensure data privacy compliance such as GDPR and SOC2</span>
+          <span
+            >provide end-to-end encryption thorughout app and infrastructure</span
+          >
+          <span
+            >build for always on reliability with focus on high availability</span
+          >
+          <span
+            >integrate disaster recovery solutions to ensure rapid restoraition
+            of system</span
+          >
+          <span
+            >conduct rigorous security testing that include vulnerability
+            assessments and penetration testing</span
+          >
+        </div>
+      </div>
+    </div>
+    <hr class="w-full border-t border-gray-300 my-20 border-10" />
+
+    <div class="content-box mt-10">
+      <h2 class="mb-10">contact</h2>
+      <div>
+        <div
+          class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
+        >
+          <a
+            href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
+            >book a call</a
+          >
+          <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
+            <PhoneImage />
+          </div>
+        </div>
+
+        <div
+          class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
+        >
+          <div class="grid">
+            <a href="mailto:phanthuclinh@gmail.com">email </a>
+            <span>phanthuclinh (at) gmail.com</span>
+          </div>
+
+          <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
+            <EmailImage />
+          </div>
+        </div>
+
+        <form
+          method="post"
+          class="grid gap-2 border-2 border-blue-500 w-full h-auto p-6 rounded-md mb-10"
+        >
+          <div class="grid w-full items-center gap-1.5">
+            <label>Full Name</label>
+            <input
+              type="text"
+              class="flex w-full rounded-md border h-10 p-2"
+              placeholder="Full Name"
+            />
+          </div>
+          <div class="grid w-full items-center gap-1.5">
+            <label>Email</label>
+            <input
+              type="email"
+              class="flex w-full rounded-md border h-10 p-2"
+              placeholder="contact@email.com"
+            />
+          </div>
+          <div class="grid w-full items-center gap-1.5">
+            <label>Company</label>
+            <input
+              type="email"
+              class="flex w-full rounded-md border h-10 p-2"
+              placeholder="Your company"
+            />
+          </div>
+          <div class="grid w-full items-center gap-1.5">
+            <label>Tell me what you want help with</label>
+            <input
+              type="email"
+              class="flex w-full rounded-md border h-20 p-2"
+            />
+          </div>
+          <button class="bg-blue-200 w-auto border p-2">Submit message</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="content-box mt-10">
+      <h2 class="mb-10">connect with me</h2>
+      <div class="grid grid-cols-2 grid-row-2 gap-1">
+        <div
+          class="flex h-full items-center justify-center p-16 bg-red-100 rounded-md"
+        >
+          <a href="https://github.com/ltphan">
+            <div class="w-40">
+              <GithubImage />
+            </div>
+          </a>
+        </div>
+        <div
+          class="flex h-full items-center justify-center p-16 bg-red-100 rounded-md"
+        >
+          <a href="https://www.linkedin.com/in/linhphan01/">
+            <div class="w-40">
+              <LinkedinImage />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="w-full bg-green-100 h-64 bottom-0 left-0 p-4"></footer>

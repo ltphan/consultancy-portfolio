@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+
+/**
+variables
+**/
+:root {
+  --max-content-width: 1200px;
+  --radius: .5rem;
+  --theme-color: rgb(33, 70, 220);
+}
+
+
+
+/* You can add your own global styles below this */
+/* Or use @theme and @layer directives for v4 configuration */
+/*
+@theme {
+  --color-custom-blue: #3b82f6;
+}
+*/
+
+@tailwind utilities;
+
+/**
+block level container; auto helps center value horizontally where browser resize spacing
+**/
+.w-content {
+  margin: 0 auto;
+  width: min(calc(100vw - 40px), var(--max-content-width));
+}
+
+.content-box {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  margin-bottom: 40px;
+}
+@media (min-width: 640px) {
+  .content-box {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.intro-text {
+  line-height: 1.5;
+  position: relative;
+
+}
+
+
