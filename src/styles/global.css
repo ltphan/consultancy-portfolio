@@ -48,14 +48,6 @@ block level container; auto helps center value horizontally where browser resize
 
 }
 
-.startup-cards-stack .z-10 {
-  animation: startupCardBrexFloat 6s ease-in-out infinite;
-}
-
-.startup-cards-stack .z-0 {
-  animation: startupCardClioFloat 7s ease-in-out infinite;
-}
-
 .card-left {
   left: -4px;
   top: -2px;
