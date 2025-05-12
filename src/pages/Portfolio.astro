@@ -2,20 +2,18 @@
 import BrexCard from "../pages/BrexCard.astro";
 import ClioCard from "../pages/ClioCard.astro";
 
-import ToggleDown from "../pages/ToggleDown.astro";
 import PhoneImage from "./PhoneImage.astro";
 import EmailImage from "../pages/EmailImage.astro";
 import GithubImage from "../pages/GithubImage.astro";
 import LinkedinImage from "./LinkedinImage.astro";
 
 import ToggleItem from "../components/ToggleItem";
+import NavigationHeader from "@components/NavigationHeader";
 
-const name = "linh phan";
-
-const navTabs = ["about", "services", "work", "contact"];
 const services = [
-  "web development and saas",
+  "ai and ml integration",
   "mobile development",
+  "web development and saas",
   "backend and api development",
   "cloud and infrastructure",
   "enterprise security features",
@@ -50,25 +48,17 @@ const workDescriptionText = [
             significantly enhancing the digital workflow for 150,000+ legal
             professionals.`,
 ];
+
+/**
+ * TODO: implement Intersection observer as user scrolls to highlight what section in the nav user is on
+ */
 ---
 
-<header class="w-content pt-4">
-  <nav
-    class="rounded-2xl border-2 py-2 flex items-center justify-between px-4 w-full bg-sky-300"
-  >
-    <h1>{name}</h1>
-    <div class="flex gap-3">
-      <div>{navTabs[0]}</div>
-      <div>{navTabs[1]}</div>
-      <div>{navTabs[2]}</div>
-      <div>{navTabs[3]}</div>
-    </div>
-  </nav>
-</header>
+<NavigationHeader client:load />
 
-<main class="min-h-svh pb-10 flex-grow">
+<main class="min-h-svh">
   <div class="w-content">
-    <div class="content-box mt-10">
+    <div id="about" class="content-box mt-10">
       <h2 class="mb-10">about me</h2>
       <div>
         <p class="intro-text">
@@ -101,9 +91,9 @@ const workDescriptionText = [
     </div>
     <hr class="w-full border-t border-gray-300 my-20 border-10" />
 
-    <div class="content-box">
+    <div id="work" class="content-box">
       <h2 class="mb-10">work</h2>
-      <div class="grid gap-10">
+      <div class="grid gap-2">
         <ToggleItem
           client:load
           headerText="milkshake blog"
@@ -135,136 +125,162 @@ const workDescriptionText = [
       </div>
     </div>
     <hr class="w-full border-t border-gray-300 my-20 border-10" />
-    <div class="content-box">
+
+    <div id="services" class="content-box">
       <h2 class="mb-10">services</h2>
-      <div class="mb-5">
-        <div class="flex justify-between mb-2">
-          <button>{services[0]}</button>
-          <ToggleDown />
-        </div>
-        <div class="grid gap-2">
-          <span>craft and develop premium native mobile apps</span>
-          <span
-            >design and create user interfaces that are easy to navigate and use</span
-          >
-          <span>build applications that are reliable even offline</span>
-          <span
-            >implement features and design principles to drive user engagement</span
-          >
-          <span>utilize push notification strategies to engage users</span>
-          <span
-            >develop mobile focused performance optimization and scalability</span
-          >
-        </div>
-      </div>
-      <br />
-      <div class="mb-5">
-        <div class="flex justify-between mb-2">
-          <button>{services[1]}</button>
-          <ToggleDown />
-        </div>
-        <div class="grid gap-2">
-          <span
-            >develop web apps that focus on responsive design and intuitive
-            interfaces</span
-          >
-          <span>implement real time interaction and collaboration features</span
-          >
-          <span>build effective admin dashboards that are robust</span>
-          <span
-            >transform complex data into clear and interactive visualizations</span
-          >
-          <span
-            >connect to external services and APIs to extend functionality</span
-          >
-          <span
-            >design and implement solutions to effectively serve a global user
-            base</span
-          >
-        </div>
-      </div>
-      <br />
-      <div class="mb-5">
-        <div class="flex justify-between mb-2">
-          <button>{services[2]}</button>
-          <ToggleDown />
-        </div>
-        <div class="grid gap-2">
-          <span>design and develop highly performant backend systems</span>
-          <span
-            >implement real-time updates and notifications that support
-            real-time data flow</span
-          >
-          <span>handle large scale data processing</span>
-          <span>utilize smart caching strategies to optimize performance</span>
-          <span
-            >ensure secure user authentication to protect application's resource
-            and user data</span
-          >
-          <span>facilitate easy integration that are well documented</span>
-        </div>
-      </div>
-      <br />
-      <div class="mb-5">
-        <div class="flex justify-between mb-2">
-          <button>{services[3]}</button>
-          <ToggleDown />
-        </div>
-        <div class="grid gap-2">
-          <span>scalable cloud infrastructure that are flexible</span>
-          <span
-            >agile infrastructure management that supports rapid development
-            cycle</span
-          >
-          <span
-            >24/7 monitoring and alerting that identifies potential issues
-            before impacts users</span
-          >
-          <span
-            >high availability architecture to ensure systems remains
-            operational</span
-          >
-          <span
-            >implement automated backup procedures to protect valuable data</span
-          >
-          <span
-            >real time performance monitoring to gain user insights on how apps
-            perform</span
-          >
-        </div>
-      </div>
-      <br />
-      <div class="mb-5">
-        <div class="flex justify-between mb-2">
-          <button>{services[4]}</button>
-          <ToggleDown />
-        </div>
-        <div class="grid gap-2">
-          <span
-            >implement enterprise-grade security to meet rigorous demands of
-            large organizations and protext against threats</span
-          >
-          <span>ensure data privacy compliance such as GDPR and SOC2</span>
-          <span
-            >provide end-to-end encryption thorughout app and infrastructure</span
-          >
-          <span
-            >build for always on reliability with focus on high availability</span
-          >
-          <span
-            >integrate disaster recovery solutions to ensure rapid restoraition
-            of system</span
-          >
-          <span
-            >conduct rigorous security testing that include vulnerability
-            assessments and penetration testing</span
-          >
-        </div>
+      <div class="grid gap-2">
+        <ToggleItem client:load headerText={services[0]}>
+          <div class="grid gap-2">
+            <span
+              >architect and implement scalable AI infrastructure optimized for
+              cost and performance</span
+            >
+            <span
+              >set up production-ready machine learning pipelines that automate
+              training and deployment</span
+            >
+            <span
+              >integrate foundation models (GPT-4, Claude, etc.) with your
+              existing business applications</span
+            >
+            <span
+              >develop custom AI solutions for specific business challenges,
+              from concept to deployment</span
+            >
+            <span
+              >create intelligent document processing systems that extract and
+              analyze critical business data</span
+            >
+            <span
+              >build recommendation engines to increase user engagement and
+              conversion rates</span
+            >
+            <span
+              >implement AI-powered chatbots and virtual assistants for customer
+              service automation</span
+            >
+            <span
+              >design data visualization dashboards that transform complex AI
+              insights into actionable intelligence</span
+            >
+            <span
+              >develop natural language search capabilities across your
+              organization's knowledge base</span
+            >
+            <span
+              >implement AI governance and monitoring tools to ensure
+              responsible AI use</span
+            >
+          </div>
+        </ToggleItem>
+        <ToggleItem client:load headerText={services[1]}>
+          <div class="grid gap-2">
+            <span>craft and develop premium native mobile apps</span>
+            <span
+              >design and create user interfaces that are easy to navigate and
+              use</span
+            >
+            <span>build applications that are reliable even offline</span>
+            <span
+              >implement features and design principles to drive user engagement</span
+            >
+            <span>utilize push notification strategies to engage users</span>
+            <span
+              >develop mobile focused performance optimization and scalability</span
+            >
+          </div>
+        </ToggleItem>
+        <ToggleItem client:load headerText={services[2]}>
+          <div class="grid gap-2">
+            <span
+              >develop web apps that focus on responsive design and intuitive
+              interfaces</span
+            >
+            <span
+              >implement real time interaction and collaboration features</span
+            >
+            <span>build effective admin dashboards that are robust</span>
+            <span
+              >transform complex data into clear and interactive visualizations</span
+            >
+            <span
+              >connect to external services and APIs to extend functionality</span
+            >
+            <span
+              >design and implement solutions to effectively serve a global user
+              base</span
+            >
+          </div>
+        </ToggleItem>
+        <ToggleItem client:load headerText={services[3]}>
+          <div class="grid gap-2">
+            <span>design and develop highly performant backend systems</span>
+            <span
+              >implement real-time updates and notifications that support
+              real-time data flow</span
+            >
+            <span>handle large scale data processing</span>
+            <span>utilize smart caching strategies to optimize performance</span
+            >
+            <span
+              >ensure secure user authentication to protect application's
+              resource and user data</span
+            >
+            <span>facilitate easy integration that are well documented</span>
+          </div>
+        </ToggleItem>
+        <ToggleItem client:load headerText={services[4]}>
+          <div class="grid gap-2">
+            <span>scalable cloud infrastructure that are flexible</span>
+            <span
+              >agile infrastructure management that supports rapid development
+              cycle</span
+            >
+            <span
+              >24/7 monitoring and alerting that identifies potential issues
+              before impacts users</span
+            >
+            <span
+              >high availability architecture to ensure systems remains
+              operational</span
+            >
+            <span
+              >implement automated backup procedures to protect valuable data</span
+            >
+            <span
+              >real time performance monitoring to gain user insights on how
+              apps perform</span
+            >
+          </div>
+        </ToggleItem>
+        <ToggleItem client:load headerText={services[5]}>
+          <div class="grid gap-2">
+            <span
+              >implement enterprise-grade security to meet rigorous demands of
+              large organizations and protext against threats</span
+            >
+            <span>ensure data privacy compliance such as GDPR and SOC2</span>
+            <span
+              >provide end-to-end encryption thorughout app and infrastructure</span
+            >
+            <span
+              >build for always on reliability with focus on high availability</span
+            >
+            <span
+              >integrate disaster recovery solutions to ensure rapid
+              restoraition of system</span
+            >
+            <span
+              >conduct rigorous security testing that include vulnerability
+              assessments and penetration testing</span
+            >
+          </div>
+        </ToggleItem>
       </div>
     </div>
     <hr class="w-full border-t border-gray-300 my-20 border-10" />
 
-    <div class="content-box mt-10">
+    <div id="contact" class="content-box mt-10">
       <h2 class="mb-10">contact</h2>
       <div>
         <div

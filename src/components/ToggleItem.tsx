@@ -1,10 +1,11 @@
 import { useState } from "react";
 
 interface ToggleItemProps {
-  headerText: string;
-  imgSrc: string;
-  altText: string;
-  descriptionText: string;
+  headerText?: string;
+  imgSrc?: string;
+  altText?: string;
+  descriptionText?: string;
+  children?: React.PropsWithChildren;
 }
 
 const ToggleItem = ({
@@ -12,6 +13,7 @@ const ToggleItem = ({
   altText,
   headerText,
   descriptionText,
+  children,
 }: ToggleItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,7 +40,8 @@ const ToggleItem = ({
           ></path>
         </svg>
       </div>
-      {isOpen ? (
+      {children && isOpen ? children : null}
+      {isOpen && !children ? (
         <div className="mb-2">
           <img src={imgSrc} alt={altText} width="1024" height="560" />
           <p className="mt-2">{descriptionText}</p>
