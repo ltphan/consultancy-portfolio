@@ -1,18 +1,14 @@
 ---
-import BrexCard from "../components/BrexCard.astro";
-import ClioCard from "../components/ClioCard.astro";
+import BrexCard from "../pages/BrexCard.astro";
+import ClioCard from "../pages/ClioCard.astro";
 
-import ToggleDown from "../components/ToggleDown.astro";
+import ToggleDown from "../pages/ToggleDown.astro";
 import PhoneImage from "./PhoneImage.astro";
-import EmailImage from "./EmailImage.astro";
-import GithubImage from "./GithubImage.astro";
+import EmailImage from "../pages/EmailImage.astro";
+import GithubImage from "../pages/GithubImage.astro";
 import LinkedinImage from "./LinkedinImage.astro";
 
-import clioForClients from "../assets/clio-for-clients.png";
-import clioForLawyers from "../assets/clio-for-lawyers.png";
-import milkShakeBlog from "../assets/milkshake-blog.png";
-
-import { Image } from "astro:assets";
+import ToggleItem from "../components/ToggleItem";
 
 const name = "linh phan";
 
@@ -27,6 +23,33 @@ const services = [
 
 const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production ready web and mobile applications,
 focused on delivering high quality solutions through customer obsession and craftmanship.`;
+
+const workDescriptionText = [
+  `I designed and developed a blog that specializes in F1 motorsport
+            gossip magazine for women, creating a responsive digital publication
+            that brings the excitement of Formula 1 to a female audience. The
+            platform features a clean, visually engaging interface that blends
+            racing news with lifestyle elements.`,
+  `I revamped and redesigned the Brex mobile application for enterprise customers, focusing on
+            critical expense management features including streamlined account
+            creation and detailed card transaction tracking. The app serves as a
+            cornerstone financial tool that helped secure enterprise deals with
+            companies like Coinbase and DoorDash.`,
+  `I built and launched Clio's first consumer product during COVID-19,
+            creating essential remote collaboration capabilities between lawyers
+            and their clients when in-person meetings weren't possible. This
+            strategic innovation opened a new market opportunity and solidified
+            Clio's position as a legal tech leader, serving over 600,000+
+            clients.`,
+  `  I led the comprehensive revamp and redesign of Clio's flagship
+            mobile application for both iOS and Android platforms. I implemented
+            critical features including case details management, transaction
+            tracking, and secure PDF document uploading, transforming the user
+            experience. This redesign dramatically increased app store ratings
+            from 2.3 to 4.8, garnering over 6,000+ positive reviews and
+            significantly enhancing the digital workflow for 150,000+ legal
+            professionals.`,
+];
 ---
 
 <header class="w-content pt-4">
@@ -61,8 +84,8 @@ focused on delivering high quality solutions through customer obsession and craf
               class="w-full md:w-auto flex items-center justify-center md:justify-start mt-4 md:mt-0 ml-4"
             >
               <div class="startup-cards relative w-24 h-16">
-                <ClioCard class="absolute shadow-sm card-right" />
-                <BrexCard class="absolute shadow-sm card-left" />
+                <ClioCard class="absolute card-right" />
+                <BrexCard class="absolute card-left" />
               </div>
             </div>
           </div>
@@ -80,95 +103,35 @@ focused on delivering high quality solutions through customer obsession and craf
 
     <div class="content-box">
       <h2 class="mb-10">work</h2>
-      <div>
-        <div class="flex justify-between mb-2">
-          <div>
-            <h1>milkshake blog</h1>
-          </div>
-          <ToggleDown />
-        </div>
-        <div class="mb-4">
-          <Image
-            src={milkShakeBlog}
-            alt="Milkshake blog image"
-            width="1024"
-            height="560"
-          />
-          <p class="mt-2">
-            I designed and developed a blog that specializes in F1 motorsport
-            gossip magazine for women, creating a responsive digital publication
-            that brings the excitement of Formula 1 to a female audience. The
-            platform features a clean, visually engaging interface that blends
-            racing news with lifestyle elements.
-          </p>
-        </div>
-        <div class="flex justify-between mb-2">
-          <div>
-            <h1>brex card and expense management</h1>
-          </div>
-          <ToggleDown />
-        </div>
-        <div class="mb-4">
-          <Image
-            src="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
-            alt="Brex mobile app image"
-            width="1024"
-            height="560"
-          />
-          <p class="mt-2">
-            I revamped and redesigned the mobile application, focusing on
-            critical expense management features including streamlined account
-            creation and detailed card transaction tracking. The app serves as a
-            cornerstone financial tool that helped secure enterprise deals with
-            companies like Coinbase and DoorDash.
-          </p>
-        </div>
-        <div class="flex justify-between">
-          <div>
-            <h1>clio for clients</h1>
-          </div>
-          <ToggleDown />
-        </div>
-        <div class="mb-4">
-          <Image
-            src={clioForClients}
-            alt="Clio for clients mobile app image"
-            width="1024"
-            height="560"
-          />
-          <p class="mt-2">
-            I built and launched Clio's first consumer product during COVID-19,
-            creating essential remote collaboration capabilities between lawyers
-            and their clients when in-person meetings weren't possible. This
-            strategic innovation opened a new market opportunity and solidified
-            Clio's position as a legal tech leader, serving over 600,000+
-            clients.
-          </p>
-        </div>
-        <div class="flex justify-between mb-2">
-          <div>
-            <h1>clio for lawfirms and lawyers</h1>
-          </div>
-          <ToggleDown />
-        </div>
-        <div class="mb-4">
-          <Image
-            src={clioForLawyers}
-            alt="Clio for lawyers image"
-            width="1024"
-            height="560"
-          />
-          <p class="mt-2">
-            I led the comprehensive revamp and redesign of Clio's flagship
-            mobile application for both iOS and Android platforms. I implemented
-            critical features including case details management, transaction
-            tracking, and secure PDF document uploading, transforming the user
-            experience. This redesign dramatically increased app store ratings
-            from 2.3 to 4.8, garnering over 6,000+ positive reviews and
-            significantly enhancing the digital workflow for 150,000+ legal
-            professionals.
-          </p>
-        </div>
+      <div class="grid gap-10">
+        <ToggleItem
+          client:load
+          headerText="milkshake blog"
+          imgSrc="/src/assets/milkshake-blog.png"
+          altText="Milkshake blog image"
+          descriptionText={workDescriptionText[0]}
+        />
+        <ToggleItem
+          client:load
+          headerText="brex card and expense management app"
+          imgSrc="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
+          altText="Brex mobile app image"
+          descriptionText={workDescriptionText[1]}
+        />
+        <ToggleItem
+          client:load
+          headerText="clio for clients"
+          imgSrc="/src/assets/clio-for-clients.png"
+          altText="Clio for clients mobile app image"
+          descriptionText={workDescriptionText[2]}
+        />
+        <ToggleItem
+          client:load
+          headerText="clio for lawfirms and lawyers"
+          imgSrc="/src/assets/clio-for-lawyers.png"
+          altText="Clio for lawyers image"
+          descriptionText={workDescriptionText[3]}
+        />
       </div>
     </div>
     <hr class="w-full border-t border-gray-300 my-20 border-10" />
