@@ -58,7 +58,8 @@ const workDescriptionText = [
 
 <main class="min-h-svh">
   <div class="w-content">
-    <div id="about" class="content-box mt-30">
+    <hr id="about" />
+    <div class="content-box mt-20">
       <h2 class="mb-10">about me</h2>
       <div>
         <p class="intro-text">
@@ -89,9 +90,9 @@ const workDescriptionText = [
         >
       </div>
     </div>
-    <hr class="w-full border-t border-gray-300 my-20 border-10" />
 
-    <div id="work" class="content-box">
+    <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
+    <div class="content-box">
       <h2 class="mb-10">work</h2>
       <div class="grid gap-2">
         <ToggleItem
@@ -124,9 +125,9 @@ const workDescriptionText = [
         />
       </div>
     </div>
-    <hr class="w-full border-t border-gray-300 my-20 border-10" />
+    <hr id="services" class="w-full border-t border-gray-300 my-20 border-10" />
 
-    <div id="services" class="content-box">
+    <div class="content-box">
       <h2 class="mb-10">services</h2>
       <div class="grid gap-2">
         <ToggleItem client:load headerText={services[0]}>
@@ -278,9 +279,10 @@ const workDescriptionText = [
         </ToggleItem>
       </div>
     </div>
-    <hr class="w-full border-t border-gray-300 my-20 border-10" />
 
-    <div id="contact" class="content-box mt-10">
+    <hr id="contact" class="w-full border-t border-gray-300 my-20 border-10" />
+
+    <div class="content-box mt-10">
       <h2 class="mb-10">contact</h2>
       <div>
         <div
