@@ -3,7 +3,7 @@ import { useState } from "react";
 const navTabs = ["about", "work", "services", "contact"];
 
 const NavigationHeader = () => {
-  const [activeTab, setActiveTab] = useState("about");
+  const [activeTab, setActiveTab] = useState("");
 
   const handleSetNavClick = (tab: string) => {
     const currentTab = tab;
