@@ -8,6 +8,10 @@ interface ToggleItemProps {
   children?: React.PropsWithChildren;
 }
 
+/**
+ * TODO: fix component to be more flexible in the type it takes
+ */
+
 const ToggleItem = ({
   imgSrc,
   altText,
@@ -18,9 +22,9 @@ const ToggleItem = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <div className={isOpen && !children ? "hover:bg-red-100" : ""}>
       <div
-        className="flex justify-between mb-2"
+        className="flex justify-between mb-2 hover:bg-red-100"
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <h1>{headerText}</h1>
@@ -30,7 +34,9 @@ const ToggleItem = ({
           viewBox="0 0 15 15"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200"
+          className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${
+            isOpen ? "rotate-180" : ""
+          }`}
         >
           <path
             d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
@@ -40,14 +46,21 @@ const ToggleItem = ({
           ></path>
         </svg>
       </div>
-      {children && isOpen ? children : null}
+      <>{children && isOpen ? children : null}</>
       {isOpen && !children ? (
         <div className="mb-2">
-          <img src={imgSrc} alt={altText} width="1024" height="560" />
+          <img
+            src={imgSrc}
+            alt={altText}
+            width="1024"
+            height="560"
+            className="transition-transform duration-300 hover:scale-105"
+          />
+          <br />
           <p className="mt-2">{descriptionText}</p>
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 
