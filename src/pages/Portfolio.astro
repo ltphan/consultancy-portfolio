@@ -11,6 +11,7 @@ import XImage from "./XImage.astro";
 import ToggleItem from "../components/ToggleItem";
 import NavigationHeader from "@components/NavigationHeader";
 import Form from "@components/Form";
+import WorkProcessSection from "@components/WorkProcessSection";
 
 const services = [
   "ai and ml integration",
@@ -118,7 +119,9 @@ const workDescriptionText = [
     <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
     <div class="content-box">
       <h2 class="mb-10">work</h2>
+
       <div class="grid gap-4">
+        <WorkProcessSection client:load />
         <ToggleItem
           client:load
           headerText="bergquist ai therapist chat"
