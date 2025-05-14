@@ -6,6 +6,7 @@ interface ToggleItemProps {
   altText?: string;
   descriptionText?: string;
   children?: React.PropsWithChildren;
+  technologies?: string[];
 }
 
 /**
@@ -18,23 +19,28 @@ const ToggleItem = ({
   headerText,
   descriptionText,
   children,
+  technologies = [],
 }: ToggleItemProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={isOpen && !children ? "hover:bg-red-100" : ""}>
+    <div className={isOpen && !children ? "hover:bg-gray-100" : ""}>
       <div
-        className="flex justify-between mb-2 hover:bg-red-100"
+        className="flex justify-between mb-4 items-center cursor-pointer group"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <h1>{headerText}</h1>
+        <h2 className="text-2xl font-serif font-light tracking-wide">
+          {" "}
+          {!children && <span className="text-blue-500/30 mr-2 ">✦</span>}
+          {headerText}
+        </h2>
         <svg
           width="15"
           height="15"
           viewBox="0 0 15 15"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 ${
+          className={`h-5 w-5 text-gray-400 group-hover:text-blue-500 transition-all duration-300 transform ${
             isOpen ? "rotate-180" : ""
           }`}
         >
@@ -48,16 +54,32 @@ const ToggleItem = ({
       </div>
       <>{children && isOpen ? children : null}</>
       {isOpen && !children ? (
-        <div className="mb-2">
+        <div className="mb-2 rounded-lg overflow-hidden">
+          <div className="flex flex-wrap gap-2 mb-4">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
           <img
             src={imgSrc}
             alt={altText}
             width="1024"
             height="560"
-            className="transition-transform duration-300 hover:scale-105"
+            className="h-full transition-transform duration-300 hover:scale-105 w-full object-cover"
           />
           <br />
-          <p className="mt-2">{descriptionText}</p>
+
+          {descriptionText && (
+            <div>
+              <h3 className="text-sm uppercase text-gray-500 mb-2">Overview</h3>
+              <p className="text-gray-700">{descriptionText}</p>
+            </div>
+          )}
         </div>
       ) : null}
     </div>

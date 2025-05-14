@@ -118,13 +118,14 @@ const workDescriptionText = [
     <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
     <div class="content-box">
       <h2 class="mb-10">work</h2>
-      <div class="grid gap-2">
+      <div class="grid gap-4">
         <ToggleItem
           client:load
           headerText="bergquist ai therapist chat"
           imgSrc="/src/assets/bergquist-ai-therapist-chat.svg"
           altText="Milkshake blog image"
           descriptionText={workDescriptionText[0]}
+          technologies={["React Native", "Expo", "Supabase", "Open AI LLM"]}
         />
         <ToggleItem
           client:load
@@ -132,6 +133,7 @@ const workDescriptionText = [
           imgSrc="/src/assets/milkshake-blog.png"
           altText="Milkshake blog image"
           descriptionText={workDescriptionText[1]}
+          technologies={["Astro", "Vanilla JS", "HTML/CSS", "Supabase"]}
         />
         <ToggleItem
           client:load
@@ -139,6 +141,13 @@ const workDescriptionText = [
           imgSrc="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
           altText="Brex mobile app image"
           descriptionText={workDescriptionText[2]}
+          technologies={[
+            "React Native",
+            "TypeScript",
+            "Expo",
+            "GraphQL",
+            "Detox",
+          ]}
         />
         <ToggleItem
           client:load
@@ -146,6 +155,7 @@ const workDescriptionText = [
           imgSrc="/src/assets/clio-for-clients.png"
           altText="Clio for clients mobile app image"
           descriptionText={workDescriptionText[3]}
+          technologies={["React Native", "TypeScript", "GraphQL", "Detox"]}
         />
         <ToggleItem
           client:load
@@ -153,6 +163,7 @@ const workDescriptionText = [
           imgSrc="/src/assets/clio-for-lawyers.png"
           altText="Clio for lawyers image"
           descriptionText={workDescriptionText[4]}
+          technologies={["React Native", "TypeScript", "GraphQL", "Detox"]}
         />
       </div>
     </div>

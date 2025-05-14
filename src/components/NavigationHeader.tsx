@@ -2,6 +2,9 @@ import { useState } from "react";
 
 const navTabs = ["about", "work", "services", "contact"];
 
+/**
+ * TODO: hamburger icon on smaller mobile devices
+ */
 const NavigationHeader = () => {
   const [activeTab, setActiveTab] = useState("");
 
