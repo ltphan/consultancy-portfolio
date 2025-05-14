@@ -24,6 +24,9 @@ const services = [
 const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production-ready web and mobile applications, focused on delivering high-quality solutions through customer obsession and craftsmanship. She creates both traditional and AI-enhanced applications tailored to each client's specific needs.`;
 
 const workDescriptionText = [
+  `I developed an AI-powered companion app that extends therapeutic support between sessions. Working closely with Dr. Melissa Bergquist, PsyD, I created a tool that engages users in reflective conversations about their goals and concerns, then provides structured summaries with insights and next steps. This digital solution helps therapy clients document their progress and access supportive guidance when in-person sessions aren't available`,
+
+  `Working closely with Dr. Melissa Bergquist, PsyD, I created this tool to extend therapeutic support between sessions. The app helps clients reflect on their personal definition of concepts like freedom and well-being, while documenting their progress over time. This digital solution enhances the therapy experience by providing accessible emotional support and structured reflection when in-person sessions aren't available.`,
   `I designed and developed a blog that specializes in F1 motorsport
             gossip magazine for women, creating a responsive digital publication
             that brings the excitement of Formula 1 to a female audience. The
@@ -118,31 +121,38 @@ const workDescriptionText = [
       <div class="grid gap-2">
         <ToggleItem
           client:load
+          headerText="bergquist ai therapist chat"
+          imgSrc="/src/assets/bergquist-ai-therapist-chat.svg"
+          altText="Milkshake blog image"
+          descriptionText={workDescriptionText[0]}
+        />
+        <ToggleItem
+          client:load
           headerText="milkshake blog"
           imgSrc="/src/assets/milkshake-blog.png"
           altText="Milkshake blog image"
-          descriptionText={workDescriptionText[0]}
+          descriptionText={workDescriptionText[1]}
         />
         <ToggleItem
           client:load
           headerText="brex card and expense management app"
           imgSrc="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
           altText="Brex mobile app image"
-          descriptionText={workDescriptionText[1]}
+          descriptionText={workDescriptionText[2]}
         />
         <ToggleItem
           client:load
           headerText="clio for clients"
           imgSrc="/src/assets/clio-for-clients.png"
           altText="Clio for clients mobile app image"
-          descriptionText={workDescriptionText[2]}
+          descriptionText={workDescriptionText[3]}
         />
         <ToggleItem
           client:load
           headerText="clio for lawfirms and lawyers"
           imgSrc="/src/assets/clio-for-lawyers.png"
           altText="Clio for lawyers image"
-          descriptionText={workDescriptionText[3]}
+          descriptionText={workDescriptionText[4]}
         />
       </div>
     </div>
