@@ -14,6 +14,8 @@ import Form from "@components/Form";
 import WorkProcessSection from "@components/WorkProcessSection";
 import ServicesSection from "@components/ServiceSection";
 
+const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+
 const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production-ready web and mobile applications, focused on delivering high-quality solutions through customer obsession and craftsmanship. She creates both traditional and AI-enhanced applications tailored to each client's specific needs.`;
 
 const workDescriptionText = [
@@ -206,7 +208,7 @@ const workDescriptionText = [
           </div>
         </div>
 
-        <Form client:load />
+        <Form formEndpoint={formEndpoint} client:load />
       </div>
     </div>
   </div>

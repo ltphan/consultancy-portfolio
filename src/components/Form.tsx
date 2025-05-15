@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+interface FormProps {
+  formEndpoint: any;
+}
+
 const services = [
   { id: "1", service: "AI & ML Intergration" },
   { id: "2", service: "Mobile Development" },
@@ -10,7 +14,7 @@ const services = [
   { id: "7", service: "Other" },
 ];
 
-const Form = () => {
+const Form = ({ formEndpoint }: FormProps) => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState(new Set());
 
@@ -35,6 +39,7 @@ const Form = () => {
 
   return (
     <form
+      action={formEndpoint}
       method="post"
       className="grid gap-2 border-2 border-blue-500 w-full h-auto p-6 rounded-md mb-10"
     >
@@ -63,6 +68,15 @@ const Form = () => {
         />
       </div>
 
+      <div className="grid w-full items-center gap-1.5">
+        <label>What size project are you typically working on?</label>
+        <input
+          type="email"
+          className="flex w-full rounded-md border h-10 p-2"
+          placeholder="Budget range (e.g. $15-25k)"
+        />
+      </div>
+
       <div>
         <label className="block">
           What services are you most interested in?
@@ -74,7 +88,7 @@ const Form = () => {
             onClick={handleServiceOpenClick}
             type="button"
           >
-            <span>Select services</span>
+            <span className="text-gray-500">Select services</span>
             <svg
               className="w-4 h-4 text-white shrink-0"
               fill="none"
@@ -92,7 +106,7 @@ const Form = () => {
           {servicesOpen && (
             <div
               id="serviceOptions"
-              className="absolute z-50 mt-1 border rounded-md py-1 w-full bg-green-500"
+              className="absolute z-50 mt-1 border rounded-md py-1 w-full bg-[var(--theme-color)]"
             >
               <div className="overflow-scroll max-h-48">
                 {services.map(({ id, service }) => (
@@ -156,7 +170,7 @@ const Form = () => {
         <label>Tell me what you want help with</label>
         <textarea
           className="w-full rounded-md border p-2"
-          rows={4}
+          rows={5}
           placeholder="Tell me your goals, challenges, timeline or any other relevant details"
         />
       </div>
