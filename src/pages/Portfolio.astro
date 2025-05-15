@@ -83,8 +83,12 @@ const workDescriptionText = [
               class="w-full md:w-auto flex items-center justify-center md:justify-start mt-4 md:mt-0 ml-4"
             >
               <div class="startup-cards relative w-24 h-16">
-                <ClioCard class="absolute card-right" />
-                <BrexCard class="absolute card-left" />
+                <a href="https://www.clio.com/"
+                  ><ClioCard class="absolute card-right" /></a
+                >
+                <a href="https://www.brex.com/"
+                  ><BrexCard class="absolute card-left" /></a
+                >
               </div>
             </div>
           </div>
@@ -202,7 +206,7 @@ const workDescriptionText = [
           </div>
         </div>
 
-        <Form />
+        <Form client:load />
       </div>
     </div>
   </div>

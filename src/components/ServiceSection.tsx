@@ -1,4 +1,3 @@
-// src/components/ServicesSection.tsx
 import { useState } from "react";
 
 interface ServiceProps {
@@ -7,10 +6,63 @@ interface ServiceProps {
   description: string[];
 }
 
-/**
- *
- * @returns
- */
+const services: ServiceProps[] = [
+  {
+    id: "ai-ml",
+    title: "AI & ML Integration",
+    description: [
+      "Design and implement custom AI solutions - from LLM integration (GPT-4, Claude) to production-ready ML pipelines tailored to your business needs",
+      "Develop intelligent systems for document processing, recommendation engines, and natural language search capabilities",
+      "Create AI-powered interfaces including chatbots, virtual assistants, and interactive data dashboards",
+      "Implement robust AI governance, monitoring, and infrastructure optimized for performance, cost, and responsible use",
+    ],
+  },
+  {
+    id: "mobile",
+    title: "Mobile Development",
+    description: [
+      "Build premium native mobile apps with intuitive interfaces and offline reliability",
+      "Implement engagement-driving features, strategic push notifications, and performance optimization",
+      "Deliver scalable solutions that provide seamless user experiences across all devices",
+    ],
+  },
+  {
+    id: "web",
+    title: "Web Development & SaaS",
+    description: [
+      "Create responsive web applications with intuitive interfaces and real-time collaboration features",
+      "Develop robust admin dashboards and interactive data visualizations",
+      "Integrate external APIs and architect solutions for global scalability",
+    ],
+  },
+  {
+    id: "backend",
+    title: "Backend & API Development",
+    description: [
+      "Design high-performance backend systems with real-time data capabilities",
+      "Implement large-scale data processing with smart caching for optimal performance",
+      "Build secure authentication systems with well-documented APIs for seamless integration",
+    ],
+  },
+  {
+    id: "cloud",
+    title: "Cloud & Infrastructure",
+    description: [
+      "Deploy flexible, scalable cloud infrastructure with agile management for rapid development",
+      "Implement 24/7 monitoring with proactive alerting and real-time performance insights",
+      "Ensure high availability with automated backups and disaster recovery solutions",
+    ],
+  },
+  {
+    id: "security",
+    title: "Enterprise Security",
+    description: [
+      "Implement enterprise-grade security measures with end-to-end encryption",
+      "Ensure regulatory compliance (GDPR, SOC2) with comprehensive data privacy protocols",
+      "Provide rigorous security testing including vulnerability assessments and penetration testing",
+    ],
+  },
+];
 
 const ServiceCard = ({
   id,
@@ -72,64 +124,6 @@ const ServiceCard = ({
 
 const ServicesSection = () => {
   const [activeServices, setActiveServices] = useState(new Set());
-
-  const services: ServiceProps[] = [
-    {
-      id: "ai-ml",
-      title: "AI & ML Integration",
-      description: [
-        "Design and implement custom AI solutions - from LLM integration (GPT-4, Claude) to production-ready ML pipelines tailored to your business needs",
-        "Develop intelligent systems for document processing, recommendation engines, and natural language search capabilities",
-        "Create AI-powered interfaces including chatbots, virtual assistants, and interactive data dashboards",
-        "Implement robust AI governance, monitoring, and infrastructure optimized for performance, cost, and responsible use",
-      ],
-    },
-    {
-      id: "mobile",
-      title: "Mobile Development",
-      description: [
-        "Build premium native mobile apps with intuitive interfaces and offline reliability",
-        "Implement engagement-driving features, strategic push notifications, and performance optimization",
-        "Deliver scalable solutions that provide seamless user experiences across all devices",
-      ],
-    },
-    {
-      id: "web",
-      title: "Web Development & SaaS",
-      description: [
-        "Create responsive web applications with intuitive interfaces and real-time collaboration features",
-        "Develop robust admin dashboards and interactive data visualizations",
-        "Integrate external APIs and architect solutions for global scalability",
-      ],
-    },
-    {
-      id: "backend",
-      title: "Backend & API Development",
-      description: [
-        "Design high-performance backend systems with real-time data capabilities",
-        "Implement large-scale data processing with smart caching for optimal performance",
-        "Build secure authentication systems with well-documented APIs for seamless integration",
-      ],
-    },
-    {
-      id: "cloud",
-      title: "Cloud & Infrastructure",
-      description: [
-        "Deploy flexible, scalable cloud infrastructure with agile management for rapid development",
-        "Implement 24/7 monitoring with proactive alerting and real-time performance insights",
-        "Ensure high availability with automated backups and disaster recovery solutions",
-      ],
-    },
-    {
-      id: "security",
-      title: "Enterprise Security Features",
-      description: [
-        "Implement enterprise-grade security measures with end-to-end encryption",
-        "Ensure regulatory compliance (GDPR, SOC2) with comprehensive data privacy protocols",
-        "Provide rigorous security testing including vulnerability assessments and penetration testing",
-      ],
-    },
-  ];
 
   const handleClick = (id: string) => {
     setActiveServices((prevSet) => {
