@@ -1,17 +1,18 @@
 import { useState } from "react";
 
 const services = [
-  "AI & ML Intergration",
-  "Mobile Development",
-  "Web Development & SaaS",
-  "Backend & API Development",
-  "Cloud & Infrastructure",
-  "Enterprise Security",
-  "Other",
+  { id: "1", service: "AI & ML Intergration" },
+  { id: "2", service: "Mobile Development" },
+  { id: "3", service: "Web Development & SaaS" },
+  { id: "4", service: "Backend & API Development" },
+  { id: "5", service: "Clound & Infrastructure" },
+  { id: "6", service: "Enterprise Security" },
+  { id: "7", service: "Other" },
 ];
 
 const Form = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [selectedServices, setSelectedServices] = useState(new Set());
 
   const handleServiceOpenClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -19,6 +20,19 @@ const Form = () => {
     e.preventDefault();
     setServicesOpen((prev) => !prev);
   };
+
+  const handleSelectedServices = (id: string) => {
+    setSelectedServices((prevSet) => {
+      const clonedSet = new Set([...prevSet]);
+      if (clonedSet.has(id)) {
+        clonedSet.delete(id);
+      } else {
+        clonedSet.add(id);
+      }
+      return clonedSet;
+    });
+  };
+
   return (
     <form
       method="post"
@@ -81,15 +95,22 @@ const Form = () => {
               className="absolute z-50 mt-1 border rounded-md py-1 w-full bg-green-500"
             >
               <div className="overflow-scroll max-h-48">
-                {services.map((value) => (
-                  <label className="flex items-center px-3 py-2 hover:bg-black/30 cursor-pointer group">
+                {services.map(({ id, service }) => (
+                  <label
+                    key={id}
+                    className="flex items-center px-3 py-2 hover:bg-black/30 cursor-pointer group"
+                  >
                     <div className="relative flex items-center">
                       <input
                         type="checkbox"
                         className="absolute opacity-0 w-0 h-0"
+                        onClick={() => handleSelectedServices(id)}
                       />
-                      {
-                        <div className="h-4 w-4 border border-[#717171] rounded bg-black/20 flex items-center justify-center transition-colors bg-everyblue border-everyblue">
+                      {selectedServices.has(id) ? (
+                        <div
+                          className={`h-4 w-4 border border-[#717171] rounded bg-black/20 flex items-center justify-center transition-colors bg-everyblue border-everyblue 
+                        `}
+                        >
                           <svg
                             className="w-3 h-3"
                             fill="none"
@@ -104,9 +125,25 @@ const Form = () => {
                             ></path>
                           </svg>
                         </div>
-                      }
+                      ) : (
+                        <div className="h-4 w-4 border border-[#717171] rounded bg-black/20 flex items-center justify-center transition-colors">
+                          <svg
+                            className="w-3 h-3 hidden"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke="black"
+                              stroke-width="3"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        </div>
+                      )}
                     </div>
-                    <span>{value}</span>
+                    <span className="ml-2">{service}</span>
                   </label>
                 ))}
               </div>
