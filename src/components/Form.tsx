@@ -13,6 +13,12 @@ const services = [
 const Form = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const handleServiceOpenClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    setServicesOpen((prev) => !prev);
+  };
   return (
     <form
       method="post"
@@ -51,7 +57,8 @@ const Form = () => {
           <button
             id="serviceDropdown"
             className="w-full border rounded-md p-2 lg:p2 text-left flex justify-between items-center"
-            onClick={() => setServicesOpen((prev) => !prev)}
+            onClick={handleServiceOpenClick}
+            type="button"
           >
             <span>Select services</span>
             <svg
@@ -90,9 +97,9 @@ const Form = () => {
                           >
                             <path
                               stroke="black"
-                              stroke-width="3"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              strokeWidth="3"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
                               d="M5 13l4 4L19 7"
                             ></path>
                           </svg>
