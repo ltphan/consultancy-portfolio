@@ -14,9 +14,27 @@ const services = [
   { id: "7", service: "Other" },
 ];
 
+interface FormData {
+  name: string;
+  budget: string;
+  services: string[];
+  website: string;
+  message: string;
+}
+
+/**
+ * TODO: add Google captcha for spam bots
+ * TODO: add data validation
+ */
+
 const Form = ({ formEndpoint }: FormProps) => {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [selectedServices, setSelectedServices] = useState(new Set());
+  const [submissionStatus, setSubmissionStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  // add status of submission state
 
   const handleServiceOpenClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -37,11 +55,55 @@ const Form = ({ formEndpoint }: FormProps) => {
     });
   };
 
+  const selectedServicesArray = Array.from(selectedServices)
+    .map(
+      (selectedServiceId) =>
+        services.find((service) => service.id === selectedServiceId)?.service
+    )
+    .filter(Boolean);
+
+  const onHandleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setSubmissionStatus("submitting");
+
+    const formData = new FormData(form);
+
+    if (selectedServicesArray.length > 0) {
+      formData.append("selectedServices", selectedServicesArray.join(", "));
+    }
+
+    for (let pair of formData.entries()) {
+      console.log(pair[0] + ": " + pair[1]);
+    }
+
+    fetch(formEndpoint, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          setSubmissionStatus("success");
+          form.reset();
+          setSelectedServices(new Set());
+        } else {
+          setSubmissionStatus("error");
+        }
+      })
+      .catch((error) => {
+        setSubmissionStatus("error");
+      });
+  };
+
   return (
     <form
       action={formEndpoint}
       method="post"
       className="grid gap-2 border-2 border-blue-500 w-full h-auto p-6 rounded-md mb-10"
+      onSubmit={onHandleSubmitForm}
     >
       <div className="grid w-full items-center gap-1.5">
         <label>Full Name</label>
@@ -49,6 +111,7 @@ const Form = ({ formEndpoint }: FormProps) => {
           type="text"
           className="flex w-full rounded-md border h-10 p-2"
           placeholder="John Smith"
+          name="name"
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
@@ -57,23 +120,26 @@ const Form = ({ formEndpoint }: FormProps) => {
           type="email"
           className="flex w-full rounded-md border h-10 p-2"
           placeholder="john@company.com"
+          name="email"
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
         <label>Company's website</label>
         <input
-          type="email"
+          type="text"
           className="flex w-full rounded-md border h-10 p-2"
           placeholder="www.company.com"
+          name="website"
         />
       </div>
 
       <div className="grid w-full items-center gap-1.5">
         <label>What size project are you typically working on?</label>
         <input
-          type="email"
+          type="text"
           className="flex w-full rounded-md border h-10 p-2"
           placeholder="Budget range (e.g. $15-25k)"
+          name="budget"
         />
       </div>
 
@@ -88,7 +154,21 @@ const Form = ({ formEndpoint }: FormProps) => {
             onClick={handleServiceOpenClick}
             type="button"
           >
-            <span className="text-gray-500">Select services</span>
+            <span
+              className={`${
+                selectedServicesArray.length > 0
+                  ? "text-black"
+                  : "text-gray-500"
+              } truncate`}
+            >
+              {selectedServicesArray.length > 0
+                ? selectedServicesArray.length > 2
+                  ? `${selectedServicesArray.slice(0, 2).join(", ")} +${
+                      selectedServicesArray.length - 2
+                    } more`
+                  : selectedServicesArray.join(", ")
+                : "Select services"}
+            </span>
             <svg
               className="w-4 h-4 text-white shrink-0"
               fill="none"
@@ -172,9 +252,27 @@ const Form = ({ formEndpoint }: FormProps) => {
           className="w-full rounded-md border p-2"
           rows={5}
           placeholder="Tell me your goals, challenges, timeline or any other relevant details"
+          name="message"
         />
       </div>
-      <button className="contact-button !rounded">Get in touch</button>
+      <button
+        className="contact-button !rounded"
+        type="submit"
+        disabled={
+          submissionStatus === "submitting" || submissionStatus === "success"
+        }
+      >
+        {submissionStatus === "submitting"
+          ? "Sending..."
+          : submissionStatus === "success"
+          ? "Request sent"
+          : "Get in touch"}
+      </button>
+      {submissionStatus === "success" ? (
+        <div className="text-green-500 text-center p-2 rounded-md">
+          Thank you for your interest! I will get back to you soon.
+        </div>
+      ) : null}
     </form>
   );
 };
