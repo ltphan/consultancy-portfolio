@@ -14,14 +14,6 @@ const services = [
   { id: "7", service: "Other" },
 ];
 
-interface FormData {
-  name: string;
-  budget: string;
-  services: string[];
-  website: string;
-  message: string;
-}
-
 /**
  * TODO: add Google captcha for spam bots
  * TODO: add data validation
@@ -33,8 +25,6 @@ const Form = ({ formEndpoint }: FormProps) => {
   const [submissionStatus, setSubmissionStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
-
-  // add status of submission state
 
   const handleServiceOpenClick = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
