@@ -58,16 +58,135 @@ const workDescriptionText = [
 <main class="min-h-svh">
   <div class="w-content">
     <div id="hero" class="hero-section">
-      <div class="hero-content">
+      <div class="hero-content mb-2">
         <h1>FROM CONCEPT TO CODE</h1>
         <h2>Stop planning your digital strategy.</h2>
         <h2>Start executing it today.</h2>
-        <p>Engineering expertise that delivers results, not recommendations.</p>
       </div>
-      <a href="#contact" class="contact-button">Get in touch</a>
+      <a
+        href="#contact"
+        class="contact-button"
+        onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+        >Get in touch</a
+      >
     </div>
 
-    <hr class="w-full border-t border-gray-300 my-20 border-10" />
+    <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
+    <div class="grid gap-4">
+      <WorkProcessSection client:load />
+      <div class="content-box">
+        <h3 class="text-xl mb-6 font-medium">My work</h3>
+        <div>
+          <ToggleItem
+            client:load
+            headerText="bergquist ai therapist chat"
+            imgSrc="/images/bergquist-ai-therapist-chat.svg"
+            altText="AI therapist chat app image"
+            descriptionText={workDescriptionText[0]}
+            technologies={["React Native", "Expo", "Supabase", "Open AI LLM"]}
+          />
+          <ToggleItem
+            client:load
+            headerText="milkshake blog"
+            imgSrc="/images/milkshake-blog.png"
+            altText="Milkshake blog image"
+            descriptionText={workDescriptionText[1]}
+            technologies={["Astro", "Vanilla JS", "HTML/CSS"]}
+          />
+          <ToggleItem
+            client:load
+            headerText="brex card and expense management app"
+            imgSrc="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
+            altText="Brex mobile app image"
+            descriptionText={workDescriptionText[2]}
+            technologies={[
+              "React Native",
+              "React",
+              "TypeScript",
+              "Expo",
+              "GraphQL",
+              "Detox",
+              "Jest",
+            ]}
+          />
+          <ToggleItem
+            client:load
+            headerText="clio for clients"
+            imgSrc="/images/clio-for-clients.png"
+            altText="Clio for clients mobile app image"
+            descriptionText={workDescriptionText[3]}
+            technologies={[
+              "React Native",
+              "TypeScript",
+              "GraphQL",
+              "Detox",
+              "Jest",
+            ]}
+          />
+          <ToggleItem
+            client:load
+            headerText="clio for lawfirms and lawyers"
+            imgSrc="/images/clio-for-lawyers.png"
+            altText="Clio for lawyers image"
+            descriptionText={workDescriptionText[4]}
+            technologies={[
+              "React Native",
+              "TypeScript",
+              "GraphQL",
+              "Detox",
+              "Jest",
+            ]}
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr id="services" class="w-full border-t border-gray-300 border-10" />
+
+    <div class="mt-14">
+      <h3 class="text-xl mb-6 font-medium">services offered</h3>
+      <ServicesSection client:load />
+    </div>
+
+    <hr id="contact" class="w-full border-t border-gray-300 border-10" />
+
+    <div class="content-box mt-14">
+      <h3 class="text-xl mb-6 font-medium">let's collaborate</h3>
+      <div>
+        <a
+          href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
+        >
+          <div
+            class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
+          >
+            book a call
+
+            <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
+              <PhoneImage />
+            </div>
+          </div>
+        </a>
+
+        <a href="mailto:phanthuclinh@gmail.com">
+          <div
+            class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
+          >
+            <div class="grid">
+              email
+              <span>phanthuclinh (at) gmail.com</span>
+            </div>
+
+            <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
+              <EmailImage />
+            </div>
+          </div>
+        </a>
+
+        <Form formEndpoint={formEndpoint} client:load />
+      </div>
+    </div>
+
+    <hr id="services" class="w-full border-t border-gray-300 border-10" />
     <br id="about" />
     <div class="content-box">
       <h2 class="mb-10">about me</h2>
@@ -111,104 +230,6 @@ const workDescriptionText = [
           intention and purpose. I build applications I would proudly use
           myself—because if it doesn't meet my standards, it won't meet yours.
         </span>
-      </div>
-    </div>
-
-    <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
-
-    <div class="grid gap-4">
-      <WorkProcessSection client:load />
-      <div class="content-box">
-        <h3 class="text-xl mb-6 font-medium">My work</h3>
-        <div>
-          <ToggleItem
-            client:load
-            headerText="bergquist ai therapist chat"
-            imgSrc="/images/bergquist-ai-therapist-chat.svg"
-            altText="AI therapist chat app image"
-            descriptionText={workDescriptionText[0]}
-            technologies={["React Native", "Expo", "Supabase", "Open AI LLM"]}
-          />
-          <ToggleItem
-            client:load
-            headerText="milkshake blog"
-            imgSrc="/images/milkshake-blog.png"
-            altText="Milkshake blog image"
-            descriptionText={workDescriptionText[1]}
-            technologies={["Astro", "Vanilla JS", "HTML/CSS", "Supabase"]}
-          />
-          <ToggleItem
-            client:load
-            headerText="brex card and expense management app"
-            imgSrc="https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png"
-            altText="Brex mobile app image"
-            descriptionText={workDescriptionText[2]}
-            technologies={[
-              "React Native",
-              "TypeScript",
-              "Expo",
-              "GraphQL",
-              "Detox",
-            ]}
-          />
-          <ToggleItem
-            client:load
-            headerText="clio for clients"
-            imgSrc="/images/clio-for-clients.png"
-            altText="Clio for clients mobile app image"
-            descriptionText={workDescriptionText[3]}
-            technologies={["React Native", "TypeScript", "GraphQL", "Detox"]}
-          />
-          <ToggleItem
-            client:load
-            headerText="clio for lawfirms and lawyers"
-            imgSrc="/images/clio-for-lawyers.png"
-            altText="Clio for lawyers image"
-            descriptionText={workDescriptionText[4]}
-            technologies={["React Native", "TypeScript", "GraphQL", "Detox"]}
-          />
-        </div>
-      </div>
-    </div>
-
-    <hr id="services" class="w-full border-t border-gray-300 border-10" />
-
-    <div class="mt-14">
-      <h3 class="text-xl mb-6 font-medium">services offered</h3>
-      <ServicesSection client:load />
-    </div>
-
-    <hr id="contact" class="w-full border-t border-gray-300 border-10" />
-
-    <div class="content-box mt-14">
-      <h3 class="text-xl mb-6 font-medium">let's collaborate</h3>
-      <div>
-        <div
-          class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
-        >
-          <a
-            href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
-            >book a call</a
-          >
-          <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
-            <PhoneImage />
-          </div>
-        </div>
-
-        <div
-          class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
-        >
-          <div class="grid">
-            <a href="mailto:phanthuclinh@gmail.com">email </a>
-            <span>phanthuclinh (at) gmail.com</span>
-          </div>
-
-          <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
-            <EmailImage />
-          </div>
-        </div>
-
-        <Form formEndpoint={formEndpoint} client:load />
       </div>
     </div>
   </div>

@@ -24,7 +24,7 @@ const ToggleItem = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={isOpen && !children ? "hover:bg-gray-100" : ""}>
+    <>
       <div
         className="flex justify-between mb-4 items-center cursor-pointer group"
         onClick={() => setIsOpen((prev) => !prev)}
@@ -82,7 +82,7 @@ const ToggleItem = ({
           )}
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 
