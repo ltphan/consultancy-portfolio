@@ -1,7 +1,13 @@
 const WorkProcessSection = () => {
   return (
     <div className="mb-15">
-      <h3 className="text-xl mb-6 font-medium">My Process</h3>
+      <h3
+        className="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
+        style={{ fontFamily: "Georgia, Times New Roman, serif", color: "#fff" }}
+      >
+        My{" "}
+        <span style={{ color: "#0047ab", fontStyle: "italic" }}>Process</span>
+      </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div className="bg-gray-50 p-4 rounded-lg overflow-hidden">
