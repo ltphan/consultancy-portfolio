@@ -74,42 +74,113 @@ block level container; auto helps center value horizontally where browser resize
   50% { transform: rotate(20deg) translateX(20px); }
 }
 
+/* Hero Section Redesign */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #101820;
+  overflow-x: hidden;
+}
+
+body {
+  background: #101820;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
 .hero-section {
-  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  background: #101820;
+  color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 1.5rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  padding-top: 5.5rem;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+.hero-section h1 {
+  font-size: 3.2rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
-.hero-content h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+.hero-section .accent {
+  color: #0047ab;
+  font-style: italic;
+  font-family: inherit;
 }
 
-.hero-content p {
+.hero-section p {
   font-size: 1.25rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
+  color: #cfd8dc;
+  max-width: 600px;
+  font-family: 'Inter', 'Arial', sans-serif;
 }
 
 .contact-button {
-  background-color: var(--theme-color); 
-  color: black;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
-  font-size: 1.125rem;
+  background: #0047ab;
+  color: #fff;
+  border: none;
+  padding: 0.9em 2.2em;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
   text-decoration: none;
-  display: inline-block;
-  transition: background-color 1s;
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+.contact-button:hover {
+  background: #003380;
+  color: #fff;
 }
 
-.contact-button:hover {
-  background-color: rgb(159, 213, 227); 
+/* Navigation Header Styles */
+.navigation-header {
+  width: 100vw;
+  background: rgba(16, 24, 32, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #222;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+.navigation-header .brand {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: -1px;
+}
+.navigation-header .nav-link {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.25em 0.75em;
+  border-radius: 0.25em;
+  transition: color 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navigation-header .nav-link:hover,
+.navigation-header .nav-link:focus {
+  color: #0047ab;
+}
+.navigation-header .nav-link.active {
+  color: #0047ab;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }

@@ -27,21 +27,19 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
 <NavigationHeader client:load />
 
 <main class="min-h-svh">
+  <div id="hero" class="hero-section">
+    <h1>
+      Stop Planning Your Strategy.<br />
+      Start <span class="accent">Executing</span> It.
+    </h1>
+    <p>
+      Strategic guidance, digital transformation, and AI expertise—tailored for your unique challenges.
+    </p>
+    <a href="#contact" class="contact-button" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+      Get in touch
+    </a>
+  </div>
   <div class="w-content">
-    <div id="hero" class="hero-section">
-      <div class="hero-content mb-2">
-        <h1>FROM CONCEPT TO CODE</h1>
-        <h2>Stop planning your digital strategy.</h2>
-        <h2>Start executing it today.</h2>
-      </div>
-      <a
-        href="#contact"
-        class="contact-button"
-        onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
-        >Get in touch</a
-      >
-    </div>
-
     <hr class="w-full border-t border-gray-300 my-20 border-10" />
     <div class="grid gap-10">
       <WorkProcessSection client:load />

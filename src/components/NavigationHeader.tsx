@@ -14,23 +14,30 @@ const NavigationHeader = () => {
 
     if (divSectionElement) {
       divSectionElement.scrollIntoView({ behavior: "smooth" });
-
       setActiveTab(currentTab);
     }
   };
 
   return (
-    <header className="w-full fixed top-0 z-10 pt-4">
-      <nav className="w-content  py-2 flex items-center justify-between px-4 w-full">
-        <h1>linh phan</h1>
-        <div className="flex gap-3">
+    <header className="w-full fixed top-0 z-20 bg-[#101820]/90 backdrop-blur border-b border-[#222]">
+      <nav className="max-w-none w-full flex items-center justify-between px-8 py-4">
+        <span
+          className="text-2xl font-serif font-bold tracking-tight text-white select-none"
+          style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+        >
+          linh phan consulting
+        </span>
+        <div className="flex gap-8">
           {navTabs.map((tab) => (
             <div
               key={tab}
               onClick={() => handleSetNavClick(tab)}
-              className={`cursor-pointer hover:text-blue-700 ${
-                activeTab === tab ? "font-bold" : ""
+              className={`cursor-pointer text-lg font-semibold transition-colors duration-200 px-2 py-1 rounded text-white hover:text-[#0047ab] focus:text-[#0047ab] ${
+                activeTab === tab
+                  ? "text-[#0047ab] underline underline-offset-4"
+                  : ""
               }`}
+              style={{ fontFamily: "Inter, Arial, sans-serif" }}
             >
               {tab}
             </div>
