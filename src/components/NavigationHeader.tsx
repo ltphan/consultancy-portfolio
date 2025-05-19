@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const navTabs = ["about", "work", "services", "contact"];
+const navTabs = ["work", "contact"];
 
 /**
  * TODO: hamburger icon on smaller mobile devices
