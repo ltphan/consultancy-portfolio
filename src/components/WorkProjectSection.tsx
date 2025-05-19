@@ -45,14 +45,15 @@ const projects = [
     imgSrc: "/images/clio-for-lawyers.png",
     altText: "Clio For Lawfirms and Lawyers App Image",
     technologies: ["React Native", "TypeScript", "GraphQL"],
-    description: `I led the comprehensive revamp and redesign of Clio's flagship
-              mobile application for both iOS and Android platforms. I implemented
-              critical features including case details management, transaction
-              tracking, and secure PDF document uploading, transforming the user
-              experience. This redesign dramatically increased app store ratings
-              from 2.3 to 4.8, garnering over 6,000+ positive reviews and
-              significantly enhancing the digital workflow for 150,000+ legal
-              professionals.`,
+    description: `Led the redesign and development of Clio's flagship mobile app, delivering new case management, transaction tracking, and secure document upload features. Raised app store ratings from 2.3 to 4.8 and improved the workflow for 150,000+ legal professionals.`,
+  },
+  {
+    id: "bergquist-ai-chat",
+    title: "bergquist ai therapist chat",
+    imgSrc: "/images/ai-therapist-chat-app.svg",
+    altText: "AI Therapist Chat App on Mobile",
+    technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
+    description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
   },
 ];
 
@@ -84,69 +85,59 @@ const WorkProjectSection = () => {
   };
 
   return (
-    <section className="mb-20">
-      <h3
-        className="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
-        style={{ fontFamily: "Georgia, Times New Roman, serif", color: "#fff" }}
-      >
-        My <span style={{ color: "#0047ab", fontStyle: "italic" }}>Work</span>
-      </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        {projects.map(
-          ({ id, title, imgSrc, altText, technologies, description }) => {
-            const open = openId === id;
-            return (
-              <div
-                key={id}
-                className="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col mb-4"
-              >
-                <img
-                  src={imgSrc}
-                  alt={altText}
-                  className="rounded-lg mb-4 w-full object-cover"
-                  style={{ maxHeight: "260px", objectFit: "cover" }}
-                />
-                <div
-                  className="flex items-center justify-between cursor-pointer mb-2"
-                  onClick={() => handleToggle(id)}
-                >
-                  <h4
-                    className="text-2xl font-bold"
-                    style={{
-                      color: "#0047ab",
-                      fontFamily: "Inter, Arial, sans-serif",
-                    }}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+      {projects.map(
+        ({ id, title, imgSrc, altText, technologies, description }) => (
+          <div
+            key={id}
+            className="relative bg-gray-50 p-6 rounded-xl shadow-md flex flex-col mb-4 group transition-all duration-300 overflow-hidden"
+            style={{ minHeight: "320px" }}
+          >
+            <img
+              src={imgSrc}
+              alt={altText}
+              className="rounded-lg mb-4 w-full"
+              style={{
+                maxHeight: "180px",
+                objectFit: "contain",
+                background: "#f3f4f6",
+              }}
+            />
+            <h4
+              className="text-2xl font-bold"
+              style={{
+                color: "#0047ab",
+                fontFamily: "Inter, Arial, sans-serif",
+              }}
+            >
+              {title}
+            </h4>
+            {/* Overlay for description/technologies */}
+            <div
+              className="absolute inset-0 bg-white/95 rounded-xl flex flex-col justify-start items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 z-10 overflow-auto w-full h-full"
+              style={{ pointerEvents: "none" }}
+            >
+              <div className="flex flex-wrap gap-2 mb-2 w-full">
+                {technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-blue-50 text-[#0047ab] px-3 py-1 rounded-full text-xs font-semibold"
                   >
-                    {title}
-                  </h4>
-                  <ChevronIcon open={open} />
-                </div>
-                {open && (
-                  <>
-                    <div className="flex flex-wrap gap-2 mb-2">
-                      {technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="bg-blue-50 text-[#0047ab] px-3 py-1 rounded-full text-xs font-semibold"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <p
-                      className="text-gray-700"
-                      style={{ fontFamily: "Inter, Arial, sans-serif" }}
-                    >
-                      {description}
-                    </p>
-                  </>
-                )}
+                    {tech}
+                  </span>
+                ))}
               </div>
-            );
-          }
-        )}
-      </div>
-    </section>
+              <p
+                className="text-gray-700 text-left break-words w-full"
+                style={{ fontFamily: "Inter, Arial, sans-serif" }}
+              >
+                {description}
+              </p>
+            </div>
+          </div>
+        )
+      )}
+    </div>
   );
 };
 
