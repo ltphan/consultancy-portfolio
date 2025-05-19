@@ -13,40 +13,11 @@ import Form from "@components/Form";
 import WorkProcessSection from "@components/WorkProcessSection";
 import ServicesSection from "@components/ServiceSection";
 import SpotlightSection from "@components/SpotlightSection";
+import WorkProjectSection from "@components/WorkProjectSection";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 
 const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production-ready web and mobile applications, focused on delivering high-quality solutions through customer obsession and craftsmanship. She creates both traditional and AI-enhanced applications tailored to each client's specific needs.`;
-
-const workDescriptionText = [
-  `I developed an AI-powered companion app that extends therapeutic support between sessions. Working closely with Dr. Melissa Bergquist, PsyD, I created a tool that engages users in reflective conversations about their goals and concerns, then provides structured summaries with insights and next steps. This digital solution helps therapy clients document their progress and access supportive guidance when in-person sessions aren't available`,
-
-  `Working closely with Dr. Melissa Bergquist, PsyD, I created this tool to extend therapeutic support between sessions. The app helps clients reflect on their personal definition of concepts like freedom and well-being, while documenting their progress over time. This digital solution enhances the therapy experience by providing accessible emotional support and structured reflection when in-person sessions aren't available.`,
-  `I designed and developed a blog that specializes in F1 motorsport
-            gossip magazine for women, creating a responsive digital publication
-            that brings the excitement of Formula 1 to a female audience. The
-            platform features a clean, visually engaging interface that blends
-            racing news with lifestyle elements.`,
-  `I revamped and redesigned the Brex mobile application for enterprise customers, focusing on
-            critical expense management features including streamlined account
-            creation and detailed card transaction tracking. The app serves as a
-            cornerstone financial tool that helped secure enterprise deals with
-            companies like Coinbase and DoorDash.`,
-  `I built and launched Clio's first consumer product during COVID-19,
-            creating essential remote collaboration capabilities between lawyers
-            and their clients when in-person meetings weren't possible. This
-            strategic innovation opened a new market opportunity and solidified
-            Clio's position as a legal tech leader, serving over 600,000+
-            clients.`,
-  `  I led the comprehensive revamp and redesign of Clio's flagship
-            mobile application for both iOS and Android platforms. I implemented
-            critical features including case details management, transaction
-            tracking, and secure PDF document uploading, transforming the user
-            experience. This redesign dramatically increased app store ratings
-            from 2.3 to 4.8, garnering over 6,000+ positive reviews and
-            significantly enhancing the digital workflow for 150,000+ legal
-            professionals.`,
-];
 
 /**
  * TODO: implement Intersection observer as user scrolls to highlight what section in the nav user is on
@@ -72,14 +43,15 @@ const workDescriptionText = [
     </div>
 
     <hr id="work" class="w-full border-t border-gray-300 my-20 border-10" />
-    <div class="grid gap-4">
+    <div class="grid gap-10">
       <WorkProcessSection client:load />
       <SpotlightSection
         client:load
         projectTitle="bergquist ai therapist chat"
         imgSrc="/images/ai-therapist-chat-app.svg"
-        description={workDescriptionText[0]}
+        alt="AI Therapist Chat App on Mobile"
       />
+      <WorkProjectSection client:load />
 
       <hr id="services" class="w-full border-t border-gray-300 border-10" />
 

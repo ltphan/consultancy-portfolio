@@ -1,6 +1,6 @@
 const WorkProcessSection = () => {
   return (
-    <div className="mb-12">
+    <div className="mb-15">
       <h3 className="text-xl mb-6 font-medium">My Process</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">

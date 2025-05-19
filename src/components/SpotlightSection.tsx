@@ -1,23 +1,27 @@
 import { useState } from "react";
 
 interface SpotlightSectionProps {
-  description: string;
   imgSrc: string;
   projectTitle: string;
+  alt: string;
 }
 
+const spotlightSectionText = `I developed an AI-powered companion app that extends therapeutic support between sessions. Working closely with Dr. Melissa Bergquist, PsyD, I created a tool that engages users in reflective conversations about their goals and concerns, then provides structured summaries with insights and next steps. This digital solution helps therapy clients document their progress and access supportive guidance when in-person sessions aren't available.`;
+const technologies = ["React Native", "Expo", "Supabase", "Open AI LLM"];
+
 const SpotlightSection = ({
-  description,
   imgSrc,
   projectTitle,
+  alt,
 }: SpotlightSectionProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-2 mb-10">
+      <h3 className="text-xl mb-6 font-medium">My Work</h3>
       <img
         src={imgSrc}
-        alt={"AI Therapist mobile chat app"}
+        alt={alt}
         width="w-full"
         height="560"
         className="mb-2"
@@ -26,7 +30,7 @@ const SpotlightSection = ({
         className="flex justify-between items-center"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <h2>{projectTitle}</h2>
+        <h2 className="mb-2">{projectTitle}</h2>
         <svg
           width="15"
           height="15"
@@ -45,7 +49,20 @@ const SpotlightSection = ({
           ></path>
         </svg>
       </div>
-      {isOpen && <p>{description}</p>}
+      {isOpen ? (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {technologies.map((tech) => (
+            <span
+              key={tech}
+              className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      ) : null}
+
+      {isOpen && <p>{spotlightSectionText}</p>}
     </div>
   );
 };
