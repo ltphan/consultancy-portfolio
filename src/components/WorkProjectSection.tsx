@@ -15,7 +15,7 @@ const projects = [
   },
   {
     id: "brex-app",
-    title: "brex card and expense management app",
+    title: "brex card and expense management",
     imgSrc:
       "https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png",
     altText: "Brex Expense Management App on Mobile Image",
@@ -56,76 +56,97 @@ const projects = [
   },
 ];
 
+const ChevronIcon = ({ open }: { open: boolean }) => (
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 15 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`h-5 w-5 text-gray-400 transition-all duration-300 transform ${
+      open ? "rotate-180" : ""
+    }`}
+  >
+    <path
+      d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
+
 const WorkProjectSection = () => {
-  const [accordionItems, setAccordionItems] = useState(new Set());
+  const [openId, setOpenId] = useState<string | null>(null);
 
-  const handleSelectAccordionItem = (id: string) => {
-    setAccordionItems((prev) => {
-      const clonedSet = new Set([...prev]);
-      if (clonedSet.has(id)) {
-        clonedSet.delete(id);
-      } else {
-        clonedSet.add(id);
-      }
-
-      return clonedSet;
-    });
+  const handleToggle = (id: string) => {
+    setOpenId((prev) => (prev === id ? null : id));
   };
 
   return (
-    <div className="grid md:grid-cols-2 gap-15 mb-10">
-      {projects.map(
-        ({ id, title, imgSrc, altText, technologies, description }) => (
-          <div key={id}>
-            <img
-              src={imgSrc}
-              alt={altText}
-              width="600"
-              height="560"
-              className="mb-2"
-            />
-            <div
-              className="flex justify-between items-center"
-              onClick={() => handleSelectAccordionItem(id)}
-            >
-              <h2 className="mb-2">{title}</h2>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-5 w-5 text-gray-400 group-hover:text-blue-500 transition-all duration-300 transform ${
-                  accordionItems.has(id) ? "rotate-180" : ""
-                }`}
+    <section className="mb-20">
+      <h3
+        className="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
+        style={{ fontFamily: "Georgia, Times New Roman, serif", color: "#fff" }}
+      >
+        My <span style={{ color: "#0047ab", fontStyle: "italic" }}>Work</span>
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {projects.map(
+          ({ id, title, imgSrc, altText, technologies, description }) => {
+            const open = openId === id;
+            return (
+              <div
+                key={id}
+                className="bg-gray-50 p-6 rounded-xl shadow-md flex flex-col mb-4"
               >
-                <path
-                  d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </div>
-            {accordionItems.has(id) ? (
-              <>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="bg-gray-200 text-gray-800 px-3 py-1 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <img
+                  src={imgSrc}
+                  alt={altText}
+                  className="rounded-lg mb-4 w-full object-cover"
+                  style={{ maxHeight: "260px", objectFit: "cover" }}
+                />
+                <div
+                  className="flex items-center justify-between cursor-pointer mb-2"
+                  onClick={() => handleToggle(id)}
+                >
+                  <h4
+                    className="text-2xl font-bold"
+                    style={{
+                      color: "#0047ab",
+                      fontFamily: "Inter, Arial, sans-serif",
+                    }}
+                  >
+                    {title}
+                  </h4>
+                  <ChevronIcon open={open} />
                 </div>
-                <p>{description}</p>
-              </>
-            ) : null}
-          </div>
-        )
-      )}
-    </div>
+                {open && (
+                  <>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="bg-blue-50 text-[#0047ab] px-3 py-1 rounded-full text-xs font-semibold"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <p
+                      className="text-gray-700"
+                      style={{ fontFamily: "Inter, Arial, sans-serif" }}
+                    >
+                      {description}
+                    </p>
+                  </>
+                )}
+              </div>
+            );
+          }
+        )}
+      </div>
+    </section>
   );
 };
 
