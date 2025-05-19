@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -77,65 +77,93 @@ const ChevronIcon = ({ open }: { open: boolean }) => (
   </svg>
 );
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+  return isMobile;
+}
+
 const WorkProjectSection = () => {
   const [openId, setOpenId] = useState<string | null>(null);
+  const isMobile = useIsMobile();
 
-  const handleToggle = (id: string) => {
-    setOpenId((prev) => (prev === id ? null : id));
+  const handleCardClick = (id: string) => {
+    if (isMobile) {
+      setOpenId((prev) => (prev === id ? null : id));
+    }
   };
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
       {projects.map(
-        ({ id, title, imgSrc, altText, technologies, description }) => (
-          <div
-            key={id}
-            className="relative bg-gray-50 p-6 rounded-xl shadow-md flex flex-col mb-4 group transition-all duration-300 overflow-hidden"
-            style={{ minHeight: "320px" }}
-          >
-            <img
-              src={imgSrc}
-              alt={altText}
-              className="rounded-lg mb-4 w-full"
-              style={{
-                maxHeight: "180px",
-                objectFit: "contain",
-                background: "#f3f4f6",
-              }}
-            />
-            <h4
-              className="text-2xl font-bold"
-              style={{
-                color: "#0047ab",
-                fontFamily: "Inter, Arial, sans-serif",
-              }}
-            >
-              {title}
-            </h4>
-            {/* Overlay for description/technologies */}
+        ({ id, title, imgSrc, altText, technologies, description }) => {
+          const open = openId === id;
+          return (
             <div
-              className="absolute inset-0 bg-white/95 rounded-xl flex flex-col justify-start items-start opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 z-10 overflow-auto w-full h-full"
-              style={{ pointerEvents: "none" }}
+              key={id}
+              className="relative bg-gray-50 p-6 rounded-xl shadow-md flex flex-col mb-4 group transition-all duration-300 overflow-hidden"
+              style={{ minHeight: "320px" }}
+              onClick={() => handleCardClick(id)}
             >
-              <div className="flex flex-wrap gap-2 mb-2 w-full">
-                {technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-blue-50 text-[#0047ab] px-3 py-1 rounded-full text-xs font-semibold"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <img
+                src={imgSrc}
+                alt={altText}
+                className="rounded-lg mb-4 w-full"
+                style={{
+                  maxHeight: "180px",
+                  objectFit: "contain",
+                  background: "#f3f4f6",
+                }}
+              />
+              <div className="flex items-center justify-between w-full">
+                <h4
+                  className="text-2xl font-bold"
+                  style={{
+                    color: "#0047ab",
+                    fontFamily: "Inter, Arial, sans-serif",
+                  }}
+                >
+                  {title}
+                </h4>
+                {isMobile && <ChevronIcon open={open} />}
               </div>
-              <p
-                className="text-gray-700 text-left break-words w-full"
-                style={{ fontFamily: "Inter, Arial, sans-serif" }}
+              {/* Overlay for description/technologies */}
+              <div
+                className={`absolute inset-0 bg-white/95 rounded-xl flex flex-col justify-start items-start transition-opacity duration-300 p-6 z-10 overflow-auto w-full h-full
+                ${
+                  isMobile
+                    ? open
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                    : "opacity-0 group-hover:opacity-100 pointer-events-none"
+                }
+              `}
               >
-                {description}
-              </p>
+                <div className="flex flex-wrap gap-2 mb-2 w-full">
+                  {technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-blue-50 text-[#0047ab] px-3 py-1 rounded-full text-xs font-semibold"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <p
+                  className="text-gray-700 text-left break-words w-full"
+                  style={{ fontFamily: "Inter, Arial, sans-serif" }}
+                >
+                  {description}
+                </p>
+              </div>
             </div>
-          </div>
-        )
+          );
+        }
       )}
     </div>
   );
