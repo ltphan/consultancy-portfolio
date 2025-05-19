@@ -96,7 +96,7 @@ const WorkProjectSection = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className={`h-5 w-5 text-gray-400 group-hover:text-blue-500 transition-all duration-300 transform ${
-                  !accordionItems.has(id) ? "rotate-180" : ""
+                  accordionItems.has(id) ? "rotate-180" : ""
                 }`}
               >
                 <path
