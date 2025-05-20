@@ -9,7 +9,7 @@ const services = [
   { id: "2", service: "Mobile Development" },
   { id: "3", service: "Web Development & SaaS" },
   { id: "4", service: "Backend & API Development" },
-  { id: "5", service: "Clound & Infrastructure" },
+  { id: "5", service: "Cloud & Infrastructure" },
   { id: "6", service: "Enterprise Security" },
   { id: "7", service: "Other" },
 ];
