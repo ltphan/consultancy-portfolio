@@ -50,44 +50,29 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
     <WorkProjectSection client:load />
 
     <div id="services" style="position: relative; top: -80px; height: 1px;"></div>
-    <div class="mt-14">
-      <h3 class="text-xl mb-6 font-medium">services offered</h3>
-      <ServicesSection client:load />
-    </div>
+    <h3
+      class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
+      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
+    >
+      Services <span style="color: #0047ab; font-style: italic;">Offered</span>
+    </h3>
+    <ServicesSection client:load />
 
     <div id="contact" style="position: relative; top: -80px; height: 1px;"></div>
-    <div class="content-box mt-14">
-      <h3 class="text-xl mb-6 font-medium">let's collaborate</h3>
-      <div>
-        <a
-          href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
-        >
-          <div
-            class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
-          >
-            book a call
-
-            <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
-              <PhoneImage />
-            </div>
-          </div>
-        </a>
-
-        <a href="mailto:phanthuclinh@gmail.com">
-          <div
-            class="flex justify-between items-center bg-blue-500 rounded-md p-2 mb-10"
-          >
-            <div class="grid">
-              email
-              <span>phanthuclinh (at) gmail.com</span>
-            </div>
-
-            <div class="w-10 h-10 bg-black rounded-[1vw] p-1">
-              <EmailImage />
-            </div>
-          </div>
-        </a>
-
+    <h3
+      class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
+      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
+    >
+      Let's <span style="color: #0047ab; font-style: italic;">Collaborate</span>
+    </h3>
+    <div class="max-w-xl mx-auto flex flex-col items-center">
+      <a
+        href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
+        class="inline-block bg-[#0047ab] text-white font-semibold rounded-full px-6 py-3 mb-6 transition-colors hover:bg-[#003380] text-center w-full"
+      >
+        Book a Call
+      </a>
+      <div class="rounded-xl border border-[#0047ab] bg-[#101820]/80 p-8 mb-10 w-full">
         <Form formEndpoint={formEndpoint} client:load />
       </div>
     </div>

@@ -63,8 +63,11 @@ const Form = ({ formEndpoint }: FormProps) => {
       formData.append("selectedServices", selectedServicesArray.join(", "));
     }
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0] + ": " + pair[1]);
+    // Remove empty fields
+    for (let [key, value] of Array.from(formData.entries())) {
+      if (!value) {
+        formData.delete(key);
+      }
     }
 
     fetch(formEndpoint, {
@@ -92,63 +95,65 @@ const Form = ({ formEndpoint }: FormProps) => {
     <form
       action={formEndpoint}
       method="post"
-      className="grid gap-2 border-2 border-blue-500 w-full h-auto p-6 rounded-md mb-10"
+      className="grid gap-4 w-full h-auto p-0 mb-0"
       onSubmit={onHandleSubmitForm}
     >
       <div className="grid w-full items-center gap-1.5">
-        <label>Full Name</label>
+        <label className="text-white">Full Name</label>
         <input
           type="text"
-          className="flex w-full rounded-md border h-10 p-2"
+          className="w-full bg-transparent border-b-2 border-gray-500 focus:border-[#0047ab] text-white placeholder-gray-400 py-2 mb-6 outline-none transition-colors duration-200"
           placeholder="John Smith"
           name="name"
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
-        <label>Email</label>
+        <label className="text-white">Email</label>
         <input
           type="email"
-          className="flex w-full rounded-md border h-10 p-2"
+          className="w-full bg-transparent border-b-2 border-gray-500 focus:border-[#0047ab] text-white placeholder-gray-400 py-2 mb-6 outline-none transition-colors duration-200"
           placeholder="john@company.com"
           name="email"
         />
       </div>
       <div className="grid w-full items-center gap-1.5">
-        <label>Company's website</label>
+        <label className="text-white">Company's website</label>
         <input
           type="text"
-          className="flex w-full rounded-md border h-10 p-2"
+          className="w-full bg-transparent border-b-2 border-gray-500 focus:border-[#0047ab] text-white placeholder-gray-400 py-2 mb-6 outline-none transition-colors duration-200"
           placeholder="www.company.com"
           name="website"
         />
       </div>
 
       <div className="grid w-full items-center gap-1.5">
-        <label>What size project are you typically working on?</label>
+        <label className="text-white">
+          What size project are you typically working on?
+        </label>
         <input
           type="text"
-          className="flex w-full rounded-md border h-10 p-2"
+          className="w-full bg-transparent border-b-2 border-gray-500 focus:border-[#0047ab] text-white placeholder-gray-400 py-2 mb-6 outline-none transition-colors duration-200"
           placeholder="Budget range (e.g. $15-25k)"
           name="budget"
         />
       </div>
 
       <div>
-        <label className="block">
+        <label className="block text-white">
           What services are you most interested in?
         </label>
         <div className="relative">
           <button
             id="serviceDropdown"
-            className="w-full border rounded-md p-2 lg:p2 text-left flex justify-between items-center"
+            className="w-full border border-gray-500 rounded-md p-2 lg:p2 text-left flex justify-between items-center bg-[#101820] text-white focus:border-[#0047ab] outline-none transition-colors duration-200"
             onClick={handleServiceOpenClick}
             type="button"
           >
             <span
               className={`${
                 selectedServicesArray.length > 0
-                  ? "text-black"
-                  : "text-gray-500"
+                  ? "text-white"
+                  : "text-gray-400"
               } truncate`}
             >
               {selectedServicesArray.length > 0
@@ -160,31 +165,31 @@ const Form = ({ formEndpoint }: FormProps) => {
                 : "Select services"}
             </span>
             <svg
-              className="w-4 h-4 text-white shrink-0"
+              className="w-4 h-4 text-gray-400 shrink-0 transition-transform duration-200"
               fill="none"
-              stroke="black"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path
-                d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
-                fill="black"
-                fillRule="evenodd"
-                clipRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
               ></path>
             </svg>
           </button>
           {servicesOpen && (
             <div
               id="serviceOptions"
-              className="absolute z-50 mt-1 border rounded-md py-1 w-full bg-[var(--theme-color)]"
+              className="absolute z-50 mt-1 border border-gray-500 rounded-md py-1 w-full bg-[#1a202c] text-white overflow-scroll max-h-48"
             >
               <div className="overflow-scroll max-h-48">
                 {services.map(({ id, service }) => (
                   <label
                     key={id}
-                    className="flex items-center px-3 py-2 hover:bg-black/30 cursor-pointer group"
+                    className="flex items-center px-3 py-2 hover:bg-[#0047ab] cursor-pointer group"
                   >
-                    <div className="relative flex items-center">
+                    <div className="relative flex items-center mr-2">
                       <input
                         type="checkbox"
                         className="absolute opacity-0 w-0 h-0"
@@ -192,16 +197,15 @@ const Form = ({ formEndpoint }: FormProps) => {
                       />
                       {selectedServices.has(id) ? (
                         <div
-                          className={`h-4 w-4 border border-[#717171] rounded bg-black/20 flex items-center justify-center transition-colors bg-everyblue border-everyblue 
-                        `}
+                          className={`h-4 w-4 border border-[#0047ab] rounded bg-[#0047ab] flex items-center justify-center transition-colors`}
                         >
                           <svg
-                            className="w-3 h-3"
+                            className="w-3 h-3 text-white"
                             fill="none"
                             viewBox="0 0 24 24"
                           >
                             <path
-                              stroke="black"
+                              stroke="currentColor"
                               strokeWidth="3"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -210,24 +214,13 @@ const Form = ({ formEndpoint }: FormProps) => {
                           </svg>
                         </div>
                       ) : (
-                        <div className="h-4 w-4 border border-[#717171] rounded bg-black/20 flex items-center justify-center transition-colors">
-                          <svg
-                            className="w-3 h-3 hidden"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke="black"
-                              stroke-width="3"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              d="M5 13l4 4L19 7"
-                            ></path>
-                          </svg>
+                        <div className="h-4 w-4 border border-gray-400 rounded bg-transparent flex items-center justify-center transition-colors">
+                          {/* Empty div for unchecked state */}
                         </div>
                       )}
                     </div>
-                    <span className="ml-2">{service}</span>
+                    <span className="ml-0 text-white text-sm">{service}</span>{" "}
+                    {/* Adjusted ml-0 and text-sm */}
                   </label>
                 ))}
               </div>
@@ -237,9 +230,9 @@ const Form = ({ formEndpoint }: FormProps) => {
       </div>
 
       <div className="grid w-full items-center gap-1.5">
-        <label>Tell me what you want help with</label>
+        <label className="text-white">Tell me what you want help with</label>
         <textarea
-          className="w-full rounded-md border p-2"
+          className="w-full rounded-md border border-gray-500 bg-transparent focus:border-[#0047ab] text-white placeholder-gray-400 p-2 mb-6 outline-none transition-colors duration-200"
           rows={5}
           placeholder="Tell me your goals, challenges, timeline or any other relevant details"
           name="message"
@@ -261,6 +254,11 @@ const Form = ({ formEndpoint }: FormProps) => {
       {submissionStatus === "success" ? (
         <div className="text-green-500 text-center p-2 rounded-md">
           Thank you for your interest! I will get back to you soon.
+        </div>
+      ) : null}
+      {submissionStatus === "error" ? (
+        <div className="text-red-500 text-center p-2 rounded-md">
+          There was an error sending your message. Please try again later.
         </div>
       ) : null}
     </form>
