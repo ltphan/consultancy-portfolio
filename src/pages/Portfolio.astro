@@ -14,6 +14,8 @@ import WorkProcessSection from "@components/WorkProcessSection";
 import ServicesSection from "@components/ServiceSection";
 import SpotlightSection from "@components/SpotlightSection";
 import WorkProjectSection from "@components/WorkProjectSection";
+import AboutMeSection from "@components/AboutMeSection";
+import OldFooter from "@components/OldFooter";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 
@@ -33,9 +35,14 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
       Start <span class="accent">Executing</span> It.
     </h1>
     <p>
-      Strategic guidance, digital transformation, and AI expertise—tailored for your unique challenges.
+      Strategic guidance, digital transformation, and AI expertise—tailored for
+      your unique challenges.
     </p>
-    <a href="#contact" class="contact-button" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+    <a
+      href="#contact"
+      class="contact-button"
+      onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"
+    >
       Get in touch
     </a>
   </div>
@@ -49,7 +56,8 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
     </h3>
     <WorkProjectSection client:load />
 
-    <div id="services" style="position: relative; top: -80px; height: 1px;"></div>
+    <div id="services" style="position: relative; top: -80px; height: 1px;">
+    </div>
     <h3
       class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
       style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
@@ -58,7 +66,8 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
     </h3>
     <ServicesSection client:load />
 
-    <div id="contact" style="position: relative; top: -80px; height: 1px;"></div>
+    <div id="contact" style="position: relative; top: -80px; height: 1px;">
+    </div>
     <h3
       class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
       style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
@@ -72,93 +81,54 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
       >
         Book a Call
       </a>
-      <div class="rounded-xl border border-[#0047ab] bg-[#101820]/80 p-8 mb-10 w-full">
+      <div
+        class="rounded-xl border border-[#0047ab] bg-[#101820]/80 p-8 mb-10 w-full"
+      >
         <Form formEndpoint={formEndpoint} client:load />
       </div>
     </div>
-
-    <div id="about" style="position: relative; top: -80px; height: 1px;"></div>
-    <div class="content-box">
-      <h2 class="mb-10">about me</h2>
-      <div>
-        <p class="intro-text">
-          {firstParagraphIntro}
-        </p>
-        <br />
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-          <div class="col-span-full flex items-center flex-wrap">
-            <span class="md:whitespace-nowrap mr-0 md:mr-2">
-              She has worked at highgrowth startups that include
-            </span>
-            <div
-              class="w-full md:w-auto flex items-center justify-center md:justify-start mt-4 md:mt-0 ml-4"
-            >
-              <div class="startup-cards relative w-24 h-16">
-                <a href="https://www.clio.com/"
-                  ><ClioCard class="absolute card-right" /></a
-                >
-                <a href="https://www.brex.com/"
-                  ><BrexCard class="absolute card-left" /></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <br />
-        <span
-          >She has experience building 0-to-1 products, revamping and
-          redesigning applications, scaling from 30,000+ users to 600,000+
-          users. Whether developing conventional applications or integrating
-          AI capabilities where they add genuine value, her focus remains on
-          creating thoughtful, user-centered solutions.</span
-        >
-        <br />
-        <br />
-        <span>
-          Every line of code and every interface element is crafted with
-          intention and purpose. I build applications I would proudly use
-          myself—because if it doesn't meet my standards, it won't meet yours.
-        </span>
-      </div>
-    </div>
   </div>
+</main>
 
-  <footer class="bg-green-100 p-4 m-2 rounded-md">
-    <h2 class="mb-2">connect with me</h2>
-    <div class="flex gap-2">
+<footer class="w-full bg-[#101820] text-white py-12">
+  <div class="w-content flex flex-col items-center">
+    <h2
+      class="text-3xl font-serif font-bold mb-8 text-center tracking-tight"
+      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
+    >
+      Connect <span style="color: #0047ab; font-style: italic;">with Me</span>
+    </h2>
+    <div class="flex gap-4">
       <div
-        class="w-12 h-12 bg-blue-200 rounded-[1vw] flex items-center justify-center"
+        class="w-12 h-12 bg-[#1a202c] border border-[#0047ab] rounded-full flex items-center justify-center transition-colors hover:bg-[#0047ab]"
       >
         <a
           href="https://github.com/ltphan"
-          class="flex items-center justify-center w-8 h-8"
+          class="flex items-center justify-center w-8 h-8 text-white"
         >
           <GithubImage />
         </a>
       </div>
       <div
-        class="w-12 h-12 bg-blue-200 rounded-[1vw] flex items-center justify-center"
+        class="w-12 h-12 bg-[#1a202c] border border-[#0047ab] rounded-full flex items-center justify-center transition-colors hover:bg-[#0047ab]"
       >
         <a
           href="https://www.linkedin.com/in/linhphan01/"
-          class="flex items-center justify-center w-8 h-8"
+          class="flex items-center justify-center w-8 h-8 text-white"
         >
           <LinkedinImage />
         </a>
       </div>
       <div
-        class="w-12 h-12 bg-blue-200 rounded-[1vw] flex items-center justify-center"
+        class="w-12 h-12 bg-[#1a202c] border border-[#0047ab] rounded-full flex items-center justify-center transition-colors hover:bg-[#0047ab]"
       >
         <a
           href="https://x.com/lennie25"
-          class="flex items-center justify-center w-8 h-8"
+          class="flex items-center justify-center w-8 h-8 text-white"
         >
           <XImage />
         </a>
       </div>
     </div>
-  </footer>
-
-  <div class="h-2"></div>
-</main>
+  </div>
+</footer>
