@@ -99,7 +99,9 @@ const ServicesSection = () => {
           <div key={id}>
             <div
               className={`transition-all duration-300 rounded-xl ${
-                open ? "border border-[#0047ab] bg-[#101820]/80" : ""
+                open
+                  ? "border border-[#0047ab] bg-[#101820]/80"
+                  : "hover:bg-[#1a202c]/50"
               }`}
             >
               <button
@@ -109,7 +111,7 @@ const ServicesSection = () => {
               >
                 <span
                   className="text-2xl font-serif font-bold text-left"
-                  style={{ color: "#0047ab" }}
+                  style={{ color: open ? "#60a5fa" : "#93c5fd" }}
                 >
                   {title}
                 </span>
@@ -123,7 +125,7 @@ const ServicesSection = () => {
                 {open && (
                   <ul className="list-disc pl-5 space-y-2 mb-4">
                     {description.map((point, idx) => (
-                      <li key={idx} className="text-gray-200">
+                      <li key={idx} className="text-gray-100">
                         {point}
                       </li>
                     ))}
