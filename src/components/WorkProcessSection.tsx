@@ -1,6 +1,6 @@
 const WorkProcessSection = () => {
   return (
-    <div className="mb-15">
+    <div className="mb-20">
       <h3
         className="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
         style={{ fontFamily: "Georgia, Times New Roman, serif", color: "#fff" }}

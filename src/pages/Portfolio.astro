@@ -1,9 +1,4 @@
 ---
-import BrexCard from "../pages/BrexCard.astro";
-import ClioCard from "../pages/ClioCard.astro";
-
-import PhoneImage from "./PhoneImage.astro";
-import EmailImage from "../pages/EmailImage.astro";
 import GithubImage from "../pages/GithubImage.astro";
 import LinkedinImage from "./LinkedinImage.astro";
 import XImage from "./XImage.astro";
@@ -12,14 +7,9 @@ import NavigationHeader from "@components/NavigationHeader";
 import Form from "@components/Form";
 import WorkProcessSection from "@components/WorkProcessSection";
 import ServicesSection from "@components/ServiceSection";
-import SpotlightSection from "@components/SpotlightSection";
 import WorkProjectSection from "@components/WorkProjectSection";
-import AboutMeSection from "@components/AboutMeSection";
-import OldFooter from "@components/OldFooter";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-
-const firstParagraphIntro = `Linh is an accomplished software engineer with experience building production-ready web and mobile applications, focused on delivering high-quality solutions through customer obsession and craftsmanship. She creates both traditional and AI-enhanced applications tailored to each client's specific needs.`;
 
 /**
  * TODO: implement Intersection observer as user scrolls to highlight what section in the nav user is on
@@ -48,43 +38,74 @@ const firstParagraphIntro = `Linh is an accomplished software engineer with expe
   </div>
   <div class="w-content">
     <WorkProcessSection client:load />
-    <h3
-      class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
-      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
-    >
-      My <span style="color: #0047ab; font-style: italic;">Work</span>
-    </h3>
-    <WorkProjectSection client:load />
+
+    <div class="mb-20">
+      <h3
+        class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
+        style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
+      >
+        My <span style="color: #0047ab; font-style: italic;">Work</span>
+      </h3>
+      <WorkProjectSection client:load />
+    </div>
 
     <div id="services" style="position: relative; top: -80px; height: 1px;">
     </div>
-    <h3
-      class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
-      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
-    >
-      Services <span style="color: #0047ab; font-style: italic;">Offered</span>
-    </h3>
-    <ServicesSection client:load />
+    <div class="mb-20">
+      <h3
+        class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
+        style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
+      >
+        Services <span style="color: #0047ab; font-style: italic;">Offered</span
+        >
+      </h3>
+      <ServicesSection client:load />
+    </div>
 
     <div id="contact" style="position: relative; top: -80px; height: 1px;">
     </div>
-    <h3
-      class="text-3xl font-serif font-bold mb-10 text-center tracking-tight"
-      style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
-    >
-      Let's <span style="color: #0047ab; font-style: italic;">Collaborate</span>
-    </h3>
-    <div class="max-w-xl mx-auto flex flex-col items-center">
-      <a
-        href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
-        class="inline-block bg-[#0047ab] text-white font-semibold rounded-full px-6 py-3 mb-6 transition-colors hover:bg-[#003380] text-center w-full"
+    <div class="mb-20">
+      <h3
+        class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
+        style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
       >
-        Book a Call
-      </a>
-      <div
-        class="rounded-xl border border-[#0047ab] bg-[#101820]/80 p-8 mb-10 w-full"
-      >
-        <Form formEndpoint={formEndpoint} client:load />
+        Let's <span style="color: #0047ab; font-style: italic;"
+          >Collaborate</span
+        >
+      </h3>
+      <div class="max-w-3xl mx-auto flex flex-col items-center">
+        <div
+          class="rounded-xl border border-[#0047ab] bg-[#101820]/80 p-8 mb-10 w-full"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h2 class="text-2xl font-serif font-bold mb-4 text-white">
+                Ready to Stop Planning and Start Building?
+              </h2>
+              <p class="text-white mb-4">
+                Traditional consultants hand you a roadmap. We give you a
+                compass, a map of the terrain, and guides who've already charted
+                what's next.
+              </p>
+              <p class="text-white">
+                Let's solve something impossible together.
+              </p>
+              <div class="mt-6">
+                <p>
+                  <a
+                    href="https://cal.com/linh-phan/30min?user=linh-phan&overlayCalendar=true"
+                    class="inline-block text-white border-b border-white pb-1 transition-colors hover:bg-[#003380]"
+                  >
+                    Book a Call
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div>
+              <Form formEndpoint={formEndpoint} client:load />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

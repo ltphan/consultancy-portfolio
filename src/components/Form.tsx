@@ -142,7 +142,7 @@ const Form = ({ formEndpoint }: FormProps) => {
         <label className="block text-white">
           What services are you most interested in?
         </label>
-        <div className="relative">
+        <div className="relative mb-6">
           <button
             id="serviceDropdown"
             className="w-full border border-gray-500 rounded-md p-2 lg:p2 text-left flex justify-between items-center bg-[#101820] text-white focus:border-[#0047ab] outline-none transition-colors duration-200"
@@ -220,7 +220,6 @@ const Form = ({ formEndpoint }: FormProps) => {
                       )}
                     </div>
                     <span className="ml-0 text-white text-sm">{service}</span>{" "}
-                    {/* Adjusted ml-0 and text-sm */}
                   </label>
                 ))}
               </div>

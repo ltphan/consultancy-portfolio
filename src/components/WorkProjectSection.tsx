@@ -2,6 +2,14 @@ import { useState, useEffect } from "react";
 
 const projects = [
   {
+    id: "bergquist-ai-chat",
+    title: "bergquist ai therapist chat",
+    imgSrc: "/images/ai-therapist-chat-app.svg",
+    altText: "AI Therapist Chat App on Mobile",
+    technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
+    description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
+  },
+  {
     id: "milkshake-blog",
     title: "milkshake blog",
     imgSrc: "/images/milkshake-blog.png",
@@ -46,14 +54,6 @@ const projects = [
     altText: "Clio For Lawfirms and Lawyers App Image",
     technologies: ["React Native", "TypeScript", "GraphQL"],
     description: `Led the redesign and development of Clio's flagship mobile app, delivering new case management, transaction tracking, and secure document upload features. Raised app store ratings from 2.3 to 4.8 and improved the workflow for 150,000+ legal professionals.`,
-  },
-  {
-    id: "bergquist-ai-chat",
-    title: "bergquist ai therapist chat",
-    imgSrc: "/images/ai-therapist-chat-app.svg",
-    altText: "AI Therapist Chat App on Mobile",
-    technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
-    description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
   },
 ];
 
