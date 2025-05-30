@@ -4,22 +4,10 @@ const projects = [
   {
     id: "bergquist-ai-chat",
     title: "bergquist ai therapist chat",
-    imgSrc: "/images/ai-therapist-chat-app.svg",
+    imgSrc: "/images/bergquist-ai-therapist-chat.svg",
     altText: "AI Therapist Chat App on Mobile",
     technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
     description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
-  },
-  {
-    id: "milkshake-blog",
-    title: "milkshake blog",
-    imgSrc: "/images/milkshake-blog.png",
-    altText: "Milkshake Blog Image",
-    technologies: ["Astro", "Vanilla JS", "HTML/CSS"],
-    description: `I designed and developed a blog that specializes in F1 motorsport
-    gossip magazine for women, creating a responsive digital publication
-    that brings the excitement of Formula 1 to a female audience. The
-    platform features a clean, visually engaging interface that blends
-    racing news with lifestyle elements.`,
   },
   {
     id: "brex-app",
@@ -132,7 +120,6 @@ const WorkProjectSection = () => {
                 </h4>
                 {isMobile && <ChevronIcon open={open} />}
               </div>
-              {/* Overlay for description/technologies */}
               <div
                 className={`absolute inset-0 bg-white/95 rounded-xl flex flex-col justify-start items-start transition-opacity duration-300 p-6 z-10 overflow-auto w-full h-full
                 ${
