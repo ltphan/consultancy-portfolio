@@ -21,12 +21,11 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 <main class="min-h-svh">
   <div id="hero" class="hero-section">
     <h1>
-      Stop Planning Your Strategy.<br />
-      Start <span class="accent">Executing</span> It.
+      I Build Software That Actually <span class="accent">Works</span><br />
     </h1>
     <p>
-      Strategic guidance, digital transformation, and AI expertise—tailored for
-      your unique challenges.
+      Web and mobile applications built to solve your specific business
+      problems—from AI integration to user-friendly interfaces that scale.
     </p>
     <a
       href="#contact"
@@ -36,9 +35,9 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
       Get in touch
     </a>
   </div>
-  <div class="w-content">
-    <WorkProcessSection client:load />
 
+  <div class="w-content">
+    <div id="work" class="relative -top-[120px] h-1"></div>
     <div class="mb-20">
       <h3
         class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
@@ -62,6 +61,8 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
       <ServicesSection client:load />
     </div>
 
+    <WorkProcessSection client:load />
+
     <div id="contact" style="position: relative; top: -80px; height: 1px;">
     </div>
     <div class="mb-20">
@@ -78,7 +79,7 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
                 I build custom digital solutions that actually work, delivering
                 tangible results tailored to your unique challenges.
               </p>
-              <p class="text-white">Ready to turn vision into reality?</p>
+              <p class="text-white">Ready to turn your vision into reality?</p>
               <div class="mt-6">
                 <p>
                   <a
