@@ -1,12 +1,6 @@
 ---
-import GithubImage from "../pages/GithubImage.astro";
-import LinkedinImage from "./LinkedinImage.astro";
-import XImage from "./XImage.astro";
-
 import NavigationHeader from "@components/NavigationHeader";
 import Form from "@components/Form";
-import WorkProcessSection from "@components/WorkProcessSection";
-import ServicesSection from "@components/ServiceSection";
 import WorkProjectSection from "@components/WorkProjectSection";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
@@ -52,21 +46,6 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
       <WorkProjectSection client:load />
     </div>
 
-    <div id="services" style="position: relative; top: -80px; height: 1px;">
-    </div>
-    <div class="mb-20">
-      <h3
-        class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
-        style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
-      >
-        Services <span style="color: #0047ab; font-style: italic;">Offered</span
-        >
-      </h3>
-      <ServicesSection client:load />
-    </div>
-
-    <WorkProcessSection client:load />
-
     <div id="contact" style="position: relative; top: -80px; height: 1px;">
     </div>
     <div class="mb-20">
@@ -104,4 +83,3 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
     </div>
   </div>
 </main>
-
