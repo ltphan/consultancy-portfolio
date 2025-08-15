@@ -19,8 +19,11 @@ const NavigationHeader = () => {
   };
 
   return (
-    <header className="w-full fixed top-0 z-20 bg-[#101820]/90 backdrop-blur border-b border-[#222]">
-      <nav className="max-w-none w-full flex items-center justify-between px-8 py-4">
+    <header className="w-full fixed top-0 z-20 bg-[#101820]/90 backdrop-blur navigation-header">
+      <nav className="max-w-none w-full flex items-center justify-between px-8 py-4 relative overflow-hidden">
+        <div className="nav-orb nav-orb-1"></div>
+        <div className="nav-orb nav-orb-2"></div>
+        <div className="nav-orb nav-orb-3"></div>
         <span
           className="text-2xl font-serif font-bold tracking-tight text-white select-none"
           style={{ fontFamily: "Georgia, Times New Roman, serif" }}
@@ -32,10 +35,8 @@ const NavigationHeader = () => {
             <div
               key={tab}
               onClick={() => handleSetNavClick(tab)}
-              className={`cursor-pointer text-lg font-semibold transition-colors duration-200 px-2 py-1 rounded text-white hover:text-[#0047ab] focus:text-[#0047ab] ${
-                activeTab === tab
-                  ? "text-[#0047ab] underline underline-offset-4"
-                  : ""
+              className={`nav-pill ${
+                activeTab === tab ? "nav-pill-active" : ""
               }`}
               style={{ fontFamily: "Inter, Arial, sans-serif" }}
             >

@@ -151,7 +151,6 @@ body {
   width: 100vw;
   background: rgba(16, 24, 32, 0.92);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid #222;
   position: fixed;
   top: 0;
   left: 0;
@@ -164,25 +163,109 @@ body {
   color: #fff;
   letter-spacing: -1px;
 }
-.navigation-header .nav-link {
-  font-family: 'Inter', 'Arial', sans-serif;
-  font-size: 1.1rem;
+
+/* Navigation Floating Orbs */
+.nav-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.nav-orb-1 {
+  width: 60px;
+  height: 60px;
+  background: #0047ab;
+  top: -40px;
+  left: 15%;
+  animation: navFloat1 15s ease-in-out infinite;
+}
+
+.nav-orb-2 {
+  width: 35px;
+  height: 35px;
+  background: #60a5fa;
+  top: 20px;
+  right: 25%;
+  animation: navFloat2 15s ease-in-out infinite -5s;
+}
+
+.nav-orb-3 {
+  width: 70px;
+  height: 70px;
+  background: #003380;
+  top: -60px;
+  left: 70%;
+  animation: navFloat3 15s ease-in-out infinite -10s;
+}
+
+.navigation-header:hover .nav-orb {
+  opacity: 0.4;
+}
+
+/* Navigation Pill-Style Buttons */
+.nav-pill {
+  cursor: pointer;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #fff;
-  padding: 0.25em 0.75em;
-  border-radius: 0.25em;
-  transition: color 0.2s;
-  cursor: pointer;
-  text-decoration: none;
+  background: rgba(0, 71, 171, 0.8);
+  border-radius: 20px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 10;
 }
-.navigation-header .nav-link:hover,
-.navigation-header .nav-link:focus {
-  color: #0047ab;
+
+.nav-pill:hover {
+  background: rgba(0, 71, 171, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 71, 171, 0.3);
 }
-.navigation-header .nav-link.active {
-  color: #0047ab;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+
+.nav-pill-active {
+  background: #0047ab;
+  box-shadow: 0 2px 8px rgba(0, 71, 171, 0.4);
+}
+
+.nav-pill:hover ~ .nav-orb {
+  opacity: 0.6;
+}
+
+@keyframes navFloat1 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% { 
+    transform: translateY(20px) translateX(-25px) scale(1.1);
+  }
+  66% { 
+    transform: translateY(40px) translateX(30px) scale(0.9);
+  }
+}
+
+@keyframes navFloat2 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% { 
+    transform: translateY(30px) translateX(-20px) scale(1.2);
+  }
+}
+
+@keyframes navFloat3 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% { 
+    transform: translateY(35px) translateX(25px) scale(0.8);
+  }
+  75% { 
+    transform: translateY(15px) translateX(-30px) scale(1.1);
+  }
 }
 
 .section-divider-container {
@@ -206,4 +289,120 @@ body {
   width: 100%;
   max-width: 700px;
   border-top: 1.5px solid #222c;
+}
+
+/* Floating Orbs Animation */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-orb.orb-1 {
+  width: 200px;
+  height: 200px;
+  background: #0047ab;
+  opacity: 0.3;
+  top: 20%;
+  left: 10%;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.floating-orb.orb-2 {
+  width: 150px;
+  height: 150px;
+  background: #60a5fa;
+  opacity: 0.4;
+  top: 60%;
+  right: 15%;
+  animation: float2 10s ease-in-out infinite 2s;
+}
+
+.floating-orb.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: #003380;
+  opacity: 0.25;
+  bottom: 20%;
+  left: 60%;
+  animation: float3 15s ease-in-out infinite 4s;
+}
+
+.floating-orb.orb-4 {
+  width: 180px;
+  height: 180px;
+  background: #1e40af;
+  opacity: 0.35;
+  top: 40%;
+  right: 40%;
+  animation: float4 8s ease-in-out infinite 1s;
+}
+
+/* Ensure text content stays above orbs */
+.hero-section h1,
+.hero-section p,
+.hero-section .contact-button {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes float1 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  25% { 
+    transform: translateY(-30px) translateX(20px) scale(1.1);
+  }
+  50% { 
+    transform: translateY(-60px) translateX(-15px) scale(0.9);
+  }
+  75% { 
+    transform: translateY(-20px) translateX(-30px) scale(1.05);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  33% { 
+    transform: translateY(40px) translateX(-25px) scale(0.8);
+  }
+  66% { 
+    transform: translateY(-25px) translateX(30px) scale(1.2);
+  }
+}
+
+@keyframes float3 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  20% { 
+    transform: translateY(-15px) translateX(-40px) scale(1.1);
+  }
+  40% { 
+    transform: translateY(25px) translateX(35px) scale(0.9);
+  }
+  60% { 
+    transform: translateY(-35px) translateX(-20px) scale(1.05);
+  }
+  80% { 
+    transform: translateY(10px) translateX(45px) scale(0.95);
+  }
+}
+
+@keyframes float4 {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) scale(1);
+  }
+  50% { 
+    transform: translateY(-45px) translateX(-35px) scale(1.15);
+  }
 }
