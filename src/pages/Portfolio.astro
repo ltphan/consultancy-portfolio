@@ -4,10 +4,6 @@ import Form from "@components/Form";
 import WorkProjectSection from "@components/WorkProjectSection";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
-
-/**
- * TODO: implement Intersection observer as user scrolls to highlight what section in the nav user is on
- */
 ---
 
 <NavigationHeader client:load />
@@ -37,12 +33,6 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
   <div class="w-content">
     <div id="work" class="relative -top-[120px] h-1"></div>
     <div class="mb-20">
-      <h3
-        class="text-4xl font-serif font-bold mb-10 text-center tracking-tight"
-        style="font-family: 'Georgia, Times New Roman, serif'; color: #fff;"
-      >
-        My <span style="color: #0047ab; font-style: italic;">Work</span>
-      </h3>
       <WorkProjectSection client:load />
     </div>
 

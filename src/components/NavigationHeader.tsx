@@ -2,9 +2,6 @@ import { useState } from "react";
 
 const navTabs = ["work", "contact"];
 
-/**
- * TODO: hamburger icon on smaller mobile devices
- */
 const NavigationHeader = () => {
   const [activeTab, setActiveTab] = useState("");
 
@@ -13,8 +10,8 @@ const NavigationHeader = () => {
     const divSectionElement = document.getElementById(currentTab);
 
     if (divSectionElement) {
-      divSectionElement.scrollIntoView({ behavior: "smooth" });
       setActiveTab(currentTab);
+      divSectionElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
