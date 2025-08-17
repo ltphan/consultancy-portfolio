@@ -10,45 +10,58 @@ const projects = [
     technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
     description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
     caseStudy: {
-      headline: "Dr. Bergquist's AI therapy companion helps patients reflect between sessions.",
+      headline:
+        "Dr. Bergquist's AI therapy companion helps patients reflect between sessions.",
       metrics: [
         { value: "95%", label: "user satisfaction" },
-        { value: "3x", label: "more engagement between sessions" }
+        { value: "3x", label: "more engagement between sessions" },
       ],
       industry: "Healthcare / Mental Health",
       services: "Mobile app development, AI integration, HIPAA compliance",
-      about: "Dr. Melissa Bergquist's AI therapy companion is a mobile application designed to support therapy clients between sessions through structured reflection and AI-guided conversations. The app helps users process emotions, track progress, and maintain therapeutic momentum outside of traditional therapy sessions.",
+      about:
+        "Dr. Melissa Bergquist's AI therapy companion is a mobile application designed to support therapy clients between sessions through structured reflection and AI-guided conversations. The app helps users process emotions, track progress, and maintain therapeutic momentum outside of traditional therapy sessions.",
       challenge: {
-        title: "Maintaining therapeutic engagement between sessions while ensuring privacy and clinical appropriateness",
-        content: "Dr. Bergquist recognized that traditional therapy sessions, while effective, left gaps between appointments where patients struggled to maintain progress. Existing mental health apps were either too generic for therapeutic use or too clinical to encourage regular engagement. The challenge was creating an AI system that could provide meaningful therapeutic support while maintaining strict privacy standards and ensuring conversations remained within appropriate therapeutic boundaries."
+        title:
+          "Maintaining therapeutic engagement between sessions while ensuring privacy and clinical appropriateness",
+        content:
+          "Dr. Bergquist recognized that traditional therapy sessions, while effective, left gaps between appointments where patients struggled to maintain progress. Existing mental health apps were either too generic for therapeutic use or too clinical to encourage regular engagement. The challenge was creating an AI system that could provide meaningful therapeutic support while maintaining strict privacy standards and ensuring conversations remained within appropriate therapeutic boundaries.",
       },
-      solution: "I developed a React Native mobile application that combines AI-powered conversation with structured therapeutic exercises. The app uses custom prompt engineering to ensure all AI interactions align with therapeutic best practices while maintaining a natural, supportive tone. Key features include contextual mood tracking, guided reflection prompts, session summaries, and secure data handling that meets HIPAA compliance requirements. The AI is trained to recognize when to encourage self-reflection versus when to suggest contacting the therapist directly.",
-      results: "Since launching the companion app, Dr. Bergquist has seen significant improvements in patient engagement and therapeutic outcomes. Patients report feeling more supported between sessions and come to appointments better prepared for deeper therapeutic work. The app has reduced session prep time by 40% while increasing patient engagement by 3x, with 95% of users reporting satisfaction with the AI companion's support and guidance."
-    }
+      solution:
+        "I developed a React Native mobile application that combines AI-powered conversation with structured therapeutic exercises. The app uses custom prompt engineering to ensure all AI interactions align with therapeutic best practices while maintaining a natural, supportive tone. Key features include contextual mood tracking, guided reflection prompts, session summaries, and secure data handling that meets HIPAA compliance requirements. The AI is trained to recognize when to encourage self-reflection versus when to suggest contacting the therapist directly.",
+      results:
+        "Since launching the companion app, Dr. Bergquist has seen significant improvements in patient engagement and therapeutic outcomes. Patients report feeling more supported between sessions and come to appointments better prepared for deeper therapeutic work. The app has reduced session prep time by 40% while increasing patient engagement by 3x, with 95% of users reporting satisfaction with the AI companion's support and guidance.",
+    },
   },
   {
     id: "brex-app",
     title: "brex card and expense management",
-    imgSrc: "https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png",
+    imgSrc:
+      "https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png",
     altText: "Brex Expense Management App on Mobile Image",
     technologies: ["React Native", "React", "TypeScript", "Expo", "GraphQL"],
     description: `I revamped and redesigned the Brex mobile application for enterprise customers, focusing on critical expense management features including streamlined account creation and detailed card transaction tracking. The app serves as a cornerstone financial tool that helped secure enterprise deals with companies like Coinbase and DoorDash.`,
     caseStudy: {
-      headline: "Brex mobile app redesign drives enterprise customer acquisition with streamlined expense management.",
+      headline:
+        "Brex mobile app redesign drives enterprise customer acquisition with streamlined expense management.",
       metrics: [
         { value: "2.3→4.8", label: "app store rating improvement" },
-        { value: "40%", label: "faster transaction processing" }
+        { value: "40%", label: "faster transaction processing" },
       ],
       industry: "Fintech / Corporate Banking",
       services: "Mobile app redesign, UX optimization, enterprise features",
-      about: "Brex is a corporate credit card and expense management platform designed for startups and growing companies. The mobile application serves as the primary interface for employees to track expenses, manage corporate cards, and submit reports.",
+      about:
+        "Brex is a corporate credit card and expense management platform designed for startups and growing companies. The mobile application serves as the primary interface for employees to track expenses, manage corporate cards, and submit reports.",
       challenge: {
-        title: "Redesigning a complex financial platform to be intuitive for enterprise users while maintaining security and compliance",
-        content: "The existing Brex mobile app had usability issues that were hindering enterprise customer adoption. Complex expense workflows, unclear navigation, and slow transaction processing were creating friction for business users. The challenge was to redesign the entire user experience while maintaining the robust financial features that enterprise customers required."
+        title:
+          "Redesigning a complex financial platform to be intuitive for enterprise users while maintaining security and compliance",
+        content:
+          "The existing Brex mobile app had usability issues that were hindering enterprise customer adoption. Complex expense workflows, unclear navigation, and slow transaction processing were creating friction for business users. The challenge was to redesign the entire user experience while maintaining the robust financial features that enterprise customers required.",
       },
-      solution: "I led a complete mobile app redesign focusing on streamlined user flows and enterprise-specific features. The new design prioritized quick expense entry, intuitive card management, and real-time transaction tracking. I implemented a component library for consistency, optimized performance for large transaction volumes, and added features specifically requested by enterprise customers like bulk actions and advanced filtering.",
-      results: "The redesigned Brex mobile app significantly improved user satisfaction and helped secure major enterprise deals with companies like Coinbase and DoorDash. App store ratings improved from 2.3 to 4.8, transaction processing became 40% faster, and the app became a key differentiator in enterprise sales conversations."
-    }
+      solution:
+        "I led a complete mobile app redesign focusing on streamlined user flows and enterprise-specific features. The new design prioritized quick expense entry, intuitive card management, and real-time transaction tracking. I implemented a component library for consistency, optimized performance for large transaction volumes, and added features specifically requested by enterprise customers like bulk actions and advanced filtering.",
+      results:
+        "The redesigned Brex mobile app significantly improved user satisfaction and helped secure major enterprise deals with companies like Coinbase and DoorDash. App store ratings improved from 2.3 to 4.8, transaction processing became 40% faster, and the app became a key differentiator in enterprise sales conversations.",
+    },
   },
   {
     id: "clio-for-clients",
@@ -58,21 +71,28 @@ const projects = [
     technologies: ["React Native", "TypeScript", "GraphQL"],
     description: `I built and launched Clio's first consumer product during COVID-19, creating essential remote collaboration capabilities between lawyers and their clients when in-person meetings weren't possible. This strategic innovation opened a new market opportunity and solidified Clio's position as a legal tech leader, serving over 600,000+ clients.`,
     caseStudy: {
-      headline: "Clio for Clients enables remote legal collaboration during COVID-19, serving 600,000+ clients.",
+      headline:
+        "Clio for Clients enables remote legal collaboration during COVID-19, serving 600,000+ clients.",
       metrics: [
         { value: "600k+", label: "clients onboarded" },
-        { value: "85%", label: "remote meeting adoption" }
+        { value: "85%", label: "remote meeting adoption" },
       ],
       industry: "Legal Technology",
-      services: "Mobile app development, real-time collaboration, document sharing",
-      about: "Clio for Clients is a mobile application that allows law firm clients to securely communicate with their lawyers, access case documents, and track legal matter progress. Built during COVID-19, it became essential infrastructure for remote legal services.",
+      services:
+        "Mobile app development, real-time collaboration, document sharing",
+      about:
+        "Clio for Clients is a mobile application that allows law firm clients to securely communicate with their lawyers, access case documents, and track legal matter progress. Built during COVID-19, it became essential infrastructure for remote legal services.",
       challenge: {
-        title: "Rapidly building a secure client portal during COVID-19 lockdowns when in-person legal meetings became impossible",
-        content: "When COVID-19 hit, law firms suddenly couldn't meet clients in person, but legal work couldn't stop. Clio needed to quickly develop a consumer-facing mobile app that would allow secure lawyer-client communication while maintaining attorney-client privilege and handling sensitive legal documents. The timeline was extremely tight as firms needed this functionality immediately."
+        title:
+          "Rapidly building a secure client portal during COVID-19 lockdowns when in-person legal meetings became impossible",
+        content:
+          "When COVID-19 hit, law firms suddenly couldn't meet clients in person, but legal work couldn't stop. Clio needed to quickly develop a consumer-facing mobile app that would allow secure lawyer-client communication while maintaining attorney-client privilege and handling sensitive legal documents. The timeline was extremely tight as firms needed this functionality immediately.",
       },
-      solution: "I built Clio's first consumer product from the ground up using React Native for cross-platform deployment. The app included secure messaging, document sharing with e-signature capabilities, case timeline viewing, and appointment scheduling. I implemented end-to-end encryption for all communications and built a user-friendly interface that could be easily adopted by clients who weren't tech-savvy.",
-      results: "Clio for Clients was successfully launched during the pandemic and became a crucial tool for law firms worldwide. The app onboarded over 600,000 clients and achieved 85% adoption for remote meetings. It opened an entirely new market opportunity for Clio in the consumer space and strengthened their position as the leading legal technology platform."
-    }
+      solution:
+        "I built Clio's first consumer product from the ground up using React Native for cross-platform deployment. The app included secure messaging, document sharing with e-signature capabilities, case timeline viewing, and appointment scheduling. I implemented end-to-end encryption for all communications and built a user-friendly interface that could be easily adopted by clients who weren't tech-savvy.",
+      results:
+        "Clio for Clients was successfully launched during the pandemic and became a crucial tool for law firms worldwide. The app onboarded over 600,000 clients and achieved 85% adoption for remote meetings. It opened an entirely new market opportunity for Clio in the consumer space and strengthened their position as the leading legal technology platform.",
+    },
   },
   {
     id: "clio-for-lawyers",
@@ -82,21 +102,68 @@ const projects = [
     technologies: ["React Native", "TypeScript", "GraphQL"],
     description: `Led the redesign and development of Clio's flagship mobile app, delivering new case management, transaction tracking, and secure document upload features. Raised app store ratings from 2.3 to 4.8 and improved the workflow for 150,000+ legal professionals.`,
     caseStudy: {
-      headline: "Clio mobile app redesign transforms workflow for 150,000+ legal professionals.",
+      headline:
+        "Clio mobile app redesign transforms workflow for 150,000+ legal professionals.",
       metrics: [
         { value: "2.3→4.8", label: "app store rating improvement" },
-        { value: "150k+", label: "active legal professionals" }
+        { value: "150k+", label: "active legal professionals" },
       ],
       industry: "Legal Technology",
-      services: "Mobile app redesign, workflow optimization, case management features",
-      about: "Clio for Lawyers is the mobile companion to Clio's practice management platform, allowing legal professionals to manage cases, track time, handle billing, and access client information while away from their desks.",
+      services:
+        "Mobile app redesign, workflow optimization, case management features",
+      about:
+        "Clio for Lawyers is the mobile companion to Clio's practice management platform, allowing legal professionals to manage cases, track time, handle billing, and access client information while away from their desks.",
       challenge: {
-        title: "Redesigning a complex legal practice management app to be mobile-first while maintaining full desktop functionality",
-        content: "The original Clio mobile app was essentially a scaled-down version of the desktop platform, which made it difficult to use on mobile devices. Lawyers needed full functionality on the go - case management, time tracking, billing, document access - but in an interface optimized for mobile workflows. The existing app had poor reviews and low adoption among Clio's user base."
+        title:
+          "Redesigning a complex legal practice management app to be mobile-first while maintaining full desktop functionality",
+        content:
+          "The original Clio mobile app was essentially a scaled-down version of the desktop platform, which made it difficult to use on mobile devices. Lawyers needed full functionality on the go - case management, time tracking, billing, document access - but in an interface optimized for mobile workflows. The existing app had poor reviews and low adoption among Clio's user base.",
       },
-      solution: "I led a complete redesign of the mobile experience, reimagining how lawyers would want to use the app in real-world scenarios. I created mobile-optimized workflows for common tasks like time tracking, case updates, and client communication. The new design included features like voice-to-text for case notes, one-tap time tracking, quick client lookup, and streamlined document upload with OCR capabilities.",
-      results: "The redesigned Clio mobile app dramatically improved the experience for legal professionals. App store ratings jumped from 2.3 to 4.8, and the app became an essential tool for over 150,000 legal professionals. Mobile usage increased significantly, and the app became a key differentiator for Clio in the competitive legal software market."
-    }
+      solution:
+        "I led a complete redesign of the mobile experience, reimagining how lawyers would want to use the app in real-world scenarios. I created mobile-optimized workflows for common tasks like time tracking, case updates, and client communication. The new design included features like voice-to-text for case notes, one-tap time tracking, quick client lookup, and streamlined document upload with OCR capabilities.",
+      results:
+        "The redesigned Clio mobile app dramatically improved the experience for legal professionals. App store ratings jumped from 2.3 to 4.8, and the app became an essential tool for over 150,000 legal professionals. Mobile usage increased significantly, and the app became a key differentiator for Clio in the competitive legal software market.",
+    },
+  },
+  {
+    id: "workflow-automation-suite",
+    title: "business workflow automation suite",
+    imgSrc: "/images/workflow-automation.png",
+    altText: "Business Workflow Automation Dashboard",
+    technologies: [
+      "Make.com",
+      "Zapier",
+      "Google Apps Script",
+      "OpenAI API",
+      "Gmail API",
+      "Monday.com API",
+      "DocuSign API",
+    ],
+    description: `Built comprehensive workflow automation solutions for businesses across multiple industries, eliminating manual processes through AI-powered data extraction, automated document generation, and seamless system integrations. Delivered cost savings of 90%+ while dramatically improving operational efficiency.`,
+    caseStudy: {
+      headline:
+        "Workflow automation suite cuts operational costs by 90% while eliminating manual data entry across multiple industries.",
+      metrics: [
+        { value: "90%+", label: "cost reduction achieved" },
+        { value: "40+ hrs", label: "weekly time savings" },
+        { value: "3", label: "industries transformed" },
+      ],
+      industry: "Cross-Industry / Business Operations",
+      services:
+        "Workflow automation, AI integration, system integration, process optimization",
+      about:
+        "A comprehensive suite of workflow automation solutions designed to eliminate manual processes and reduce operational costs for businesses. The system combines AI-powered data extraction, automated document generation, and seamless integrations between existing business tools to create efficient, cost-effective workflows across angel investing, HVAC services, and real estate development.",
+      challenge: {
+        title:
+          "Eliminating expensive manual processes while maintaining accuracy and compliance across diverse business operations",
+        content:
+          "Businesses across multiple industries were spending significant time and money on manual data entry, document processing, and workflow coordination. An angel investor was manually processing emails and updating project management systems, an HVAC business was paying $500/month for software while still doing manual client intake, and a real estate developer needed compliant document automation. Each required custom solutions that could integrate with existing tools while dramatically reducing costs and human error.",
+      },
+      solution:
+        "I developed a suite of interconnected automation solutions tailored to each business context. For the angel investor, I built an AI-powered email processing system using OpenAI APIs that automatically extracts deal information and updates Monday.com project boards. For the HVAC business, I created a comprehensive client intake automation using Google Apps Script and Make.com that generates documents and coordinates multi-stakeholder communications. For the real estate developer, I implemented a Zapier-based compliance workflow that automatically generates DocuSign documents from website form submissions. All solutions leverage cost-effective platforms and existing business tools.",
+      results:
+        "The automation suite delivered transformative results across all three businesses. The angel investor eliminated manual data entry entirely while maintaining 100% accuracy in deal tracking. The HVAC business reduced monthly software costs from $500 to nearly free while cutting client onboarding time by 75%. The real estate developer achieved full compliance automation with zero manual document generation. Combined, these solutions save over 40 hours of manual work weekly while reducing operational costs by more than 90%, proving that intelligent automation can deliver massive business value without expensive enterprise software.",
+    },
   },
 ];
 
@@ -134,11 +201,13 @@ function useIsMobile() {
 const WorkProjectSection = () => {
   const [openId, setOpenId] = useState<string | null>(null);
   const [showEnhancedModal, setShowEnhancedModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<
+    (typeof projects)[0] | null
+  >(null);
   const isMobile = useIsMobile();
 
   const handleCardClick = (id: string) => {
-    const project = projects.find(p => p.id === id);
+    const project = projects.find((p) => p.id === id);
     if (project?.caseStudy) {
       setSelectedProject(project);
       setShowEnhancedModal(true);
@@ -167,9 +236,9 @@ const WorkProjectSection = () => {
   // Clean, minimal modal inspired by Brex case studies
   const EnhancedModal = () => {
     if (!selectedProject?.caseStudy) return null;
-    
+
     const { caseStudy, technologies, title } = selectedProject;
-    
+
     return (
       <div
         className={`fixed inset-0 z-50 transition-all duration-300 ${
@@ -201,16 +270,19 @@ const WorkProjectSection = () => {
                   <X size={24} />
                 </button>
 
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
+                <div className="flex flex-col">
+                  <div>
                     <h1 className="text-3xl font-bold text-gray-900 mb-4">
                       {caseStudy.headline}
                     </h1>
 
                     {/* Simple metrics */}
-                    <div className="flex gap-8 mb-6">
+                    <div className="flex gap-8 mb-6 flex-wrap">
                       {caseStudy.metrics.map((metric, index) => (
-                        <div key={index} className="border-l-4 border-orange-400 pl-4">
+                        <div
+                          key={index}
+                          className="border-l-4 border-orange-400 pl-4"
+                        >
                           <div className="text-3xl font-bold text-gray-900">
                             {metric.value}
                           </div>
@@ -222,38 +294,36 @@ const WorkProjectSection = () => {
                     </div>
                   </div>
 
-                  {/* Right side info panel */}
-                  <div className="w-80 ml-8">
+                  {/* Info panel - now below metrics */}
+                  <div className="w-full">
                     <div className="bg-gray-50 p-6 rounded-lg space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">
-                          Industry
-                        </h4>
-                        <p className="text-gray-600">
-                          {caseStudy.industry}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">
-                          Services provided
-                        </h4>
-                        <p className="text-gray-600">
-                          {caseStudy.services}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">
-                          Technology used
-                        </h4>
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {technologies.map((tech) => (
-                            <span
-                              key={tech}
-                              className="bg-white px-3 py-1 rounded text-sm text-gray-600 border"
-                            >
-                              {tech}
-                            </span>
-                          ))}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-1">
+                            Industry
+                          </h4>
+                          <p className="text-gray-600">{caseStudy.industry}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-1">
+                            Services provided
+                          </h4>
+                          <p className="text-gray-600">{caseStudy.services}</p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900 mb-1">
+                            Technology used
+                          </h4>
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            {technologies.map((tech) => (
+                              <span
+                                key={tech}
+                                className="bg-white px-3 py-1 rounded text-sm text-gray-600 border"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -315,11 +385,21 @@ const WorkProjectSection = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-serif font-bold text-white mb-4">
+          Featured Work
+        </h2>
+        <p className="text-[#cfd8dc] text-lg max-w-2xl mx-auto">
+          Explore case studies and projects that showcase how I've helped
+          companies build innovative digital solutions.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
         {projects.map(
           ({ id, title, imgSrc, altText, technologies, description }) => {
             const open = openId === id;
-            const project = projects.find(p => p.id === id);
+            const project = projects.find((p) => p.id === id);
             const hasCaseStudy = project?.caseStudy;
 
             if (hasCaseStudy) {
@@ -327,20 +407,17 @@ const WorkProjectSection = () => {
               return (
                 <div
                   key={id}
-                  className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer overflow-hidden group"
-                  style={{ minHeight: "320px" }}
+                  className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer overflow-hidden group h-full flex flex-col"
                   onClick={() => handleCardClick(id)}
                 >
                   <div className="p-6 h-full flex flex-col">
-                    <div className="relative mb-4">
+                    <div className="relative mb-4 h-[180px] bg-[#f9fafb] rounded-lg flex items-center justify-center">
                       <img
                         src={imgSrc}
                         alt={altText}
-                        className="rounded-lg w-full transform group-hover:scale-[1.02] transition-transform duration-300"
+                        className="rounded-lg max-w-full max-h-full transform group-hover:scale-[1.02] transition-transform duration-300"
                         style={{
-                          maxHeight: "180px",
                           objectFit: "contain",
-                          background: "#f9fafb",
                         }}
                       />
                       {/* Subtle overlay on hover */}
@@ -353,9 +430,24 @@ const WorkProjectSection = () => {
                       </h4>
 
                       <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px] flex-1">
-                        {project.caseStudy.headline.length > 80 
-                          ? project.caseStudy.headline.substring(0, 80) + "..." 
-                          : project.caseStudy.headline}
+                        {(() => {
+                          switch (id) {
+                            case "bergquist-ai-chat":
+                              return "AI therapy companion helps patients reflect between sessions with 95% user satisfaction.";
+                            case "brex-app":
+                              return "Mobile app redesign drives enterprise customer acquisition with streamlined expense management.";
+                            case "clio-for-clients":
+                              return "First consumer product enables remote legal collaboration during COVID-19, serving 600,000+ clients.";
+                            case "clio-for-lawyers":
+                              return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
+                            case "workflow-automation-suite":
+                              return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
+                            default:
+                              return project.caseStudy.headline.length > 80
+                                ? project.caseStudy.headline.substring(0, 80) + "..."
+                                : project.caseStudy.headline;
+                          }
+                        })()}
                       </p>
                     </div>
 
@@ -376,20 +468,17 @@ const WorkProjectSection = () => {
             return (
               <div
                 key={id}
-                className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer overflow-hidden group"
-                style={{ minHeight: "320px" }}
+                className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer overflow-hidden group h-full flex flex-col"
                 onClick={() => handleCardClick(id)}
               >
                 <div className="p-6 h-full flex flex-col">
-                  <div className="relative mb-4">
+                  <div className="relative mb-4 h-[180px] bg-[#f9fafb] rounded-lg flex items-center justify-center">
                     <img
                       src={imgSrc}
                       alt={altText}
-                      className="rounded-lg w-full transform group-hover:scale-[1.02] transition-transform duration-300"
+                      className="rounded-lg max-w-full max-h-full transform group-hover:scale-[1.02] transition-transform duration-300"
                       style={{
-                        maxHeight: "180px",
                         objectFit: "contain",
-                        background: "#f9fafb",
                       }}
                     />
                     {/* Subtle overlay on hover */}
@@ -402,9 +491,24 @@ const WorkProjectSection = () => {
                     </h4>
 
                     <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px] flex-1">
-                      {description.length > 120 
-                        ? description.substring(0, 120) + "..." 
-                        : description}
+                      {(() => {
+                        switch (id) {
+                          case "bergquist-ai-chat":
+                            return "AI therapy companion helps patients reflect between sessions with 95% user satisfaction.";
+                          case "brex-app":
+                            return "Mobile app redesign drives enterprise customer acquisition with streamlined expense management.";
+                          case "clio-for-clients":
+                            return "First consumer product enables remote legal collaboration during COVID-19, serving 600,000+ clients.";
+                          case "clio-for-lawyers":
+                            return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
+                          case "workflow-automation-suite":
+                            return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
+                          default:
+                            return description.length > 120
+                              ? description.substring(0, 120) + "..."
+                              : description;
+                        }
+                      })()}
                     </p>
                   </div>
 
@@ -424,7 +528,11 @@ const WorkProjectSection = () => {
                   {isMobile && (
                     <div
                       className={`absolute inset-0 bg-white/95 rounded-lg flex flex-col justify-start items-start transition-opacity duration-300 p-6 z-10 overflow-auto w-full h-full
-                      ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+                      ${
+                        open
+                          ? "opacity-100 pointer-events-auto"
+                          : "opacity-0 pointer-events-none"
+                      }
                     `}
                     >
                       <div className="flex flex-wrap gap-2 mb-4 w-full">

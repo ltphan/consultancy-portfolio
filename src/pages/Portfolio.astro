@@ -2,6 +2,7 @@
 import NavigationHeader from "@components/NavigationHeader";
 import Form from "@components/Form";
 import WorkProjectSection from "@components/WorkProjectSection";
+import TestimonialsSection from "@components/TestimonialsSection";
 
 const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
 ---
@@ -29,6 +30,8 @@ const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
       Get in touch
     </a>
   </div>
+
+  <TestimonialsSection client:load />
 
   <div class="w-content">
     <div id="work" class="relative -top-[120px] h-1"></div>
