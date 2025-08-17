@@ -3,6 +3,46 @@ import { X } from "lucide-react";
 
 const projects = [
   {
+    id: "workflow-automation-suite",
+    title: "business workflow automation suite",
+    imgSrc: "/images/workflow-automation.png",
+    altText: "Business Workflow Automation Dashboard",
+    technologies: [
+      "Make.com",
+      "Zapier",
+      "Google Apps Script",
+      "OpenAI API",
+      "Gmail API",
+      "Monday.com API",
+      "DocuSign API",
+    ],
+    description: `Built comprehensive workflow automation solutions for businesses across multiple industries, eliminating manual processes through AI-powered data extraction, automated document generation, and seamless system integrations. Delivered cost savings of 90%+ while dramatically improving operational efficiency.`,
+    caseStudy: {
+      headline:
+        "Workflow automation suite cuts operational costs by 90% while eliminating manual data entry across multiple industries.",
+      metrics: [
+        { value: "90%+", label: "cost reduction achieved" },
+        { value: "40+ hrs", label: "weekly time savings" },
+        { value: "3", label: "industries transformed" },
+      ],
+      industry: "Cross-Industry / Business Operations",
+      services:
+        "Workflow automation, AI integration, system integration, process optimization",
+      about:
+        "A comprehensive suite of workflow automation solutions designed to eliminate manual processes and reduce operational costs for businesses. The system combines AI-powered data extraction, automated document generation, and seamless integrations between existing business tools to create efficient, cost-effective workflows across angel investing, HVAC services, and real estate development.",
+      challenge: {
+        title:
+          "Eliminating expensive manual processes while maintaining accuracy and compliance across diverse business operations",
+        content:
+          "Businesses across multiple industries were spending significant time and money on manual data entry, document processing, and workflow coordination. An angel investor was manually processing emails and updating project management systems, an HVAC business was paying $500/month for software while still doing manual client intake, and a real estate developer needed compliant document automation. Each required custom solutions that could integrate with existing tools while dramatically reducing costs and human error.",
+      },
+      solution:
+        "I developed a suite of interconnected automation solutions tailored to each business context. For the angel investor, I built an AI-powered email processing system using OpenAI APIs that automatically extracts deal information and updates Monday.com project boards. For the HVAC business, I created a comprehensive client intake automation using Google Apps Script and Make.com that generates documents and coordinates multi-stakeholder communications. For the real estate developer, I implemented a Zapier-based compliance workflow that automatically generates DocuSign documents from website form submissions. All solutions leverage cost-effective platforms and existing business tools.",
+      results:
+        "The automation suite delivered transformative results across all three businesses. The angel investor eliminated manual data entry entirely while maintaining 100% accuracy in deal tracking. The HVAC business reduced monthly software costs from $500 to nearly free while cutting client onboarding time by 75%. The real estate developer achieved full compliance automation with zero manual document generation. Combined, these solutions save over 40 hours of manual work weekly while reducing operational costs by more than 90%, proving that intelligent automation can deliver massive business value without expensive enterprise software.",
+    },
+  },
+  {
     id: "bergquist-ai-chat",
     title: "bergquist ai therapist chat",
     imgSrc: "/images/bergquist-ai-therapist-chat.svg",
@@ -123,46 +163,6 @@ const projects = [
         "I led a complete redesign of the mobile experience, reimagining how lawyers would want to use the app in real-world scenarios. I created mobile-optimized workflows for common tasks like time tracking, case updates, and client communication. The new design included features like voice-to-text for case notes, one-tap time tracking, quick client lookup, and streamlined document upload with OCR capabilities.",
       results:
         "The redesigned Clio mobile app dramatically improved the experience for legal professionals. App store ratings jumped from 2.3 to 4.8, and the app became an essential tool for over 150,000 legal professionals. Mobile usage increased significantly, and the app became a key differentiator for Clio in the competitive legal software market.",
-    },
-  },
-  {
-    id: "workflow-automation-suite",
-    title: "business workflow automation suite",
-    imgSrc: "/images/workflow-automation.png",
-    altText: "Business Workflow Automation Dashboard",
-    technologies: [
-      "Make.com",
-      "Zapier",
-      "Google Apps Script",
-      "OpenAI API",
-      "Gmail API",
-      "Monday.com API",
-      "DocuSign API",
-    ],
-    description: `Built comprehensive workflow automation solutions for businesses across multiple industries, eliminating manual processes through AI-powered data extraction, automated document generation, and seamless system integrations. Delivered cost savings of 90%+ while dramatically improving operational efficiency.`,
-    caseStudy: {
-      headline:
-        "Workflow automation suite cuts operational costs by 90% while eliminating manual data entry across multiple industries.",
-      metrics: [
-        { value: "90%+", label: "cost reduction achieved" },
-        { value: "40+ hrs", label: "weekly time savings" },
-        { value: "3", label: "industries transformed" },
-      ],
-      industry: "Cross-Industry / Business Operations",
-      services:
-        "Workflow automation, AI integration, system integration, process optimization",
-      about:
-        "A comprehensive suite of workflow automation solutions designed to eliminate manual processes and reduce operational costs for businesses. The system combines AI-powered data extraction, automated document generation, and seamless integrations between existing business tools to create efficient, cost-effective workflows across angel investing, HVAC services, and real estate development.",
-      challenge: {
-        title:
-          "Eliminating expensive manual processes while maintaining accuracy and compliance across diverse business operations",
-        content:
-          "Businesses across multiple industries were spending significant time and money on manual data entry, document processing, and workflow coordination. An angel investor was manually processing emails and updating project management systems, an HVAC business was paying $500/month for software while still doing manual client intake, and a real estate developer needed compliant document automation. Each required custom solutions that could integrate with existing tools while dramatically reducing costs and human error.",
-      },
-      solution:
-        "I developed a suite of interconnected automation solutions tailored to each business context. For the angel investor, I built an AI-powered email processing system using OpenAI APIs that automatically extracts deal information and updates Monday.com project boards. For the HVAC business, I created a comprehensive client intake automation using Google Apps Script and Make.com that generates documents and coordinates multi-stakeholder communications. For the real estate developer, I implemented a Zapier-based compliance workflow that automatically generates DocuSign documents from website form submissions. All solutions leverage cost-effective platforms and existing business tools.",
-      results:
-        "The automation suite delivered transformative results across all three businesses. The angel investor eliminated manual data entry entirely while maintaining 100% accuracy in deal tracking. The HVAC business reduced monthly software costs from $500 to nearly free while cutting client onboarding time by 75%. The real estate developer achieved full compliance automation with zero manual document generation. Combined, these solutions save over 40 hours of manual work weekly while reducing operational costs by more than 90%, proving that intelligent automation can deliver massive business value without expensive enterprise software.",
     },
   },
 ];
@@ -444,7 +444,8 @@ const WorkProjectSection = () => {
                               return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
                             default:
                               return project.caseStudy.headline.length > 80
-                                ? project.caseStudy.headline.substring(0, 80) + "..."
+                                ? project.caseStudy.headline.substring(0, 80) +
+                                    "..."
                                 : project.caseStudy.headline;
                           }
                         })()}
