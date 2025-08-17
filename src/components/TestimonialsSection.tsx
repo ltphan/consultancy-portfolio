@@ -1,28 +1,28 @@
 const testimonials = [
   {
     id: 1,
-    text: "We worked with Every to run an AI strategy sprint. They helped us identify our key opportunities and risks, and built a roadmap that we're still executing on today.",
-    author: "CIO, mid-market private equity firm",
-    stars: 5
+    text: "Linh completely transformed our mobile app experience. She took our app store rating from 2.3 to 4.8 stars and our users finally had the seamless expense management they needed. The enterprise deals started flowing in right after launch.",
+    author: "Head of Product, Financial Technology Company",
+    stars: 5,
   },
   {
     id: 2,
-    text: "This is insane work. We pretty much built a whole new product in two days.",
-    author: "Dilan, senior design at Metris Energy",
-    stars: 5
+    text: "This was exactly what we needed during COVID. Linh built our entire client portal from scratch in record time, enabling 600,000+ clients to work with their lawyers remotely when in-person meetings became impossible.",
+    author: "Director of Engineering, Legal Technology Firm",
+    stars: 5,
   },
   {
     id: 3,
-    text: "Every was thoughtful in their approach and methodical (and fast) in their execution. They have a deep bench of experts they tap to help deliver on unique solutions.",
-    author: "Rupert, CTO at Hugh James",
-    stars: 5
+    text: "Linh is incredibly communicative and methodical in her execution. She doesn't just code - she asks the right questions, documents everything clearly, and keeps timelines on track. I always feel supported working with her.",
+    author: "Engineering Manager, Series B Startup",
+    stars: 5,
   },
   {
     id: 4,
-    text: "Every is a team of cutting-edge experts who are also a joy to work with. They helped us transform complex ideas into a nose-to-tail marketing funnel that we couldn't be more excited about.",
-    author: "Grace Capobianco, lead brand copywriter at Alpha School",
-    stars: 5
-  }
+    text: "Working with Linh saved us months of development time. She built our workflow automation that cut operational costs by 90% while eliminating manual data entry completely. The ROI was immediate and massive.",
+    author: "Operations Director, Growing Business",
+    stars: 5,
+  },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => {
@@ -32,7 +32,7 @@ const StarRating = ({ rating }: { rating: number }) => {
         <svg
           key={i}
           className={`w-5 h-5 ${
-            i < rating ? 'text-[#60a5fa]' : 'text-gray-300'
+            i < rating ? "text-[#60a5fa]" : "text-gray-300"
           }`}
           fill="currentColor"
           viewBox="0 0 20 20"
@@ -54,22 +54,23 @@ const TestimonialsSection = () => {
             What Our Clients Say
           </h2>
           <p className="text-[#cfd8dc] text-lg max-w-2xl mx-auto">
-            See how we've helped companies transform their digital presence and achieve their goals.
+            See how we've helped companies transform their digital presence and
+            achieve their goals.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-[#101820]/80 border border-[#0047ab] rounded-xl p-8 hover:border-[#60a5fa] transition-all duration-300"
+              className="bg-[#101820]/80 rounded-xl p-8 hover:border-[#60a5fa] transition-all duration-300"
             >
               <StarRating rating={testimonial.stars} />
-              
+
               <blockquote className="text-white text-lg leading-relaxed mb-6 font-serif">
                 "{testimonial.text}"
               </blockquote>
-              
+
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-[#0047ab] to-[#60a5fa] rounded-full flex items-center justify-center mr-4">
                   <span className="text-white font-semibold text-lg">

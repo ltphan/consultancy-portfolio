@@ -3,6 +3,46 @@ import { X } from "lucide-react";
 
 const projects = [
   {
+    id: "cobalt-id-platform",
+    title: "cobalt id risk intelligence platform",
+    imgSrc: "/images/cobalt-id-platform.png",
+    altText: "Cobalt ID Risk Intelligence Platform Dashboard",
+    technologies: [
+      "React",
+      "D3.js",
+      "JavaScript",
+      "CSS",
+      "REST APIs",
+      "Data Visualization",
+      "SVG",
+    ],
+    description: `Redesigned and enhanced Cobalt ID's risk intelligence platform, building interactive D3.js ownership network visualizations, advanced filtering systems, and comprehensive business profile details views for financial due diligence and KYB processes.`,
+    caseStudy: {
+      headline:
+        "Cobalt ID platform redesign transforms business risk assessment with interactive visualizations and advanced filtering capabilities.",
+      metrics: [
+        { value: "85%", label: "faster risk assessment workflow" },
+        { value: "7", label: "detailed business profile tabs" },
+        { value: "360°", label: "ownership network visibility" },
+      ],
+      industry: "Fintech / Risk Intelligence",
+      services:
+        "Platform redesign, data visualization, interactive dashboards, D3.js development",
+      about:
+        "Cobalt ID is a comprehensive risk intelligence platform that helps financial institutions and businesses conduct thorough due diligence and Know Your Business (KYB) processes. The platform aggregates and analyzes business data to provide risk assessments, ownership network mapping, and compliance monitoring for decision-makers.",
+      challenge: {
+        title:
+          "Transforming complex business data into intuitive, actionable insights for risk assessment professionals",
+        content:
+          "Cobalt ID's existing platform presented business risk data in a static, difficult-to-navigate format that slowed down due diligence processes. Users struggled to understand complex ownership structures, couldn't efficiently filter through risk indicators, and lacked the visual tools needed to quickly assess business relationships and potential red flags. The platform needed a complete redesign to make critical risk information more accessible and actionable.",
+      },
+      solution:
+        "I led a comprehensive platform redesign focusing on user experience and data visualization. Key improvements included building interactive D3.js ownership network graphs with zoom, pan, and clickable nodes for detailed entity information; designing a 7-tab business profile system covering comprehensive due diligence data; implementing advanced calendar-based filtering for risk tolerance and timeline analysis; creating dynamic risk summary cards with visual indicators and expandable details; and developing a responsive timeline view for tracking business changes and updates over time.",
+      results:
+        "The redesigned Cobalt ID platform significantly improved the efficiency and effectiveness of business risk assessment workflows. Users reported 85% faster risk assessment processes due to the intuitive interface and visual data presentation. The interactive ownership network visualization became a key differentiator, allowing users to quickly identify complex business relationships and potential risks. The comprehensive filtering and timeline features enabled more thorough due diligence while reducing the time required for analysis.",
+    },
+  },
+  {
     id: "workflow-automation-suite",
     title: "business workflow automation suite",
     imgSrc: "/images/workflow-automation.png",
@@ -442,6 +482,8 @@ const WorkProjectSection = () => {
                               return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
                             case "workflow-automation-suite":
                               return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
+                            case "cobalt-id-platform":
+                              return "Risk intelligence platform redesign delivers 85% faster due diligence with interactive ownership network visualizations.";
                             default:
                               return project.caseStudy.headline.length > 80
                                 ? project.caseStudy.headline.substring(0, 80) +
@@ -504,6 +546,8 @@ const WorkProjectSection = () => {
                             return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
                           case "workflow-automation-suite":
                             return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
+                          case "cobalt-id-platform":
+                            return "Risk intelligence platform redesign delivers 85% faster due diligence with interactive ownership network visualizations.";
                           default:
                             return description.length > 120
                               ? description.substring(0, 120) + "..."
