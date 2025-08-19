@@ -6,7 +6,7 @@ const testimonials = [
     stars: 5,
   },
   {
-    id: 3,
+    id: 2,
     text: "I was impressed how communicative and collobarative Linh was. She worked throughout unexpected challenges with laser focus that remained consistent through our project.",
     author: "Founder, Series A Company",
     stars: 5,
