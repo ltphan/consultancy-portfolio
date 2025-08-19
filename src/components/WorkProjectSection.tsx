@@ -28,6 +28,7 @@ const projects = [
       industry: "Fintech / Risk Intelligence",
       services:
         "Platform redesign, data visualization, interactive dashboards, D3.js development",
+      companyName: "Cobalt ID",
       about:
         "Cobalt ID is a comprehensive risk intelligence platform that helps financial institutions and businesses conduct thorough due diligence and Know Your Business (KYB) processes. The platform aggregates and analyzes business data to provide risk assessments, ownership network mapping, and compliance monitoring for decision-makers.",
       challenge: {
@@ -68,6 +69,7 @@ const projects = [
       industry: "Cross-Industry / Business Operations",
       services:
         "Workflow automation, AI integration, system integration, process optimization",
+      companyName: "Multiple Businesses",
       about:
         "A comprehensive suite of workflow automation solutions designed to eliminate manual processes and reduce operational costs for businesses. The system combines AI-powered data extraction, automated document generation, and seamless integrations between existing business tools to create efficient, cost-effective workflows across angel investing, HVAC services, and real estate development.",
       challenge: {
@@ -98,6 +100,7 @@ const projects = [
       ],
       industry: "Healthcare / Mental Health",
       services: "Mobile app development, AI integration, HIPAA compliance",
+      companyName: "Dr. Bergquist",
       about:
         "Dr. Melissa Bergquist's AI therapy companion is a mobile application designed to support therapy clients between sessions through structured reflection and AI-guided conversations. The app helps users process emotions, track progress, and maintain therapeutic momentum outside of traditional therapy sessions.",
       challenge: {
@@ -129,6 +132,7 @@ const projects = [
       ],
       industry: "Fintech / Corporate Banking",
       services: "Mobile app redesign, UX optimization, enterprise features",
+      companyName: "Brex",
       about:
         "Brex is a corporate credit card and expense management platform designed for startups and growing companies. The mobile application serves as the primary interface for employees to track expenses, manage corporate cards, and submit reports.",
       challenge: {
@@ -145,7 +149,7 @@ const projects = [
   },
   {
     id: "clio-for-clients",
-    title: "clio for clients",
+    title: "Clio for Clients",
     imgSrc: "/images/clio-for-clients.png",
     altText: "Clio for clients mobile app image",
     technologies: ["React Native", "TypeScript", "GraphQL"],
@@ -155,28 +159,29 @@ const projects = [
         "Clio for Clients enables remote legal collaboration during COVID-19, serving 600,000+ clients.",
       metrics: [
         { value: "600k+", label: "clients onboarded" },
-        { value: "85%", label: "remote meeting adoption" },
+        { value: "85%", label: "mobile application adoption rate" },
       ],
       industry: "Legal Technology",
       services:
         "Mobile app development, real-time collaboration, document sharing",
+      companyName: "Clio",
       about:
-        "Clio for Clients is a mobile application that allows law firm clients to securely communicate with their lawyers, access case documents, and track legal matter progress. Built during COVID-19, it became essential infrastructure for remote legal services.",
+        "Clio is a legal technology company that offers law firms cloud-based software for law practice management tasks including contract management, client intake, timekeeping, trust accounting and billing",
       challenge: {
         title:
-          "Rapidly building a secure client portal during COVID-19 lockdowns when in-person legal meetings became impossible",
+          "Rapidly executing and building a secure client mobile application during COVID-19 lockdowns when in-person legal meetings were forbidden",
         content:
-          "When COVID-19 hit, law firms suddenly couldn't meet clients in person, but legal work couldn't stop. Clio needed to quickly develop a consumer-facing mobile app that would allow secure lawyer-client communication while maintaining attorney-client privilege and handling sensitive legal documents. The timeline was extremely tight as firms needed this functionality immediately.",
+          "When COVID-19 hit in March 2020, restrictions prevented lawyers from meeting their clients in person, but legal work could not stop. Clio needed to quickly address this significant challenge by enabling lawyer-to-client remote collaboration, allowing lawyers' clients to stay on top of communication, documents, and legal tasks all in one place. The timeline was extremely tight as firms needed this functionality immediately.",
       },
       solution:
-        "I built Clio's first consumer product from the ground up using React Native for cross-platform deployment. The app included secure messaging, document sharing with e-signature capabilities, case timeline viewing, and appointment scheduling. I implemented end-to-end encryption for all communications and built a user-friendly interface that could be easily adopted by clients who weren't tech-savvy.",
+        "I designed and built Clio's first consumer-facing product from the ground up. The mobile application included high-value features such as secure messaging, document sharing with e-signature capabilities, case timeline viewing, and appointment scheduling. All features were built with end-to-end usability in mind for lawyers' clients",
       results:
-        "Clio for Clients was successfully launched during the pandemic and became a crucial tool for law firms worldwide. The app onboarded over 600,000 clients and achieved 85% adoption for remote meetings. It opened an entirely new market opportunity for Clio in the consumer space and strengthened their position as the leading legal technology platform.",
+        "Clio for Clients was successfully launched during the pandemic and became a crucial remote collaboration tool for law firms and clients worldwide. The mobile application onboarded over 600,000 clients and achieved an 85% adoption rate among lawyers' clients. It opened an entirely new market opportunity for Clio, securing their place as a household brand in the legal industry.",
     },
   },
   {
     id: "clio-for-lawyers",
-    title: "clio for lawfirms and lawyers",
+    title: "Clio for Lawyers and Lawfirms",
     imgSrc: "/images/clio-for-lawyers.png",
     altText: "Clio For Lawfirms and Lawyers App Image",
     technologies: ["React Native", "TypeScript", "GraphQL"],
@@ -191,18 +196,19 @@ const projects = [
       industry: "Legal Technology",
       services:
         "Mobile app redesign, workflow optimization, case management features",
+      companyName: "Clio",
       about:
-        "Clio for Lawyers is the mobile companion to Clio's practice management platform, allowing legal professionals to manage cases, track time, handle billing, and access client information while away from their desks.",
+        "Clio is a legal technology company that offers law firms cloud-based software for law practice management tasks including contract management, client intake, timekeeping, trust accounting, and billing",
       challenge: {
         title:
-          "Redesigning a complex legal practice management app to be mobile-first while maintaining full desktop functionality",
+          "Redesigning a complex legal practice management application to be mobile first",
         content:
-          "The original Clio mobile app was essentially a scaled-down version of the desktop platform, which made it difficult to use on mobile devices. Lawyers needed full functionality on the go - case management, time tracking, billing, document access - but in an interface optimized for mobile workflows. The existing app had poor reviews and low adoption among Clio's user base.",
+          "Customers were complaining that the original Clio mobile application was a scaled-down version of the desktop platform that did not take into account a mobile-first strategy. The poor user experience — from PDF uploading to billing — made it difficult for legal professionals to complete their work on-the-go. Lawyers needed full functionality on the go, including case management, time tracking, billing, secure communication, and document access, all in an interface optimized for mobile. The existing app had poor reviews and low adoption among Clio's user base.",
       },
       solution:
-        "I led a complete redesign of the mobile experience, reimagining how lawyers would want to use the app in real-world scenarios. I created mobile-optimized workflows for common tasks like time tracking, case updates, and client communication. The new design included features like voice-to-text for case notes, one-tap time tracking, quick client lookup, and streamlined document upload with OCR capabilities.",
+        "I led a complete redesign of the mobile experience, reimagining how lawyers and law firms would want to use an app that suited their and their clients' needs. I prioritized common workflows and tasks to include offline document uploading, real-time case updates, and streamlined communication that enabled quick response times. The new design included one-tap time tracking, streamlined document upload, and calendar integration for scheduling.",
       results:
-        "The redesigned Clio mobile app dramatically improved the experience for legal professionals. App store ratings jumped from 2.3 to 4.8, and the app became an essential tool for over 150,000 legal professionals. Mobile usage increased significantly, and the app became a key differentiator for Clio in the competitive legal software market.",
+        "The revamped Clio mobile application dramatically improved the user experience for legal professionals. App Store and Google Play Store ratings soared from 2.3 to 4.8 stars. The mobile app became an essential tool for 150,000+ legal professionals.",
     },
   },
 ];
@@ -286,12 +292,10 @@ const WorkProjectSection = () => {
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
         }`}
+        onClick={closeEnhancedModal}
       >
         {/* Simple backdrop */}
-        <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-          onClick={closeEnhancedModal}
-        />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
 
         {/* Modal Content */}
         <div
@@ -300,7 +304,10 @@ const WorkProjectSection = () => {
           }`}
         >
           <div className="min-h-full flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg shadow-xl max-w-6xl w-full mx-auto">
+            <div
+              className="bg-white rounded-lg shadow-xl max-w-6xl w-full mx-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Simple header */}
               <div className="relative p-8 border-b border-gray-200">
                 <button
@@ -321,7 +328,7 @@ const WorkProjectSection = () => {
                       {caseStudy.metrics.map((metric, index) => (
                         <div
                           key={index}
-                          className="border-l-4 border-orange-400 pl-4"
+                          className="border-l-4 border-[#60a5fa] pl-4"
                         >
                           <div className="text-3xl font-bold text-gray-900">
                             {metric.value}
@@ -376,7 +383,7 @@ const WorkProjectSection = () => {
                 {/* About section */}
                 <div className="mb-8">
                   <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                    About {title}
+                    About {caseStudy.companyName || title}
                   </h2>
                   <p className="text-gray-700 leading-relaxed">
                     {caseStudy.about}
@@ -477,9 +484,9 @@ const WorkProjectSection = () => {
                             case "brex-app":
                               return "Mobile app redesign drives enterprise customer acquisition with streamlined expense management.";
                             case "clio-for-clients":
-                              return "First consumer product enables remote legal collaboration during COVID-19, serving 600,000+ clients.";
+                              return "Building first consumer product to enable remote legal collaboration during COVID-19, that is currently serving 600,000+ clients.";
                             case "clio-for-lawyers":
-                              return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
+                              return "Redesigning and revamping top-rated application for lawyers to access pivotal information on-the-go.";
                             case "workflow-automation-suite":
                               return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
                             case "cobalt-id-platform":

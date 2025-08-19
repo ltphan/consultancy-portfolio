@@ -1,26 +1,14 @@
 const testimonials = [
   {
     id: 1,
-    text: "Linh completely transformed our mobile app experience. She took our app store rating from 2.3 to 4.8 stars and our users finally had the seamless expense management they needed. The enterprise deals started flowing in right after launch.",
-    author: "Head of Product, Financial Technology Company",
-    stars: 5,
-  },
-  {
-    id: 2,
-    text: "This was exactly what we needed during COVID. Linh built our entire client portal from scratch in record time, enabling 600,000+ clients to work with their lawyers remotely when in-person meetings became impossible.",
-    author: "Director of Engineering, Legal Technology Firm",
+    text: "Linh executes on tasks in a methodical and strategic manner. She fearlessly conquers challenges and finds opportunities to always improve the experience of what a great software application should be.",
+    author: "CTO, Series D Company",
     stars: 5,
   },
   {
     id: 3,
-    text: "Linh is incredibly communicative and methodical in her execution. She doesn't just code - she asks the right questions, documents everything clearly, and keeps timelines on track. I always feel supported working with her.",
-    author: "Engineering Manager, Series B Startup",
-    stars: 5,
-  },
-  {
-    id: 4,
-    text: "Working with Linh saved us months of development time. She built our workflow automation that cut operational costs by 90% while eliminating manual data entry completely. The ROI was immediate and massive.",
-    author: "Operations Director, Growing Business",
+    text: "I was impressed how communicative and collobarative Linh was. She worked throughout unexpected challenges with laser focus that remained consistent through our project.",
+    author: "Founder, Series A Company",
     stars: 5,
   },
 ];
@@ -63,21 +51,21 @@ const TestimonialsSection = () => {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-[#101820]/80 rounded-xl p-8 hover:border-[#60a5fa] transition-all duration-300"
+              className="bg-[#101820]/80 rounded-xl p-8 hover:border-[#60a5fa] transition-all duration-300 flex flex-col h-full"
             >
               <StarRating rating={testimonial.stars} />
 
-              <blockquote className="text-white text-lg leading-relaxed mb-6 font-serif">
+              <blockquote className="text-white text-lg leading-relaxed mb-6 font-serif flex-grow">
                 "{testimonial.text}"
               </blockquote>
 
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#0047ab] to-[#60a5fa] rounded-full flex items-center justify-center mr-4">
+              <div className="flex items-center mt-auto">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#0047ab] to-[#60a5fa] rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                   <span className="text-white font-semibold text-lg">
                     {testimonial.author.charAt(0)}
                   </span>
                 </div>
-                <div>
+                <div className="flex items-center">
                   <p className="text-[#cfd8dc] font-medium">
                     {testimonial.author}
                   </p>
