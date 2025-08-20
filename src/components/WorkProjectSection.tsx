@@ -86,10 +86,10 @@ const projects = [
   },
   {
     id: "bergquist-ai-chat",
-    title: "bergquist ai therapist chat",
+    title: "Dr. Bergquist AI Therapist Companion App",
     imgSrc: "/images/bergquist-ai-therapist-chat.svg",
     altText: "AI Therapist Chat App on Mobile",
-    technologies: ["React Native", "Expo", "Supabase", "Open AI LLM"],
+    technologies: ["React Native", "React", "Expo", "Supabase", "Open AI LLM"],
     description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
     caseStudy: {
       headline:
@@ -98,26 +98,26 @@ const projects = [
         { value: "95%", label: "user satisfaction" },
         { value: "3x", label: "more engagement between sessions" },
       ],
-      industry: "Healthcare / Mental Health",
+      industry: "Healthcare Technology",
       services: "Mobile app development, AI integration, HIPAA compliance",
       companyName: "Dr. Bergquist",
       about:
-        "Dr. Melissa Bergquist's AI therapy companion is a mobile application designed to support therapy clients between sessions through structured reflection and AI-guided conversations. The app helps users process emotions, track progress, and maintain therapeutic momentum outside of traditional therapy sessions.",
+        "Dr. Melissa Bergquist is a licensed psychologist whose private practice focuses on eliminating maladaptive behaviors and improving interpersonal relationships, work-life balance, and mental health outcomes.",
       challenge: {
         title:
           "Maintaining therapeutic engagement between sessions while ensuring privacy and clinical appropriateness",
         content:
-          "Dr. Bergquist recognized that traditional therapy sessions, while effective, left gaps between appointments where patients struggled to maintain progress. Existing mental health apps were either too generic for therapeutic use or too clinical to encourage regular engagement. The challenge was creating an AI system that could provide meaningful therapeutic support while maintaining strict privacy standards and ensuring conversations remained within appropriate therapeutic boundaries.",
+          "Dr. Bergquist recognized that traditional therapy sessions, while effective, left gaps between appointments where patients struggled to maintain progress. Existing mental health apps were either too generic for therapeutic use or too clinical to encourage regular engagement. The challenge was creating an AI system that could provide meaningful therapeutic support while maintaining strict privacy standards.",
       },
       solution:
-        "I developed a React Native mobile application that combines AI-powered conversation with structured therapeutic exercises. The app uses custom prompt engineering to ensure all AI interactions align with therapeutic best practices while maintaining a natural, supportive tone. Key features include contextual mood tracking, guided reflection prompts, session summaries, and secure data handling that meets HIPAA compliance requirements. The AI is trained to recognize when to encourage self-reflection versus when to suggest contacting the therapist directly.",
+        "I developed a mobile and desktop application that combines AI-powered conversation with structured therapeutic exercises, working closely with Dr. Bergquist to ensure the AI captured her therapeutic voice and approach. The application uses custom prompt engineering to ensure all AI interactions align with Dr. Bergquist's best therapeutic practices while maintaining a natural and supportive tone. Key features include contextual mood tracking, guided reflection prompts, session summaries, and secure data handling that meets HIPAA compliance requirements. The AI is trained to recognize when to encourage self-reflection versus when to suggest contacting the therapist directly.",
       results:
-        "Since launching the companion app, Dr. Bergquist has seen significant improvements in patient engagement and therapeutic outcomes. Patients report feeling more supported between sessions and come to appointments better prepared for deeper therapeutic work. The app has reduced session prep time by 40% while increasing patient engagement by 3x, with 95% of users reporting satisfaction with the AI companion's support and guidance.",
+        "Since launching the supplementary application, Dr. Bergquist has seen significant improvements in patient engagement and therapeutic outcomes. Patients report feeling more supported between sessions and come to appointments better prepared for deeper therapeutic work. The application has reduced session prep time by 40% while increasing patient engagement by 3x, with 95% of users reporting satisfaction with the AI companion's support and guidance.",
     },
   },
   {
     id: "brex-app",
-    title: "brex card and expense management",
+    title: "Brex Card and Expense Management",
     imgSrc:
       "https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png",
     altText: "Brex Expense Management App on Mobile Image",
@@ -127,24 +127,24 @@ const projects = [
       headline:
         "Brex mobile app redesign drives enterprise customer acquisition with streamlined expense management.",
       metrics: [
-        { value: "2.3→4.8", label: "app store rating improvement" },
-        { value: "40%", label: "faster transaction processing" },
+        { value: "4.5+", label: "app store rating achieved" },
+        { value: "20k+", label: "customers using mobile app" },
       ],
-      industry: "Fintech / Corporate Banking",
+      industry: "Financial Technology",
       services: "Mobile app redesign, UX optimization, enterprise features",
       companyName: "Brex",
       about:
         "Brex is a corporate credit card and expense management platform designed for startups and growing companies. The mobile application serves as the primary interface for employees to track expenses, manage corporate cards, and submit reports.",
       challenge: {
         title:
-          "Redesigning a complex financial platform to be intuitive for enterprise users while maintaining security and compliance",
+          "Building an intuitive expense management platform for enterprise customers with full-fledged functionalities that didn't exist on the market",
         content:
-          "The existing Brex mobile app had usability issues that were hindering enterprise customer adoption. Complex expense workflows, unclear navigation, and slow transaction processing were creating friction for business users. The challenge was to redesign the entire user experience while maintaining the robust financial features that enterprise customers required.",
+          "There was no user-friendly mobile application for enterprise customers on the market that offered spending controls, budgets, and automated reimbursement policies for expense tracking and approval. The competitors in the market had complex expense workflows, unclear navigation, and slow transaction processing times that created friction within large enterprise firms trying to control spend. The challenge was to create a solution from the ground up that kept user experience in mind for easy flow while maintaining robust financial features with security and compliance that global enterprise companies require.",
       },
       solution:
-        "I led a complete mobile app redesign focusing on streamlined user flows and enterprise-specific features. The new design prioritized quick expense entry, intuitive card management, and real-time transaction tracking. I implemented a component library for consistency, optimized performance for large transaction volumes, and added features specifically requested by enterprise customers like bulk actions and advanced filtering.",
+        "I led the complete mobile app redesign that focused on streamlining user flows and enterprise-specific features. The new design prioritized quick expense entry, OCR receipt matching, and real-time transaction tracking. I implemented high-priority features, optimized performance for large transaction volumes, and added features specifically requested by enterprise customers like bulk actions and advanced filtering.",
       results:
-        "The redesigned Brex mobile app significantly improved user satisfaction and helped secure major enterprise deals with companies like Coinbase and DoorDash. App store ratings improved from 2.3 to 4.8, transaction processing became 40% faster, and the app became a key differentiator in enterprise sales conversations.",
+        "The Brex mobile app significantly improved user satisfaction and helped secure major enterprise deals with companies like Coinbase, DoorDash, and SeatGeek. The app achieved a 4.5-star rating on both the App Store and Google Play Store and is used by Brex's 20,000+ customers. The app demonstrated deep customer understanding and attention to detail, which became a key differentiator in enterprise sales conversations.",
     },
   },
   {
@@ -190,7 +190,7 @@ const projects = [
       headline:
         "Clio mobile app redesign transforms workflow for 150,000+ legal professionals.",
       metrics: [
-        { value: "2.3→4.8", label: "app store rating improvement" },
+        { value: "2.3 → 4.8", label: "app store rating improvement" },
         { value: "150k+", label: "active legal professionals" },
       ],
       industry: "Legal Technology",
@@ -480,9 +480,9 @@ const WorkProjectSection = () => {
                         {(() => {
                           switch (id) {
                             case "bergquist-ai-chat":
-                              return "AI therapy companion helps patients reflect between sessions with 95% user satisfaction.";
+                              return "Supplementrary AI therapy companion chatbot that helps patients reflect between sessions with 95% user satisfaction.";
                             case "brex-app":
-                              return "Mobile app redesign drives enterprise customer acquisition with streamlined expense management.";
+                              return "Built mobile app that streamlined expense workflows and drove enterprise customer acquisition including Coinbase and DoorDash.";
                             case "clio-for-clients":
                               return "Building first consumer product to enable remote legal collaboration during COVID-19, that is currently serving 600,000+ clients.";
                             case "clio-for-lawyers":
