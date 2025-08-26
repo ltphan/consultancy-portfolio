@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-const navTabs = ["work", "contact"];
+const navTabs = ["Get In Touch"];
 
 const NavigationHeader = () => {
   const [activeTab, setActiveTab] = useState("");
 
   const handleSetNavClick = (tab: string) => {
-    const currentTab = tab;
+    const currentTab = tab === "Get In Touch" ? "contact" : "";
     const divSectionElement = document.getElementById(currentTab);
 
     if (divSectionElement) {
@@ -23,9 +23,9 @@ const NavigationHeader = () => {
         <div className="nav-orb nav-orb-3"></div>
         <span
           className="text-2xl font-serif font-bold tracking-tight text-white select-none"
-          style={{ fontFamily: "Georgia, Times New Roman, serif" }}
+          style={{ fontFamily: "Lora, Georgia, serif" }}
         >
-          linh phan consulting
+          LP
         </span>
         <div className="flex gap-8">
           {navTabs.map((tab) => (
@@ -35,7 +35,7 @@ const NavigationHeader = () => {
               className={`nav-pill ${
                 activeTab === tab ? "nav-pill-active" : ""
               }`}
-              style={{ fontFamily: "Inter, Arial, sans-serif" }}
+              style={{ fontFamily: "Lora, Georgia, serif" }}
             >
               {tab}
             </div>

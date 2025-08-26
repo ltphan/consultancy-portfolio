@@ -37,16 +37,6 @@ const TestimonialsSection = () => {
   return (
     <div className="w-content">
       <div className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-serif font-bold text-white mb-4">
-            What Our Clients Say
-          </h2>
-          <p className="text-[#cfd8dc] text-lg max-w-2xl mx-auto">
-            See how we've helped companies transform their digital presence and
-            achieve their goals.
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial) => (
             <div

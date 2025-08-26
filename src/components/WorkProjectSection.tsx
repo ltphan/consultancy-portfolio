@@ -15,7 +15,7 @@ const projects = [
       "D3.js",
       "Data Visualization",
     ],
-    description: `Redesigned and enhanced Cobalt ID's risk intelligence platform, building interactive D3.js ownership network visualizations, advanced filtering systems, and comprehensive business profile details views for financial due diligence and KYB processes.`,
+    description: `Redesigned and enhanced Cobalt ID's risk intelligence platform, building interactive ownership network visualizations, advanced filtering systems, and comprehensive business profile details views for financial due diligence and KYB processes.`,
     caseStudy: {
       headline:
         "Cobalt ID platform redesign transforms business risk assessment with interactive visualizations and advanced filtering capabilities.",
@@ -25,8 +25,7 @@ const projects = [
         { value: "360°", label: "ownership network visibility" },
       ],
       industry: "Fintech / Risk Intelligence",
-      services:
-        "Platform redesign, data visualization, interactive dashboards, D3.js development",
+      services: "Platform redesign, data visualization, interactive dashboards",
       companyName: "Cobalt ID",
       about:
         "Cobalt ID is a comprehensive risk intelligence platform that helps financial institutions and businesses conduct thorough due diligence and Know Your Business (KYB) processes. The platform aggregates and analyzes business data to provide risk assessments, ownership network mapping, and compliance monitoring for decision-makers.",
@@ -360,12 +359,10 @@ const WorkProjectSection = () => {
   return (
     <>
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-serif font-bold text-white mb-4">
-          Featured Work
-        </h2>
+        <h2 className="text-3xl font-serif text-white mb-4">Featured Work</h2>
         <p className="text-[#cfd8dc] text-lg max-w-2xl mx-auto">
-          Explore case studies and projects that showcase how I've helped
-          companies build innovative digital solutions.
+          Explore case studies that showcase how we've helped companies build
+          innovative solutions.
         </p>
       </div>
 
