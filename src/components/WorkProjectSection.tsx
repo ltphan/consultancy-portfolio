@@ -4,17 +4,16 @@ import { X } from "lucide-react";
 const projects = [
   {
     id: "cobalt-id-platform",
-    title: "cobalt id risk intelligence platform",
+    title: "Cobalt ID AI Fraud",
     imgSrc: "/images/cobalt-id-platform.png",
     altText: "Cobalt ID Risk Intelligence Platform Dashboard",
     technologies: [
       "React",
-      "D3.js",
       "JavaScript",
-      "CSS",
       "REST APIs",
+      "Material UI",
+      "D3.js",
       "Data Visualization",
-      "SVG",
     ],
     description: `Redesigned and enhanced Cobalt ID's risk intelligence platform, building interactive D3.js ownership network visualizations, advanced filtering systems, and comprehensive business profile details views for financial due diligence and KYB processes.`,
     caseStudy: {
@@ -41,78 +40,6 @@ const projects = [
         "I led a comprehensive platform redesign focusing on user experience and data visualization. Key improvements included building interactive D3.js ownership network graphs with zoom, pan, and clickable nodes for detailed entity information; designing a 7-tab business profile system covering comprehensive due diligence data; implementing advanced calendar-based filtering for risk tolerance and timeline analysis; creating dynamic risk summary cards with visual indicators and expandable details; and developing a responsive timeline view for tracking business changes and updates over time.",
       results:
         "The redesigned Cobalt ID platform significantly improved the efficiency and effectiveness of business risk assessment workflows. Users reported 85% faster risk assessment processes due to the intuitive interface and visual data presentation. The interactive ownership network visualization became a key differentiator, allowing users to quickly identify complex business relationships and potential risks. The comprehensive filtering and timeline features enabled more thorough due diligence while reducing the time required for analysis.",
-    },
-  },
-  {
-    id: "workflow-automation-suite",
-    title: "business workflow automation suite",
-    imgSrc: "/images/workflow-automation.png",
-    altText: "Business Workflow Automation Dashboard",
-    technologies: [
-      "Make.com",
-      "Zapier",
-      "Google Apps Script",
-      "OpenAI API",
-      "Gmail API",
-      "Monday.com API",
-      "DocuSign API",
-    ],
-    description: `Built comprehensive workflow automation solutions for businesses across multiple industries, eliminating manual processes through AI-powered data extraction, automated document generation, and seamless system integrations. Delivered cost savings of 90%+ while dramatically improving operational efficiency.`,
-    caseStudy: {
-      headline:
-        "Workflow automation suite cuts operational costs by 90% while eliminating manual data entry across multiple industries.",
-      metrics: [
-        { value: "90%+", label: "cost reduction achieved" },
-        { value: "40+ hrs", label: "weekly time savings" },
-        { value: "3", label: "industries transformed" },
-      ],
-      industry: "Cross-Industry / Business Operations",
-      services:
-        "Workflow automation, AI integration, system integration, process optimization",
-      companyName: "Multiple Businesses",
-      about:
-        "A comprehensive suite of workflow automation solutions designed to eliminate manual processes and reduce operational costs for businesses. The system combines AI-powered data extraction, automated document generation, and seamless integrations between existing business tools to create efficient, cost-effective workflows across angel investing, HVAC services, and real estate development.",
-      challenge: {
-        title:
-          "Eliminating expensive manual processes while maintaining accuracy and compliance across diverse business operations",
-        content:
-          "Businesses across multiple industries were spending significant time and money on manual data entry, document processing, and workflow coordination. An angel investor was manually processing emails and updating project management systems, an HVAC business was paying $500/month for software while still doing manual client intake, and a real estate developer needed compliant document automation. Each required custom solutions that could integrate with existing tools while dramatically reducing costs and human error.",
-      },
-      solution:
-        "I developed a suite of interconnected automation solutions tailored to each business context. For the angel investor, I built an AI-powered email processing system using OpenAI APIs that automatically extracts deal information and updates Monday.com project boards. For the HVAC business, I created a comprehensive client intake automation using Google Apps Script and Make.com that generates documents and coordinates multi-stakeholder communications. For the real estate developer, I implemented a Zapier-based compliance workflow that automatically generates DocuSign documents from website form submissions. All solutions leverage cost-effective platforms and existing business tools.",
-      results:
-        "The automation suite delivered transformative results across all three businesses. The angel investor eliminated manual data entry entirely while maintaining 100% accuracy in deal tracking. The HVAC business reduced monthly software costs from $500 to nearly free while cutting client onboarding time by 75%. The real estate developer achieved full compliance automation with zero manual document generation. Combined, these solutions save over 40 hours of manual work weekly while reducing operational costs by more than 90%, proving that intelligent automation can deliver massive business value without expensive enterprise software.",
-    },
-  },
-  {
-    id: "bergquist-ai-chat",
-    title: "Dr. Bergquist AI Therapist Companion App",
-    imgSrc: "/images/bergquist-ai-therapist-chat.svg",
-    altText: "AI Therapist Chat App on Mobile",
-    technologies: ["React Native", "React", "Expo", "Supabase", "Open AI LLM"],
-    description: `Designed and built an AI-powered companion app for therapy clients, enabling reflective conversations, structured summaries, and actionable insights between sessions. Collaborated closely with Dr. Melissa Bergquist, PsyD to deliver a supportive digital experience for users.`,
-    caseStudy: {
-      headline:
-        "Dr. Bergquist's AI therapy companion helps patients reflect between sessions.",
-      metrics: [
-        { value: "95%", label: "user satisfaction" },
-        { value: "3x", label: "more engagement between sessions" },
-      ],
-      industry: "Healthcare Technology",
-      services: "Mobile app development, AI integration, HIPAA compliance",
-      companyName: "Dr. Bergquist",
-      about:
-        "Dr. Melissa Bergquist is a licensed psychologist whose private practice focuses on eliminating maladaptive behaviors and improving interpersonal relationships, work-life balance, and mental health outcomes.",
-      challenge: {
-        title:
-          "Maintaining therapeutic engagement between sessions while ensuring privacy and clinical appropriateness",
-        content:
-          "Dr. Bergquist recognized that traditional therapy sessions, while effective, left gaps between appointments where patients struggled to maintain progress. Existing mental health apps were either too generic for therapeutic use or too clinical to encourage regular engagement. The challenge was creating an AI system that could provide meaningful therapeutic support while maintaining strict privacy standards.",
-      },
-      solution:
-        "I developed a mobile and desktop application that combines AI-powered conversation with structured therapeutic exercises, working closely with Dr. Bergquist to ensure the AI captured her therapeutic voice and approach. The application uses custom prompt engineering to ensure all AI interactions align with Dr. Bergquist's best therapeutic practices while maintaining a natural and supportive tone. Key features include contextual mood tracking, guided reflection prompts, session summaries, and secure data handling that meets HIPAA compliance requirements. The AI is trained to recognize when to encourage self-reflection versus when to suggest contacting the therapist directly.",
-      results:
-        "Since launching the supplementary application, Dr. Bergquist has seen significant improvements in patient engagement and therapeutic outcomes. Patients report feeling more supported between sessions and come to appointments better prepared for deeper therapeutic work. The application has reduced session prep time by 40% while increasing patient engagement by 3x, with 95% of users reporting satisfaction with the AI companion's support and guidance.",
     },
   },
   {
@@ -442,7 +369,7 @@ const WorkProjectSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-stretch">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
         {projects.map(
           ({ id, title, imgSrc, altText, technologies, description }) => {
             const open = openId === id;
@@ -479,18 +406,14 @@ const WorkProjectSection = () => {
                       <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px] flex-1">
                         {(() => {
                           switch (id) {
-                            case "bergquist-ai-chat":
-                              return "Supplementrary AI therapy companion chatbot that helps patients reflect between sessions with 95% user satisfaction.";
                             case "brex-app":
                               return "Built mobile app that streamlined expense workflows and drove enterprise customer acquisition including Coinbase and DoorDash.";
                             case "clio-for-clients":
                               return "Building first consumer product to enable remote legal collaboration during COVID-19, that is currently serving 600,000+ clients.";
                             case "clio-for-lawyers":
                               return "Redesigning and revamping top-rated application for lawyers to access pivotal information on-the-go.";
-                            case "workflow-automation-suite":
-                              return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
                             case "cobalt-id-platform":
-                              return "Risk intelligence platform redesign delivers 85% faster due diligence with interactive ownership network visualizations.";
+                              return "Revamped and redeisgned AI risk intelligence platform that delivers 85% faster due diligence with interactive ownership network visualizations.";
                             default:
                               return project.caseStudy.headline.length > 80
                                 ? project.caseStudy.headline.substring(0, 80) +
@@ -543,16 +466,12 @@ const WorkProjectSection = () => {
                     <p className="text-sm text-gray-600 mb-4 line-clamp-3 min-h-[60px] flex-1">
                       {(() => {
                         switch (id) {
-                          case "bergquist-ai-chat":
-                            return "AI therapy companion helps patients reflect between sessions with 95% user satisfaction.";
                           case "brex-app":
                             return "Mobile app redesign drives enterprise customer acquisition with streamlined expense management.";
                           case "clio-for-clients":
                             return "First consumer product enables remote legal collaboration during COVID-19, serving 600,000+ clients.";
                           case "clio-for-lawyers":
                             return "Mobile app redesign transforms workflow for 150,000+ legal professionals with 4.8★ rating.";
-                          case "workflow-automation-suite":
-                            return "Automation suite cuts operational costs by 90% while eliminating manual data entry across industries.";
                           case "cobalt-id-platform":
                             return "Risk intelligence platform redesign delivers 85% faster due diligence with interactive ownership network visualizations.";
                           default:
