@@ -23,18 +23,18 @@ const projects = [
         { value: "7", label: "detailed business profile tabs" },
         { value: "360°", label: "ownership network visibility" },
       ],
-      industry: "Fintech / Risk Intelligence",
+      industry: "Financial Technology & Risk Intelligence",
       services: "Platform redesign, data visualization, interactive dashboards",
       companyName: "Cobalt ID",
-      about: `Cobalt ID is a comprehensive AI risk intelligence platform that helps financial institutions conduct thorough due diligence and KYB ("Know Your Business") processes on businesses. The platform aggregates and analyzes business data to provide risk assessments, ownership network mapping, and compliance monitoring for decision-makers to ensure businesses in question are fully vetted and not fraudulent.`,
+      about: `Cobalt ID is a comprehensive AI risk intelligence platform that helps financial institutions conduct thorough due diligence and KYB ("Know Your Business") processes on businesses. The platform aggregates and analyzes business data to provide risk assessments, ownership network mapping, and compliance monitoring for analysts to ensure businesses in question are not fraudulent.`,
       challenge: {
         title:
           "Transforming complex business data into intuitive, actionable insights for risk assessment professionals",
         content:
-          "Cobalt ID's existing platform presented business risk data in a static, difficult-to-navigate user interface that slowed down the due diligence processes. Analysts struggled to understand relationships between businesses in a complex ownership structure, were unable to efficiently filter through risk indicators, and lacked the visual tools needed to quickly surface red flags in business relationships. The platform needed a complete redesign to make critical risk information more accessible and actionable.",
+          "Cobalt ID's existing platform presented business risk data in a static, difficult-to-navigate user interface that slowed down the due diligence processes. Analysts struggled to understand relationships between businesses in a complex ownership structure, were unable to filter through risk indicators, and lacked visual tools needed to quickly surface red flags in business relationships. The platform needed a complete redesign to make critical risk information more accessible and actionable.",
       },
       solution:
-        "I led a comprehensive platform redesign focusing on user experience and data visualization. Key improvements included building interactive ownership network graphs with zoom, pan, and clickable nodes for detailed information on businesses and people; designing a 7-tab business profile system covering comprehensive due diligence data; implementing advanced calendar-based and multiselect risk tolerance filters; creating dynamic risk summary cards with visual indicators and expandable details; and developing a responsive timeline view for tracking business changes and updates in real time.",
+        "I led a comprehensive platform redesign focusing on user experience and data visualization. Key improvements included building interactive ownership network graphs with zoom, pan, and clickable nodes for detailed information on businesses and people; designing a 7-tab business profile system covering comprehensive due diligence data; implementing advanced calendar-based and multiselect risk tolerance filters; creating dynamic risk summary cards with visual indicators and expandable details; and developing a timeline view for tracking business changes and updates in real time.",
       results:
         "The redesigned Cobalt ID platform significantly improved the efficiency and effectiveness of business risk assessment workflows. Enhanced data visualization reduced analysis time for complex ownership structures, while the improved user experience supported client retention goals. The interactive ownership network visualization became a key differentiator in client demos, allowing users to quickly identify complex business relationships and potential risks. The comprehensive filtering and timeline features enabled more thorough due diligence while reducing the time required for analysis.",
     },
@@ -359,7 +359,8 @@ const WorkProjectSection = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl font-serif text-white mb-4">Featured Work</h2>
         <p className="text-[#cfd8dc] text-lg max-w-2xl mx-auto">
-          Explore case studies that show how we've built innovative solutions for businesses.
+          Explore case studies that show how we've built innovative solutions
+          for businesses.
         </p>
       </div>
 
