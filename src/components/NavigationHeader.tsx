@@ -24,9 +24,7 @@ const NavigationHeader = () => {
         <span
           className="text-2xl font-serif font-bold tracking-tight text-white select-none"
           style={{ fontFamily: "Lora, Georgia, serif" }}
-        >
-          LP
-        </span>
+        ></span>
         <div className="flex gap-8">
           {navTabs.map((tab) => (
             <div
