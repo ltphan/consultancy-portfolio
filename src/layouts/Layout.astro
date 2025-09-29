@@ -1,5 +1,13 @@
 ---
+// Layout.astro - Updated for minimal portfolio
 import "../styles/global.css";
+
+// Accept title as a prop for dynamic page titles
+export interface Props {
+  title?: string;
+}
+
+const { title = "LP Consulting - AI Strategy & Implementation" } = Astro.props;
 ---
 
 <!doctype html>
@@ -7,22 +15,80 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/src/assets/chrome-tab-icon.png" type="image/png" />
+    <link
+      rel="shortcut icon"
+      href="/src/assets/chrome-tab-icon.png"
+      type="image/png"
+    />
+    <link rel="apple-touch-icon" href="/src/assets/chrome-tab-icon.png" />
+
+    <!-- Google Fonts - Inter for body, Libre Baskerville for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="LP Consulting - AI-First Strategy & Implementation"
+    />
+    <meta name="author" content="Linh Phan" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://linhphan.dev/" />
+    <meta property="og:title" content="LP Consulting" />
+    <meta
+      property="og:description"
+      content="AI-First Strategy & Implementation"
+    />
+    <meta property="og:image" content="https://linhphan.dev/lp-logo-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://linhphan.dev/" />
+    <meta property="twitter:title" content="LP Consulting" />
+    <meta
+      property="twitter:description"
+      content="AI-First Strategy & Implementation"
+    />
+    <meta
+      property="twitter:image"
+      content="https://linhphan.dev/lp-logo-og.png"
+    />
+
     <meta name="generator" content={Astro.generator} />
-    <title>Linh Phan Consulting</title>
+    <title>{title}</title>
   </head>
-  <body class="bg-cream">
+  <body class="bg-white">
     <slot />
   </body>
 </html>
 
 <style>
+  /* Reset and base styles */
   html,
   body {
     margin: 0;
+    padding: 0;
     height: 100%;
+  }
+
+  /* Set Inter as default font */
+  body {
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 </style>

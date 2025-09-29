@@ -231,7 +231,7 @@ const Form = ({ formEndpoint }: FormProps) => {
       <div className="grid w-full items-center gap-1.5">
         <label className="text-white">Tell me what you want help with</label>
         <textarea
-          className="w-full rounded-md border border-gray-500 bg-transparent focus:border-[#0047ab] text-white placeholder-gray-400 p-2 mb-6 outline-none transition-colors duration-200"
+          className="w-full rounded-md border border-gray-500 bg-transparent focus:border-[#0047ab] text-white placeholder-gray-400 p-2 mb-6 outline-none transition-colors duration-200 resize"
           rows={5}
           placeholder="Tell me your goals, challenges, timeline or any other relevant details"
           name="message"

@@ -1,0 +1,466 @@
+---
+// Portfolio_Minimal.astro
+// DESIGN SYSTEM & STARTER TEMPLATE FOR CLAUDE
+//
+// DESIGN PRINCIPLES:
+// - Ultra minimal like Alephic (alephic.com)
+// - No case studies, no services section
+// - Logo carousel shows credibility without explanation
+// - Clean typography: Inter font, light weights (300-400)
+// - Lots of white space
+
+import lpLogo from "../assets/lp-logo.png";
+// - Black and white only, no colors
+//
+// TYPOGRAPHY:
+// - Font: Inter (use Google Fonts or system fonts)
+// - Hero title: 72px, font-weight: 300, letter-spacing: -2px
+// - Body text: 16-18px, font-weight: 400
+// - Small text: 14px
+// - Line height: 1.5 for body, 1 for headlines
+//
+// COLORS:
+// - Black: #000000
+// - White: #FFFFFF
+// - Gray: #666666
+// - Light Gray: #999999
+// - Border: #E5E5E5
+//
+// SPACING:
+// - Section margins: 120-160px
+// - Container max-width: 1100px
+// - Padding: 40px on mobile, 0 on desktop
+//
+// INTERACTIONS:
+// - Hover opacity: 0.5 or 0.8
+// - Transitions: 0.2s ease
+// - No fancy animations, just simple fades
+
+import Layout from "../layouts/Layout.astro";
+
+// EASY ARTICLE MANAGEMENT
+// Just add new articles to this array to show them on the site
+const articles = [
+  {
+    title: "Your Article Title Here",
+    excerpt: "A compelling subtitle that summarizes the key point",
+    date: "January 2024",
+    slug: "article-sample-1", // This matches your filename
+    link: "/articles/article-sample-1", // Add this line
+    published: true,
+  },
+];
+
+// Filter to only show published articles
+const publishedArticles = articles.filter((article) => article.published);
+
+const formEndpoint = import.meta.env.PUBLIC_FORMSPREE_ENDPOINT;
+---
+
+<Layout title="Linh Phan - I ship code. Not PowerPoints.">
+  <main class="min-h-screen bg-white">
+    <!-- NAVIGATION - Fixed, minimal, top right -->
+    <nav class="fixed top-10 right-10 z-20 flex gap-8">
+      <!-- <button
+        id="nav-toggle"
+        class="text-sm text-black hover:opacity-50 transition-opacity duration-200 cursor-pointer"
+      >
+        Writing
+      </button> -->
+      <button
+        id="contact-link"
+        class="text-sm text-black hover:opacity-50 transition-opacity duration-200 cursor-pointer"
+      >
+        Contact
+      </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="min-h-screen bg-white flex flex-col items-center justify-center"
+    >
+      <div class="container mx-auto max-w-6xl px-10 text-center">
+        <div>
+          <div class="flex flex-col items-center">
+            <img
+              src={lpLogo.src}
+              alt="LP Logo"
+              class="w-80 h-80 object-contain"
+              style="image-rendering: crisp-edges; image-rendering: -webkit-crisp-edges;"
+            />
+          </div>
+        </div>
+
+        <!-- Main statement - the key message -->
+        <h1
+          class="text-5xl md:text-8xl font-normal leading-tight tracking-tight mb-8"
+        >
+          <span class="font-bold">Execute</span> AI Strategy.<br /><span
+            class="font-bold">Not</span
+          > PowerPoints.
+        </h1>
+
+        <div class="max-w-3xl mx-auto mb-10">
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            Your AI strategy gets bigger every quarter. Actual usage? <span
+              class="font-bold italic">Still zero.</span
+            >
+            <br />
+            We build the AI tools your committee's been debating.
+          </p>
+
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+          </p>
+
+          <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            We watch how you work, build tools that fit your actual workflow,
+            and teach your team by doing - not presenting. The result? <span
+              class="font-bold italic">AI that gets used, not discussed.</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- LOGO DISPLAY - Clean and static -->
+      <div class="text-center mb-6">
+        <p class="text-sm text-gray-500 uppercase tracking-wide">
+          We've shipped AI at
+        </p>
+      </div>
+      <div class="py-5 mb-10">
+        <div class="flex justify-center items-center gap-6 md:gap-16">
+          <a
+            href="https://www.cobaltid.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-80 transition-opacity duration-200"
+          >
+            <img
+              src="https://media.licdn.com/dms/image/v2/D4E0BAQGJAV8DokKpCw/company-logo_200_200/B4EZc3IKIyHcAc-/0/1748976575361/cobaltid_logo?e=1761782400&v=beta&t=s1XW6tHFdzDtcRjGbfsdEts7Wc_rW_JDS546665iaj0"
+              alt="Cobalt ID"
+              class="h-12 w-20 md:h-20 md:w-32 object-contain"
+            />
+          </a>
+          <a
+            href="https://www.brex.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-80 transition-opacity duration-200"
+          >
+            <img
+              src="https://cdn.prod.website-files.com/5ee1205133aab8ebebcb0e8d/642db3d89875f20268535c40_Brex%20logo%20centrado.png"
+              alt="Brex"
+              class="h-14 w-24 md:h-24 md:w-40 object-contain"
+            />
+          </a>
+          <a
+            href="https://www.clio.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-80 transition-opacity duration-200"
+          >
+            <img
+              src="https://www.clio.com/wp-content/uploads/2021/12/clio-logo.svg"
+              alt="Clio"
+              class="h-12 w-20 md:h-20 md:w-32 object-contain"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- CTA - Simple, centered -->
+      <div class="text-center mb-20">
+        <p class="text-4xl md:text-6xl font-medium text-gray-900 mb-6">
+          Stop strategizing, start shipping.
+        </p>
+        <button
+          id="cta-contact"
+          class="bg-black text-white px-8 py-4 rounded-xl hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+        >
+          Get in touch
+        </button>
+      </div>
+    </section>
+
+    <!-- WRITING SECTION - Hidden by default, shows when Writing clicked -->
+    <section
+      id="writing"
+      class="hidden container mx-auto max-w-3xl px-10 pt-32"
+    >
+      <button
+        id="back-home"
+        class="text-sm text-gray-500 hover:text-black transition-colors duration-200 mb-10"
+      >
+        ← Back
+      </button>
+
+      <div class="mb-20">
+        <h2 class="text-5xl font-light tracking-tight mb-4">Writing</h2>
+        <p class="text-gray-600">
+          Writing as a tool for thinking. Ideas, experiments, and lessons from
+          building.
+        </p>
+      </div>
+
+      <!-- Articles List -->
+      <div class="articles-list">
+        {
+          publishedArticles.map((article) => (
+            <a href={article.link} class="block">
+              <article class="py-8 border-b border-gray-200 hover:pl-3 transition-all duration-200 cursor-pointer">
+                <h3 class="text-xl mb-2 tracking-tight">{article.title}</h3>
+                <p class="text-gray-600 text-sm mb-2 leading-relaxed">
+                  {article.excerpt}
+                </p>
+                <span class="text-xs text-gray-400">{article.date}</span>
+              </article>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CONTACT MODAL - Hidden by default, shows when Contact clicked -->
+    <div
+      id="contact-modal"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center"
+      style="background-color: rgba(0, 0, 0, 0.15);"
+    >
+      <div class="bg-white rounded-3xl max-w-md w-full mx-4 p-10 relative">
+        <!-- Close button -->
+        <button
+          id="close-modal"
+          class="absolute top-6 right-6 text-2xl text-gray-400 hover:text-black transition-colors duration-200"
+        >
+          ×
+        </button>
+
+        <h3 class="text-2xl font-light tracking-tight mb-6">
+          Let's ship something.
+        </h3>
+
+        <p class="text-sm text-gray-600 mb-8 leading-relaxed">
+          Software built for your specific problem. Not a framework, not a
+          template—just what actually works.
+        </p>
+
+        <!-- Simple form with just essentials -->
+        <form
+          id="contact-form"
+          action={formEndpoint}
+          method="POST"
+          class="space-y-5"
+        >
+          <div>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Name"
+              class="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-black focus:outline-none transition-colors duration-200 text-base"
+            />
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="Email"
+              class="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-black focus:outline-none transition-colors duration-200 text-base"
+            />
+          </div>
+
+          <div>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company"
+              class="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-black focus:outline-none transition-colors duration-200 text-base"
+            />
+          </div>
+
+          <div>
+            <textarea
+              name="message"
+              required
+              placeholder="What are you looking to build?"
+              rows="4"
+              class="w-full px-0 py-3 border-0 border-b border-gray-300 focus:border-black focus:outline-none transition-colors duration-200 resize-y max-w-full text-base"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-black text-white py-4 rounded-xl hover:opacity-80 transition-opacity duration-200 text-base"
+          >
+            Get in touch
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    /* FORM STYLING */
+    input::placeholder,
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    /* TYPOGRAPHY SYSTEM */
+    * {
+      font-family:
+        "Inter",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    /* TYPOGRAPHY HIERARCHY */
+    h1,
+    h2,
+    h3 {
+      letter-spacing: -0.02em;
+    }
+
+    /* Body text should be clearly smaller */
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* MOBILE HEADING OPTIMIZATION */
+    @media (max-width: 768px) {
+      h1 {
+        line-height: 1.2;
+        font-size: 2.5rem !important;
+      }
+    }
+  </style>
+
+  <script>
+    // SIMPLE VANILLA JS FOR NAVIGATION
+    // No frameworks needed for this simple interaction
+
+    const home = document.getElementById("home");
+    const writing = document.getElementById("writing");
+    const modal = document.getElementById("contact-modal");
+    const navToggle = document.getElementById("nav-toggle");
+
+    // Check URL hash on page load
+    function checkHash() {
+      if (window.location.hash === "#writing") {
+        home?.classList.add("hidden");
+        writing?.classList.remove("hidden");
+        if (navToggle) navToggle.textContent = "Home";
+      }
+    }
+
+    // Run on page load
+    checkHash();
+
+    // Function to update nav text and handle navigation
+    function toggleSection() {
+      const isOnHome = !home?.classList.contains("hidden");
+
+      if (isOnHome) {
+        // Currently on home, show writing section
+        home?.classList.add("hidden");
+        writing?.classList.remove("hidden");
+        if (navToggle) navToggle.textContent = "Home";
+      } else {
+        // Currently on writing, show home section
+        writing?.classList.add("hidden");
+        home?.classList.remove("hidden");
+        if (navToggle) navToggle.textContent = "Writing";
+      }
+    }
+
+    // Main navigation toggle
+    navToggle?.addEventListener("click", toggleSection);
+
+    // Back to home (also updates nav text)
+    document.getElementById("back-home")?.addEventListener("click", () => {
+      writing?.classList.add("hidden");
+      home?.classList.remove("hidden");
+      if (navToggle) navToggle.textContent = "Writing";
+    });
+
+    // Show contact modal
+    ["contact-link", "cta-contact"].forEach((id) => {
+      document.getElementById(id)?.addEventListener("click", () => {
+        modal?.classList.remove("hidden");
+      });
+    });
+
+    // Close modal
+    document.getElementById("close-modal")?.addEventListener("click", () => {
+      modal?.classList.add("hidden");
+    });
+
+    // Close modal on backdrop click
+    modal?.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal?.classList.add("hidden");
+      }
+    });
+
+    // Close modal on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        modal?.classList.add("hidden");
+      }
+    });
+
+    // FORM SUBMISSION WITH BETTER UX
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    const submitButton = form?.querySelector(
+      'button[type="submit"]'
+    ) as HTMLButtonElement;
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Update button state
+      const originalText = submitButton.textContent || "Send Message";
+      submitButton.textContent = "Sending...";
+      submitButton.disabled = true;
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // Success
+          submitButton.textContent = "✓ Sent";
+          form.reset();
+
+          // Close modal after 2 seconds
+          setTimeout(() => {
+            modal?.classList.add("hidden");
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+          }, 2000);
+        } else {
+          throw new Error("Failed to send");
+        }
+      } catch (error) {
+        // Error
+        submitButton.textContent = "Error - Try Again";
+        submitButton.disabled = false;
+
+        setTimeout(() => {
+          submitButton.textContent = originalText;
+        }, 3000);
+      }
+    });
+  </script>
+</Layout>

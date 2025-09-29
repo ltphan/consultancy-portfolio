@@ -43,7 +43,7 @@ const projects = [
     id: "brex-app",
     title: "Brex Card and Expense Management",
     imgSrc:
-      "https://cdn.prod.website-files.com/64dc251f5942d90e0038cc65/64ffa942938c27ea2cedf83d_brex-mobile.png",
+      "https://cdn.prod.website-files.com/5ee1205133aab8ebebcb0e8d/642db3d89875f20268535c40_Brex%20logo%20centrado.png",
     altText: "Brex Expense Management App on Mobile Image",
     technologies: ["React Native", "React", "TypeScript", "Expo", "GraphQL"],
     description: `I revamped and redesigned the Brex mobile application for enterprise customers, focusing on critical expense management features including streamlined account creation and detailed card transaction tracking. The app serves as a cornerstone financial tool that helped secure enterprise deals with companies like Coinbase and DoorDash.`,
@@ -384,9 +384,11 @@ const WorkProjectSection = () => {
                       <img
                         src={imgSrc}
                         alt={altText}
-                        className="rounded-lg max-w-full max-h-full transform group-hover:scale-[1.02] transition-transform duration-300"
+                        className="rounded-lg max-w-full transform group-hover:scale-[1.02] transition-transform duration-300"
                         style={{
                           objectFit: "contain",
+                          height: "80px",
+                          maxHeight: "80px",
                         }}
                       />
                       {/* Subtle overlay on hover */}
@@ -444,9 +446,11 @@ const WorkProjectSection = () => {
                     <img
                       src={imgSrc}
                       alt={altText}
-                      className="rounded-lg max-w-full max-h-full transform group-hover:scale-[1.02] transition-transform duration-300"
+                      className="rounded-lg max-w-full transform group-hover:scale-[1.02] transition-transform duration-300"
                       style={{
                         objectFit: "contain",
+                        height: "80px",
+                        maxHeight: "80px",
                       }}
                     />
                     {/* Subtle overlay on hover */}
